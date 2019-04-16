@@ -1,0 +1,21 @@
+
+function checkEmail(email) {
+  
+    var filter = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+  
+    if (!filter.test(email)) {
+    //alert('Lütfen uygun formatta bir mail adresi giriniz !');
+    return false;
+ }
+  else{
+  //alert('Mail adresi uygun formattadir.');
+  return true;
+  }
+}
+
+////////////////
+
+var mailBireysel = $('#mailBireysel').val(); // input'un id si ile degeri aliyoruz. 
+
+var mailDonen = checkEmail(mailBireysel); // Yukarida tanimladigimiz fonksiyona degeri gönderiyoruz.
+

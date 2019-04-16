@@ -1,0 +1,47 @@
+/////////////////////////////   e.preventDefault();   ----->  DEFAULT FONK ONLER ////////////////// /////////////////// 
+
+$("a.tikla").click(function(event)
+{
+event.preventDefault();
+});
+
+////////////////////////////////////// ///////////////////  $('#ToIdsDialogLink').trigger('click');  /////////////////// 
+
+ ---> Bir nesnenin herhangi bir eventini tetiklemeye yarar.Sanki o event olmus gibi davranilir.
+--> Örnegin bir butona tikladiniz ayni anda baska bir nesnenin tiklama eventi içindeki kodlarininda çalismasini istiyorsunuz ve bunu jQuery’de yapmak istiyorsaniz .trigger() fonksiyonu imdadiniza yetisiyor.
+
+/////////////////// /////////////////// /////////////////// /////////////////// /////////////////// 
+ e.stopImmediatePropagation();
+e.stopPropagation();  ----> bubbling olayini engeller . Ustteki nesnenin eventlerinden etkilenmesin.  XCapturing.
+
+////////////////////////////////////////////// e.target /////////////////// /////////////////// 
+
+if($(e.target).is(':checkbox') || $(e.target).hasClass('bip-form-checkbox-label'))
+e.target  -->su anki event hangi Nesne için uygulaniyor ??
+Yürürlükteki olayin hangi elemente uygulandigini belirtir.
+
+//////////////////////////////////////////////
+
+ $('#dialogAddUserFromFile').modal('show');
+
+filter()
+ $('#attachmentsContainer input[type=file]:last')[0].onchange = function(e) {
+
+
+$(this).parents('.row').toggleClass('dealer', $(this).val() == 4)   ---> ToggleClass
+
+
+
+
+///////////////////////////////////////
+
+   function SetIsBCC(e) {
+        mmessage.IsBCC = $(e).data("type") === "BCC" ? true : false;
+    }
+
+
+
+
+
+
+vent.delegateTarget

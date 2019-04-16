@@ -1,0 +1,30 @@
+<html>
+<head>
+  <style>
+span, strong, p { 
+  padding: 8px; display: block; border: 1px solid #999;  }
+    </style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+  
+
+<div id="log"></div>
+<div>
+  <p>
+    <strong><span>TIKLA</span></strong>
+  </p>
+</div>
+<span>DENEME</span>
+<script>$("body").click(function(event) {
+    //Tıklanılanı kırmızı yap
+$(event.target).css("background-color", "red");
+  $("#log").html("Şuraya tıklandı: " + event.target.nodeName);
+});  </script>
+
+
+<!-- $(event.delegateTarget)  nerden tetiklediysen onu alır
+Yukarıdaki ornekte body i etkileyeceyk. body yerine strong yaparsan strong etkılenır
+-->
+</body>
+</html>

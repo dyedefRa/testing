@@ -1,0 +1,9 @@
+
+var mmessage = { ACTION: {}, common: {}, newMessage: {}, detail: {} };
+
+ mmessage.TRASH = 3;
+    mmessage.NEWMESSAGE = 4;
+    mmessage.sendMessageUserIds = [];
+    mmessage.sendMessageBCCUserIds = [];
+
+

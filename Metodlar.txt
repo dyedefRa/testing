@@ -1,0 +1,28 @@
+  $('#messagesMenu li a[data-index="' + index + '"]').addClass('active');
+
+
+
+$('#bip-messages-incoming').parent().css("overflow-y", "auto");
+
+mmessage.newMessage.sendMessageRemoveUserTo($(this).parents('.bip-message-to-user').data('id'));
+
+
+
+
+$('.bip-message-unread').find('.icon-read-message').removeClass('icon-read-message').addClass('icon-message');
+
+
+$(e.target).hasClass('bip-form-checkbox-label')
+
+
+ $('.checkboxToggler').attr('checked', false);
+
+
+ $('.messagesArea').on('click', '.btnUndoTrashItems', function (e) {     }
+
+
+mmessage.common.calculateAttachmentsSize = function () {    .... return ...}
+
+
+var x = document.getElementById("myBtn");
+x.addEventListener("click", myFunction);

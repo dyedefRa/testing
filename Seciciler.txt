@@ -1,0 +1,13 @@
+Yazilis Biçimi	Açiklama
+$("*")	Bütün elemanlari seçer
+$(this)	O anda aktif olan HTML5 elemanini seçer
+$("p.d1")	class="d1"  olan bütün <p> elemanlarini seçer
+$("p:first")	Ilk <p> elemanini seçer
+$("ul li:first")	Ilk <ul> elemaninin ilk <li> elemanini seçer
+$("ul li:first-child")	Her <ul>elemaninin ilk <li> elemanini seçer
+$("[href]")	href vasfini içeren bütün elemanlari seçer
+$("a[target='_blank']")	Hedef vasif degeri  "_blank" olan bütün <a> elemanlarini seçer
+$("a[target!='_blank']")	Hedef vasif degeri "_blank" olmayan bütün <a> elemanlarini seçer."_blank"
+$(":button")	<button> tipindeki bütün <button> ve <input> elemanlarini seçer
+$("tr:even")	Bütün çift <tr> elemanlarini seçer
+$("tr:odd")	Bütün tek <tr> elemanlarini seçer

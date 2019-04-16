@@ -1,0 +1,25 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ID ve Name alip , belirli bir diziye eger o dizide o id li deger yoksa ekleme olayi.
+
+TANIM =>
+mmessage.newMessage.sendMessageAddUserTo = function (id, name) {
+        if (!mmessage.IsBCC) {
+            var index = mmessage.sendMessageUserIds.findIndex(function (user) {
+                return user.id === id;
+            });
+            if (index > -1) {
+                return;
+            };
+            mmessage.sendMessageUserIds.push({ id: id, name: name });
+
+            $('#ToIdsDiv').append('<span class="bip-message-to-user" data-id="' + id + '"><a href="#">' + name + ' <span class="bip-icon icon-cikis" data-type="CC"></span> </a><input type="hidden" name="Ids[]" value="' + id + '"/></span>');
+        }
+}
+
+KULLANIM => 
+  mmessage.newMessage.sendMessageAddUserTo($(this).data('id'), $(this).data('name'));
+
+
+/////////////////////////////////////////
+
+  mmessage.sendMessageUserIds.splice(index, 1);
