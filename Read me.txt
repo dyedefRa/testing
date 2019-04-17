@@ -1,0 +1,34 @@
+Scheduler ile program
+https://www.oguzhansari.com/blog/c-mvc-de-quartz-net-ile-zamanlanmis-gorev-hazirlama
+
+WinServis  
+https://berkarat.com/windows-services/
+https://www.pythontr.com/makale/c-windows-service-olusturma-580
+
+@@@@ --> TASK   http://local.boschevaletleri.com/Admin/D2cORderDetail?orderId=8802
+etleri.com/Admin/d2cOrderDetail?orderId=22439
+
+pa_D2COrderItem_Single_BulkUpdateDeliveryNote
+
+BYTE
+
+SERVS PUBLISH
+http://www.mshowto.org/c-ile-windows-servis-gelistirme-ve-setup-olusturma-bolum-2.html
+
+jQuery 
+https://www.youtube.com/watch?v=1PKOdfj7P6Q
+
+
+
+tprs excel
+ClosedXML
+ExcelToPdf
+Schedule
+XML TO SQL
+SPLIT IN SQL
+STOREPROC ****
+IF ELSE IN SQL
+WITH AS ;
+
+schedule set
+https://www.youtube.com/watch?v=9ZiJPXN1WUM&list=PLSi1BNmQ61ZohCcl43UdAksg7X3_TSmly&index=15
