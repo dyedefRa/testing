@@ -1,0 +1,31 @@
+ bip.ajax({
+            url: '/Message/Inbox',
+            data: { pageSize: 7, pageNumber: 1 },
+            success: function(data) {
+                //console.log('home messages', data);
+                $('#innerMailbox').html('');
+                if (data.response.HasError || data.response.ResultValue.length == 0) {
+                    $('<div style="padding:15px">-- Mesaj Kutunuz Boş --</div>').appendTo('#innerMailbox');
+                    return;
+                }
+                
+                $('#templateHomeMessages').tmpl(data).appendTo('#innerMailbox');
+                $('.bip-mmbb-row').find('.icon-message').removeClass('icon-message').addClass('icon-read-message');
+                $('.bip-mmbb-row.unread').find('.icon-read-message').removeClass('icon-read-message').addClass('icon-message');
+            }
+        });
+
+		
+		/////
+ $('#templateHomeMessages').tmpl(data).appendTo('#innerMailbox');
+ 
+ templateHomeMessages adlı templateye data nesnesini bas . InnerMailBox id li nesneye bunları template olarak at.
+ 
+ //////
+ 
+ Temlate içi Else kullanımı 
+ 
+                 {{if from.indexOf('<') > 0}}${from.substring(0, from.indexOf('<'))}{{else}}${from}{{/if}}
+
+ 
+ 

@@ -1,0 +1,44 @@
+Query ile sayfa yönlendirmek için asagidaki komutlari kullanabilirsiniz.
+
+1
+$(location).attr('href', 'http://www.gencayyildiz.com')
+1
+$(window).attr('location', 'http://www.gencayyildiz.com')
+1
+$(location).prop('href', 'http://www.gencayyildiz.com')
+Ayni islem için Windows kütüphanesinide kullanabiliriz.
+
+1
+2
+//Bu komut http'ye benzer bir yönlendirme islevi saglamaktadir.
+window.location.replace('http://www.gencayyildiz.com')
+1
+window.location.assign('http://www.gencayyildiz.com')
+1
+2
+//Bu komut bir <a .. > baglantisina benzer davranis sergilemektedir.
+window.location.href = 'http://www.gencayyildiz.com';
+
+ 
+1
+document.location.href = 'http://www.gencayyildiz.com';
+Farkli komutlarlar ile…
+
+1
+self.location = 'http://www.gencayyildiz.com';
+1
+top.location = 'http://www.gencayyildiz.com';
+Hazir buraya kadar gelmisken JavaScript ile geri ve ileri komutlarindan da bahsedelim…
+
+1
+2
+//Bu komut ile bir önceki sayfaya gidersiniz.
+window.history.back();
+1
+2
+//Ayni mantikta bu komut ilede bir önceki sayfaya gidersiniz.
+window.history.go(-1)
+1
+2
+//Benzer mantikta bu komut ilede bir sonraki sayfaya gidersiniz.
+window.history.go(+1)

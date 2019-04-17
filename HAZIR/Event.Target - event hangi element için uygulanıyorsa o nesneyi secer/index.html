@@ -16,11 +16,31 @@ span, strong, p {
   </p>
 </div>
 <span>DENEME</span>
-<script>$("body").click(function(event) {
+
+<hr>
+<ul>
+  <li>AA</li>
+  <li>BB</li>
+  <li>CC</li>
+</ul>
+<script>
+  $(function(){
+    eqKullan();
+  });
+  
+$("body").click(function(event) {
     //Tıklanılanı kırmızı yap
 $(event.target).css("background-color", "red");
   $("#log").html("Şuraya tıklandı: " + event.target.nodeName);
-});  </script>
+}); 
+
+function eqKullan(){
+  
+  $("ul li:eq(1)").html('asf');
+  // alert($("ul li:eq(1)").val());
+}
+
+ </script>
 
 
 <!-- $(event.delegateTarget)  nerden tetiklediysen onu alır
