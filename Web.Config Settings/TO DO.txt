@@ -1,0 +1,33 @@
+ <system.net>
+    <mailSettings>
+      <smtpfrom="user@domain.com">
+        <network
+          host="smtp.domain.com"
+          port="587"
+          userName="user@domain.com"     
+          password="sifreniz"
+          defaultCredentials="false" />
+      </smtp>
+    </mailSettings>
+ </system.net>
+
+
+
+<httpRuntime
+ executionTimeout="200" //sn cinsinden timeout süresi 
+ maxRequestLength="20000" // kb cinsinden upload miktari belirleme
+ appRequestQueueLimit="5000"  //ayni anda karsilanacak istek sayisi
+ requireRootedSaveAsPath="true"  //dosya yolu belirlemede root'tan baslanir
+ shutdownTimeout="90"  //dk cinsinden isteklerin çalisma süresi
+ />
+
+<location path=/File/>
+    <system.web>
+        <httpRuntime executionTimeout=60 maxRequestLength=4096 />
+    </system.web>
+</location>
+<location path=/Picture/>
+    <system.web>
+        <httpRuntime executionTimeout=60 maxRequestLength=1024 />
+    </system.web>
+</location>

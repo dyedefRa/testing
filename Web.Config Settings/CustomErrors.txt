@@ -1,0 +1,11 @@
+<system.web>
+<customErrorsmode="On">
+            <errorstatusCode="404"redirect="404.htm"/>
+            <errorstatusCode="500"redirect="500.htm"/>
+</customErrors>
+</system.web>
+
+
+Yukarida gözüken On nun anlami olusan hatalari istemciye göstermedir.Bu sayede hata olustugunda nerede hangi satirda hata olustugu ve hata olusturan kodlar istemcilere gösterilmez.Bu alani Off yaparsak olusan hatalar istemciye gösterilir.Bu alan ayrica RemoteOnly de olabilir ve bu sistem varsayilanidir.Bunun anlami sunucudaki sayfalar çalisirken olusan hatalari internet üzerindeki istemcilere gösterme, localdeki istemcilere gösterdir.
+
+Ilgili hata ile ilgili error bilgisini yukaridaki gibi eklersek istemciler bir hata olustugunda daha önceden hazirladigimiz ilgili hata sayfalarina yönlendirileceklerdir.Yukaridaki örnekte 404 sayfa bulunamadi hatasi olustugunda istemci 404.htm sayfasina, 500 sunucu hatasi olustugunda ise 500.htm sayfasina yönlendirileceklerdir.
