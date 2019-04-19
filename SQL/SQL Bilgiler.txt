@@ -1,0 +1,6 @@
+AND ISNULL(s.Email, '') <> ''   
+==> ISNULL  ilk parametre bos ise ikinci parametreyi ilke ata ve s.Email in degerini dön her halukarda
+
+DECLARE @val2 DATETIME =  DATEADD(HH,-48,GETDATE()) 
+ Select @val2
+===> 48 saat geriye git

@@ -1,0 +1,32 @@
+
+ @BrandId INT  
+AS  
+BEGIN  
+ DECLARE @LastLoginDate DATETIME = [dbo].[fnGetDatePart](DATEADD(DAY, -90, GETDATE()))  
+  
+ SELECT * FROM (  
+  SELECT u.* FROM [User] u (NOLOCK)  
+  INNER JOIN UserDealer ud (NOLOCK) ON u.Id = ud.UserId  
+  WHERE u.[Type] = 4 AND ud.BrandId = @BrandId  
+  
+  UNION   
+  
+  SELECT u.* FROM [User] u (NOLOCK)  
+  INNER JOIN UserService us (NOLOCK) ON u.Id = us.UserId  
+  WHERE u.[Type] = 2 AND @BrandId = 5  
+ ) u  
+ WHERE [Status] = 0 AND ((LastLoginDate IS NOT NULL AND LastLoginDate < @LastLoginDate) OR (LastLoginDate IS NULL AND CreatedDate < @LastLoginDate))  
+END
+
+
+-- Description: <Parametrede verilen tarih-saat bilgisinin tarih bölümünü almak için kullanilir>  
+-- =============================================  
+CREATE FUNCTION [dbo].[fnGetDatePart]  
+(  
+ @DateTime DATETIME  
+)  
+RETURNS DATETIME  
+AS  
+BEGIN  
+ RETURN CAST(FLOOR(CAST(@DateTime AS FLOAT)) AS DATETIME)  
+END  
