@@ -5,8 +5,8 @@ WinServis
 https://berkarat.com/windows-services/
 https://www.pythontr.com/makale/c-windows-service-olusturma-580
 
-@@@@ --> TASK   http://local.boschevaletleri.com/Admin/D2cORderDetail?orderId=8802
-etleri.com/Admin/d2cOrderDetail?orderId=22439
+@@@@ --> TASK   /Admin/D2cORderDetail?orderId=8802
+/Admin/d2cOrderDetail?orderId=22439
 
 pa_D2COrderItem_Single_BulkUpdateDeliveryNote cc
 
