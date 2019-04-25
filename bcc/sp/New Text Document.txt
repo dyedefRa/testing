@@ -1,0 +1,47 @@
+sp_helptext pa_InternalMessage_Single_MessageDetail
+
+
+---
+
+CREATE PROCEDURE [dbo].[pa_InternalMessage_Single_MessageDetail]      
+ @UserId int,      
+ @MessageId int,      
+ @IsReceivingMessage bit       
+AS      
+BEGIN      
+      
+ -- 1: gelen mesaj (inbox)      
+ -- 0: giden mesaj      
+ IF @IsReceivingMessage = 1      
+ BEGIN      
+  SELECT TOP 1 t1.Id, t1.[Subject], t1.Body, t1.CreatedDate, t1.TotalSent, t1.Attachments, t1.IsDraft, u.Id AS UserId, u.Firstname, u.Lastname      
+  FROM InternalMessage (NOLOCK) t1      
+  LEFT JOIN [User] u (NOLOCK) ON u.Id = t1.CreatedBy      
+  INNER JOIN InternalMessageTo (NOLOCK) t2 ON t2.InternalMessageId = t1.Id      
+  WHERE       
+   t1.Id = @MessageId AND      
+   t2.InternalMessageId = @MessageId AND      
+   t2.UserId = @UserId     
+     
+    
+      
+  UPDATE InternalMessageTo      
+  SET Seen = 1      
+  WHERE InternalMessageId = @MessageId AND UserId = @UserId      
+ END      
+ ELSE      
+ BEGIN      
+  SELECT TOP 1 t1.Id, t1.[Subject], t1.Body, t1.CreatedDate, t1.TotalSent, t1.Attachments, t1.IsDraft, u.Id AS UserId, u.Firstname, u.Lastname      
+  FROM InternalMessage (NOLOCK) t1      
+  LEFT JOIN [User] u (NOLOCK) ON u.Id =   
+  (SELECT TOP 1 imt.UserId FROM InternalMessageTo imt  
+   WHERE imt.InternalMessageId = t1.Id  
+   AND  
+   (imt.IsBCC IS NULL OR imt.IsBCC=0)  
+   )      
+  WHERE       
+   t1.Id = @MessageId AND      
+   t1.CreatedBy = @UserId      
+ END      
+      
+END 
