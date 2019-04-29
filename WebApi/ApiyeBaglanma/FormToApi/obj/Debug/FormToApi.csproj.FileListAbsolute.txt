@@ -1,0 +1,10 @@
+C:\Users\aozturk\source\repos\FormToApi\FormToApi\bin\Debug\FormToApi.exe.config
+C:\Users\aozturk\source\repos\FormToApi\FormToApi\bin\Debug\FormToApi.exe
+C:\Users\aozturk\source\repos\FormToApi\FormToApi\bin\Debug\FormToApi.pdb
+C:\Users\aozturk\source\repos\FormToApi\FormToApi\obj\Debug\FormToApi.csprojAssemblyReference.cache
+C:\Users\aozturk\source\repos\FormToApi\FormToApi\obj\Debug\FormToApi.Form1.resources
+C:\Users\aozturk\source\repos\FormToApi\FormToApi\obj\Debug\FormToApi.Properties.Resources.resources
+C:\Users\aozturk\source\repos\FormToApi\FormToApi\obj\Debug\FormToApi.csproj.GenerateResource.cache
+C:\Users\aozturk\source\repos\FormToApi\FormToApi\obj\Debug\FormToApi.csproj.CoreCompileInputs.cache
+C:\Users\aozturk\source\repos\FormToApi\FormToApi\obj\Debug\FormToApi.exe
+C:\Users\aozturk\source\repos\FormToApi\FormToApi\obj\Debug\FormToApi.pdb

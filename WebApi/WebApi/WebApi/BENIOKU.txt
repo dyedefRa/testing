@@ -1,0 +1,5 @@
+﻿ (Web üzerinden apiye erişmek istediğimizde bu sorunu aldık)
+Allow-Origin sorunu için=> (Cross Domain)
+1)--     	 NuGet > Cors > Microsoft.AspNet.WebApi.Cors
+2)--		 App_Start>WebApiConfig>  config.EnableCors();
+3)-->		 [EnableCors("*","*","*")] on CityContoller

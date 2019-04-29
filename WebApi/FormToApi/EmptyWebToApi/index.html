@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <title></title>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+            $('#verileriCek').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://localhost:8091/api/city/1',
+                    success: function (data) {
+                        console.log(data);
+                    }
+                })
+            })
+        });
+    </script>
+</head>
+<body>
+
+    <a href="#" id="verileriCek">Apiden Cek</a>
+</body>
+</html>

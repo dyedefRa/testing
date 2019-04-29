@@ -1,0 +1,6 @@
+https://www.youtube.com/watch?v=H2La4kIM0dc&list=PLpiXyP9d3U1oZAToh0vg4N6meBWM_IPDQ&index=4
+
+Port:8091
+.NEt:4.5
+
+IIS de Application Pool- a gir oradan hangi pool - seçdiysen ki muhtemelen NET v4.5 i seçtin bu video izlediysen ona  sag tikla Advanced settings -e gir ordanda identity bölmesinden Build in accoundu Local System yap
