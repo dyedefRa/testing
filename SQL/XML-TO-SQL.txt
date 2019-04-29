@@ -1,0 +1,38 @@
+       var xmlData = "<a>" +
+                          string.Join("",
+                              allOrderFiles.Select(
+                                  x =>
+                                      string.Format("<b c=\"{0}\"/>", x.Replace(_bipConfiguration.D2C.SftpNewOrdersDirectory + "/", "")))
+                                  .ToArray()) + "</a>";
+
+            int affectedRowCount = _d2COrderFileActivityBusinessLogic.BulkInsert(_bipConfiguration.BrandId, D2COrderFileActivityType.NewOrder, D2COrderFileActivityStatus.WaitingContent, xmlData).ResultValue;
+
+
+
+
+---SQL
+
+CREATE PROCEDURE [dbo].[pa_D2COrderFileActivity_Single_BulkInsert]  
+ @BrandId INT,  
+ @FileType TINYINT,  
+ @FileStatus TINYINT,  
+ @XmlData XML  
+AS  
+BEGIN  
+ DECLARE @date DATETIME = GETDATE()  
+  
+ INSERT INTO D2COrderFileActivity(FileType, [FileName], CreatedDate, FileStatus, FileContent, BrandId)  
+ SELECT   
+  @FileType,  
+  p.value('@c','varchar(50)'),  
+  @date,  
+  @FileStatus,  
+  '',  
+  @BrandId  
+ FROM @XmlData.nodes('/a/b') AS table1(p)  
+ LEFT JOIN D2COrderFileActivity fa (NOLOCK) ON fa.[FileName] = p.value('@c','varchar(50)')  
+ WHERE fa.Id IS NULL  
+  
+ SELECT @@ROWCOUNT AS TotalAffectedRows  
+END  
+  

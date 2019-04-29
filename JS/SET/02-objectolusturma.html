@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script>
+
+var array3=['afasf',1,true,{name:'hh',child:{x:'xx',y:'y',z:'z'}},['saf',3,true]];
+console.log(array3);
+//Array farklı tipleri alabılır.
+            //OBJECT OLUSTURMA 1
+        var oyuncu={
+            name:'Ali',
+            surname:'Öztürk',
+            age:25,
+            isOkey:true
+        };
+       //OBJECT OLUSTURMA 2
+        var nesnem={
+            "ad":"yücel",
+            "soyad":"derler",
+            "okul":{
+                "yil":2015,
+                "basariOrani":3.4
+            }
+        }
+        var array=[oyuncu,nesnem];
+        console.log(array);
+        // console.log(array[0].surname);
+        // console.log(array[1].suasfasname);
+
+  
+    // //OBJECT OLUSTURMA 3
+    var yeniObject= new Object();
+    yeniObject.adi='hakan';
+    yeniObject.soyadi='ünsal';
+    yeniObject.okul=new Object();
+    yeniObject.okul.adi='HAYesevi';
+    yeniObject.okul.yil=2015;
+//---SORU ! onceki console ile arraayı attıgımda neden 4 nesne var?
+   array.unshift(yeniObject);
+
+
+//------ OBJECT WITH FUNC
+var object1={
+    name:'Furkan',
+    surname:'Turan',
+    yas:15,
+    fullName:function(){
+      return  this.name+' '+this.surname;
+    }
+}
+console.log(object1.fullName());
+
+//-----------
+
+
+        </script>
+
+</body>
+</html>

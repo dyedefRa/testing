@@ -1,0 +1,11 @@
+window --> Bütün tanımlanan fonk,dizi,array,..... herşey 
+        windowun altındadır.
+
+        window.open() --> Boş bir blank açar
+
+
+
+*Bir obje için Constructor oluşturmak
+ bkz:05 ***
+*Hızlı object oluşturmak -->  var obj1:{name:'asfasf',deger:[1,2,3]};
+ bkz:02 

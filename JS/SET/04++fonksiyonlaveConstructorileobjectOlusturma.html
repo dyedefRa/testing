@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    Name: <input type="text" name="name">
+    Surname:    <input type="text" >
+    Age: <input type="number">  
+    <button>Ekle</button>
+    <button onclick="{futbolTeam=[]}">Clear</button>
+    <button onclick="{console.log(futbolTeam)}">Show List</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <script>
+        var player1={
+            name:'Ric',
+            surname:'Que',
+            age:32
+        }
+var futbolTeam=[];
+
+//Player olusturan Fonksiyon.
+        function playerCreator(name,surname,age){
+            var object1={
+                name:name,
+                surname:surname,
+                age:age
+         }
+            futbolTeam.push(object1);
+    }
+// *****Player Nesnesi için CONSTRUCTOR OLUSTURDUK
+    function Player(name,surname,age){
+        this.name=name;
+        this.surname=surname;
+        this.age=age;
+      
+    }
+
+    function Kitap(title,pageNumber,publishedDate){
+        this.title=title,
+        this.pageNumber=pageNumber,
+        this.publishedDate=publishedDate,
+        this.bilgiYaz=function(){
+            return `${this.title} adlı , ${this.pageNumber} sayfalı kitap ;
+             ${this.publishedDate} tarihinde yayınlanmıştır`;
+        }
+    }
+    $(()=>{
+        // console.log(new Kitap('Tutuanamayanlar',515,2003));
+         var kitap1=new Kitap('Tutunamayanlar',515,2003);
+         console.log(kitap1.bilgiYaz());
+    });
+    
+    $('body button:contains(Ekle)').click(()=>{
+                 $name=$('body>input').val();
+                 $surname=$('body input:eq(1)').val();
+                 $age=$('input[type=number]').val();
+        //   playerCreator($name,$surname,$age);
+        //Ya yukardaki ya aşagıdaki
+        var playerUnknown=new Player($name,$surname,$age);
+        futbolTeam.push(playerUnknown);
+        
+
+  
+        
+    });
+
+
+        </script>
+</body>
+</html>
+
+<!--     Func Argument & caller ? -->

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="basaEkle" value="ilkk">
+    <button>Basa ekle</button>
+    <hr>
+    <input type="text" id="sonaEkle" value="sonn">
+    <button>Sona ekle</button>
+   
+    <!-- <hr>
+    <div id="newOrnek">
+    
+    </div> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
+    <script>
+    
+    var array=['var1','var2','var3'];
+    $(function(){
+        console.log(array);
+    });
+    
+    //body
+    $('body button:eq(0)').on('click',function(){
+     
+     var deger=$('input[name=basaEkle]').val();
+     array.unshift(deger);
+     console.log(array);
+    })
+
+    $('body button:eq(1)').click(function(){
+array.push($('#sonaEkle').val());
+console.log(array);
+    });
+    $(function(){
+      alert(array.findIndex('var1'));
+    });
+
+   
+    </script>
+</body>
+</html>

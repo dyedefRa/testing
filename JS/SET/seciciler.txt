@@ -1,0 +1,242 @@
+
+http://www.zskblog.com/detay.aspx?id=15
+
+Jquery ve Seçiciler (Jquery Selectors)
+Jquery öğrenmeye başlayan birisinin ilk olarak seçicileri öğrenmesini gerektiğini düşünüyorum. Zira seçicileri iyi öğrenmeden HTML elemanlarına olaylar vermek, değiştirmek v.b. gibi işlemleri yapması zor. Bu yüzden Jquery için seçicilerin en önemli konu olduğunu söyleyebilirim. 
+
+Seçicileri 4 ana grupta toplayabiliriz.
+
+1) Basit seçiciler
+2) Hiyerarşik seçiciler
+3) Filtreli seçiciler
+4) Form seçiciler
+
+Bu seçicileri sırayla tüm özellikleri inceledikten sonra farklı tipte seçicileri bir arada kullanarak Jquery ile tüm elemanlara hakim olalım.
+
+1) Basit seçiciler
+
+Basit seçiciler elemanları filtresiz direk seçmek için kullanılan seçicilerdir. Aşağıdaki örneklere bakalım :
+
+Jquery ve Seçiciler örnek : $('div')
+
+tüm div etiketlerini seçer.
+Jquery ve Seçiciler örnek : $("#main") 
+
+id özniteliği main olan elemti seçer. Bu bir katman ya da başka bir eleman da olabilir.
+Jquery ve Seçiciler örnek : $(".name")
+
+class özniteliği name olan tüm elemanları seçer.
+
+Jquery ve Seçiciler örnek : $("div.name")
+
+class özniteliği name olan tüm div etiketlerini seçer.
+
+Jquery ve Seçiciler örnek : $("div.name.title")
+
+class özniteliği name ve title olan tüm div etiketlerini seçer. 
+
+Jquery ve Seçiciler örnek : $("img , div ") 
+
+tüm img ve div etiketlerini seçer.
+
+Jquery ve Seçiciler örnek : Jquery ve Seçiciler örnek : $("*")
+
+tüm elemanları seçer
+
+2) Hiyerarşik seçiciler
+
+Üst elemanı yani alt küme içinde olan elamlanları seçerken kullanılan seçicilerdir. Örnekle konuya girelim. 
+
+Jquery ve Seçiciler örnek : $("#main div") 
+
+id özniteliği main olan elementin içindeki tüm div etiketelerini seçer. ( iç içe olan div etiketleri dahil )
+
+<div id="main">
+<div> bu div elemanı seçilir </div>
+</div>
+<div> bu div elemanı seçilmez </div>
+
+
+$("#main div span ")
+
+id özniteliği main olan elemanın içindeki div elamanların içindeki span etiketlerini seçer. ( soldan sağa doğru hiyerarşik bir şekilde )
+
+Jquery ve Seçiciler örnek : $("#main div span ")
+
+<div id="main">
+<div> <span> bu span elemanı seçilir </span> </div>
+<div> <span> bu span elemanı seçilir </span> </div>
+<div> <img> </div>
+</div>
+<div> <span> bu span elemanı seçilmez </span> </div>
+<span> bu span elemanı seçilmez </span>
+
+$("#main > div") 
+
+id özniteliği 'main' olan elementin içindeki 1. dereceden yakını olan div etiketlerini seçer. ( seçtiği div etiketin içindeki div etiketlerini seçmez. )
+
+Jquery ve Seçiciler örnek : $("#main > div") 
+
+<div id="main">
+<div> bu div elemanı seçilir </div>
+<div> bu div elemanı seçilir </div>
+<div> bu div elemanı seçilir 
+<div> bu div elemanı seçilmez</div> 
+</div>
+bu div elemanı seçilmez
+</div>
+
+$("div + span") 
+
+div elamanından sonra gelen ilk span elamanını seçer. ( birden fazla olsa dahi ilk olanı seçer )
+
+Jquery ve Seçiciler örnek : $("div + span") 
+
+<span> bu span etiketi seçilmez </span>
+<div> bir katman
+<div id="small">katman içinde katman</div>
+</div>
+<span>bu span elemanı seçilir</span>
+<span>bu span elemanı seçilmez</span>
+<div> 
+<span >bu span elemanı seçilmez <span>
+</div>
+
+$("div ~ span")
+
+div elemanından sonra gelen tüm span elemanlarını seçer. ( seçtiği div etikentin içindeki başka div etiketlerini seçmez. )
+
+Jquery ve Seçiciler örnek : $("div ~ span")
+
+<span>bu span elemanı seçilmez </span>
+<div> bir katman
+<div id="small">katman içinde katman</div>
+</div>
+<span> bu span elemanı seçilir</span>
+<span> bu span elemanı seçilir</span>
+<div> 
+<span >bu span elemanı seçilmez<span>
+</div>
+<span > bu span elemanı seçilir<span>
+
+3) Filtreli Seçiciler 
+
+Basit ya da hiyerarşik seçicileri kullanarak seçilen elemanları filtrelemek için kullanılır.
+
+Jquery seçilen elemanları indexler. Bu sayede index numaralarına göre filtreleme yapabiliriz.
+
+Filtreleri kullanmadan önce filtrelerin isimlerini ve işlevlerine bakalım:
+:first
+0 numaralı indexe sahip elamanı seçer.
+ör : $('div:first')
+:last
+Son numaralı indekse sahip elemanı seçer.
+:not(selector)
+eşleşen özelliklere sahip elemanları eler.
+Jquery ve Seçiciler örnek : $("div :not ( .name )" )
+:even
+Çift numaralı indekse sahip elemanları seçer.
+Jquery ve Seçiciler örnek : $('ul li : even')
+:odd
+Tek numaralı indexe sahip elemanları seçer.
+:eq(index)
+Verilen indekse sahip elemanları seçer.
+Jquery ve Seçiciler örnek : $('ul li : eq(2)')
+:gt(index)
+Verilen indeksten daha büyük indekse sahip olan elemanları seçer.
+Jquery ve Seçiciler örnek : $('ul li : gt(2)')
+:lt(index)
+Girilen indeksten daha küçük indekse sahip elemanları seçer.
+:header
+<h2>,<h3>... header etiketleri seçer.
+:animated
+O andaki animasyonlu elemanları seçer.
+Jquery ve Seçiciler örnek : $(' div: animated')
+:nth-child(index/even/odd/equation)
+Girilen seçiciye alt kümedeki elemanları seçer.
+Jquery ve Seçiciler örnek : $(' ul li: nth-child(even)')
+:first-child
+Bulunduğu alt kümenin ilk elamanını seçer.
+Jquery ve Seçiciler örnek : $(' ul li: first-child')
+:last-child
+Bulunduğu alt kümenin son elamanını seçer.< /li>
+:only-child
+Bulunduğu kümede eleman tek ise eleman seçilir.
+Jquery ve Seçiciler örnek : $(' ul li: only-child')
+Bu filtrelerin dışında başka tipte bir filtre daha var:
+
+Attributed filters ( Öznitelik filtreleri )
+
+Elamanları özniteliklerine göre filtrelemek için kullanılır.
+
+Jquery ve Seçiciler örnek : 
+<img alt="img1" src="images/image1.jpg">
+<img alt="img2" src="images/image2.jpg">
+<img alt="img3" src="images/image1.png">
+
+Jquery ve Seçiciler örnek : $("img [alt = img1]") 
+
+alt özniteliği img1 olan img etiketli elamanı seçer.
+
+Jquery ve Seçiciler örnek : $("img [alt*= img]") 
+
+alt özniteliğinde img barındıran img etiketli elamanı seçer ki bu örnekteki tüm elamları seçer.
+
+Jquery ve Seçiciler örnek : $("img [src^=images/image1]") 
+
+src özniteliği images/image1 ile başlıyan tüm img etiketli elamanları seçer. 
+
+Jquery ve Seçiciler örnek : $("img [alt$= .jpg]") 
+
+src özniteliği .jpg ile biten tüm img etiketli elamanları seçer.
+
+Şimdi elemanların gizli ya da görünür olanları seçmek ve eleman içeriğine göre filtrelemek için kullanılar seçicileri inceleyelim.
+:hidden
+Jquery ve Seçiciler örnek : $("div : hidden") 
+Gizlenmiş elemanları seçer.
+:visible
+Görünür elemanları seçer :contains(text)
+Girilen ifadeyi bulunduran elemanları seçer.
+Jquery ve Seçiciler örnek : $("p : contains ('elma')")
+:empty
+Alt eleman bulundurmayan boş elamanları seçer.
+:has(selector)
+Girilen elamanı alt eleman olarak barındıran elemanları seçer.
+:parent
+Alt eleman barındıran elemanları seçer.
+
+4) Form seçiciler. 
+
+Form elemanlarını direk seçmek için kullanılan seçicilerdir.
+:input
+Tüm form elemanlarını seçer.
+:text
+text tipi form elemanlarını seçer.
+Jquery ve Seçiciler örnek : $(':text')
+<input type="text" name="text field"> elemanı seçer.
+:password
+password tipi form elemanlarını seçer.
+:radio
+radio tipi form elemanlarını seçer.
+:checkbox
+chechbox tipi form elemanlarını seçer.
+:submit
+submit tipi form elemanlarını seçer.
+:image
+image tipi form elemanlarını seçer.
+:reset
+reset tipi form elemanlarını seçer.
+:button
+button tipi form elemanlarını seçer.
+:file
+file tipi form elemanlarını seçer.
+Şimdi form elanlarınını filtrelemek için kullanılan seçicileri inceleyelim.
+:enabled
+Değiştirilebilen elemanlarını seçer.
+Jquery ve Seçiciler örnek : $('form : enabled')
+:disabled
+Değiştirilmeye kapatılmış elamanlarını seçer.
+:checked
+İşaretlenmiş onay kutularını seçer. Jquery ve Seçiciler örnek : $('form : checked')
+:selected
+option tipi seçilmiş elemanları seçer.
