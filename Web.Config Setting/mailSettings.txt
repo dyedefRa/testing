@@ -17,7 +17,7 @@ Bu ayarlari kod dosyalarimiz dan using System.Net.Mail; referansini ekledikten s
 
         MailMessage mail = new MailMessage();
         mail.IsBodyHtml = true;
-        mail.From = new MailAddress("user@domain.com", "Baris Samanci");
+        mail.From = new MailAddress("user@domain.com", "isim ");
         mail.To.Add(new MailAddress(aliciMail, aliciAdi));
         mail.Body = mesaj;
         mail.Subject = konu;

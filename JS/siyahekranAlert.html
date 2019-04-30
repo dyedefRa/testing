@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div.gosterButonu {
+    display: inline-block;
+    transition:all 0.4s;
+    cursor:pointer;
+    margin:10px; padding:0px;
+    width: 172px;
+    height: 200px;
+    border: 2px solid #555;
+    box-shadow: 10px 10px 10px #555;
+    text-decoration: none;
+    text-align:center;
+    color:black;
+}
+.kutu {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.8);
+}
+.icKutu {
+    overflow:scroll;
+    width: 80%;
+    height: 80%;
+    margin: 5% auto;
+    background-color: white;
+    border: 3px solid gray;
+    padding: 10px;
+    box-shadow: -10px -10px 25px #ccc;
+}</style>
+</head>
+<body>
+
+        <div class="gosterButonu" id="link1">
+                Link1 içeriği...
+                </div>
+                 
+                <div class="gosterButonu" id="link2">
+                Link2 içeriği...
+                </div>
+                <div id="kutu1" class="kutu">
+                        <div class="icKutu">
+                            <div class="kapatButonuCerceve">
+                                  <div class="kapatButonu">X</div>
+                            </div>
+                             <h1>Başlık1</h1><div class="clear"></div>
+                              <p>Açıklamalar ve diğer içerikler...</p>
+                        </div>
+                    </div>
+
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+                    <script>
+                    $(document).ready(function () {
+ 
+                        $(".gosterButonu, .gosterButonu img").click(function (event) {
+                            var butonAdi = $(this).closest('div').attr('id'); // tıklanan linkin idsini aldık
+                            var butonNo = butonAdi.slice(4); // idnin içinden 5. karakterden sonrasını aldık
+                            var kutuAdi = "#kutu" + butonNo; // kutu adını elde ettik
+                     
+                            $(kutuAdi).fadeIn(300);
+                        });
+                     
+                     
+                        $(".kapatButonu").click(function () {
+                     
+                            $(".kutu").fadeOut(200); // kapatButonuna tıklanınca açılmış durumdaki kutu kapansın.
+                     
+                        });
+                     
+                        $(".kutu").click(function () {
+                     
+                            $(".kutu").fadeOut(200); // kutuya tıklanırsa da açılan kutu kapansın.
+                     
+                        });
+                     
+                        $(".icKutu").click(function () {
+                            event.preventDefault();
+                            event.stopPropagation();
+                     
+                        });
+                     
+                    });
+                </script>
+</body>
+</html>
