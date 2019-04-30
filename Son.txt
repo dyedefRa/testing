@@ -4,3 +4,16 @@ MVC
 https://www.youtube.com/watch?v=GscwlKjYhys&list=PLfusR98SaeH9j2DgTggGEB_Pd8B4W1RH1
 https://www.youtube.com/watch?v=J16dJtItriE&list=PLfusR98SaeH_WsaT2DtkKOOlWECmnCquK
 https://www.youtube.com/watch?v=xi40m7XofTE&list=PLpiXyP9d3U1ryxoRtiX3s4-bQhvKi6sFa
+
+
+--closest ,parent(),serialize  ,find()
+--window.location.replace
+
+
+http://www.bilgisun.org/javascript-yonlendirme   ******
+
+// HTTP yönlendirme ile ayni etkiye sahip olan;
+window.location.replace("http://www.bilgisun.org");
+
+// Bir baglantiya tiklatilmis gibi yönlendirme etkisine sahip olan; 
+window.location.href = "http://www.bilgisun.org";
