@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <style>
+    *{
+        min-height: 30px;
+        min-width: 70px;
+    }
+    .renkVer{
+        background-color: blue;
+    }
+    </style>
+</head>
+<body>
+   
+  <ul class="bir">
+      <li>ITEM 1</li>
+      <li>ITEM 2</li>
+      <li>ITEM 3</li>
+      <li>ITEM 4</li>
+      <li>ITEM 5</li>
+  </ul>
+  <hr>
+
+  <ul class="iki">
+    <li>DOC 1</li>
+    <li>DOC 2</li>
+    <li>DOC 3</li>
+    <li>DOC 4</li>
+    <li>DOC 5</li>
+</ul>
+<input type="text">
+  <div class="so5">
+      <div class="so4">
+          <div class="so3">
+              <div class="so2">AABBBSAF 1</div>
+              <div class="so2">AABBBSAF 2</div>
+          </div>
+          <div class="so3">
+              <div class="so2">AABBBSAF 3</div>
+              <div class="so2">AABBBSAF 4</div>
+          </div>
+          <div class="so3">
+              <div class="so2">AABBBSAF 5</div>
+              <div class="so2">AABBBSAF 6</div>
+          </div>
+      </div>
+      <div class="so4">
+        <div class="so3">
+            <div class="so2">AABBBSAF 7</div>
+            <div class="so2">AABBBSAF 8</div>
+        </div>
+        <div class="so3">
+            <div class="so2">AABBBSAF 9</div>
+            <div class="so2">AABBBSAF 41</div>
+        </div>
+        <div class="so3">
+            <div class="so2">AABBBSAF 53</div>
+            <div class="so2">AABBBSAF 62</div>
+        </div>
+    </div>
+  </div>
+  <hr>
+
+<script>
+
+$(()=>{
+    $('div.so2:contains(AABBBSAF 9)').closest('.so4').css({"background-color":"red"});
+// Classı so2 olan divlerden AABBBSAF 9 içerni seç ve  bu nesnein USTUNDEKI ILK .so4 CLASSLI NESNEYI AL!.
+
+$('body ul:eq(0)').next().next().next().val('deneme');
+// bodynin içindeki önüne gelen ilk ul yi al. nerde olursa olsun. parent-child ilişkisine gerek yok. 
+//ve bu itemi aynı rutbeden devam ederek 3 nesne gec ve 3.unun val a deger at.
+});
+</script>
+</body>
+</html>
