@@ -1,0 +1,50 @@
+
+/*****LİSTE*****/
+.liste{
+	width:720px;
+	float:left;
+}
+
+.liste div{
+	float:left;
+	width:200px;
+	background:#EBDF8F;
+	margin:10px;
+	padding:10px;
+	z-index:2;
+	cursor:move;
+}
+
+.liste img{
+	width:100%;
+}
+
+
+/********SEPET***********/
+
+.sepet{
+right:0;
+top:0;
+background:#EF7375;
+padding:20px;
+width:500px;
+min-height:600px;
+position:fixed;
+}
+
+.sepet .tasi {
+	float:left;
+	width:100px;
+	background:#EBDF8F;
+	margin:10px;
+	padding:10px;
+	z-index:2;
+
+}
+
+.sepet .tasi img{
+width:100%;
+}
+.sepet .kaldir{
+cursor:pointer;
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UI ORNEKLER</title>
+<link rel="stylesheet" type="text/css" href="jquery-ui.css">
+<script src="jquery-1.12.1.min.js"></script>
+<script src="jquery-ui.js"></script>
+<script src="site.js"></script>
+</head>
+
+<body>
+<h1>Uygulama geliştirme aşamasında hatalar en basit şekliyle üç ana grupta </h1>
+<div id="panel">
+    <h3>Söz dizimi hataları</h3>
+        <div>
+        <p>
+        Söz dizimi hatalarıyla kastedilen; programlama diline uygun olmayan, derleme anında derleyicinin hata mesajı vermesine sebep olan kodlamalardır. Günümüz entegre yazılım geliştirme araçlarında (IDE: Integrated Development Environment) bu sıkıntılar neredeyse yok denecek kadar azdır. Artık özelikle kod editörlerinin gelişmiş yazım denetimi sayesinde yazılımcılar söz dizimi hatalarını derlemeye gerek bile kalmadan fark edebiliyorlar. Ola ki hatayı gözden kaçırdınız ya da kodlama aşamasında aracınız yakalayamadı, derleme aşamasında size satırına kadar hatanın tüm detayla uyarısı gelecektir. Çözülmesi en kolay “bug”lar, söz dizimi hatalarıdır. Örneğin bir CSharp Windows uygulaması geliştirirken MessageBox.Show(“Merhaba”) yerine MessageBox.Shan(“Merhaba”) yazarsanız bu bir söz dizimi hatası olur. Eğer Visual Studio kullanıyorsanız daha derleme aşamasına geçmeye gerek kalmadan söz diziminizin hatalı olduğu konusunda uyarılırsınız ve çok fazla acı çekmeden kodlamaya devam edebilirsiniz.
+        </p>
+        </div>
+    <h3> Çalışma zamanı hataları</h3>
+        <div>
+        <p>
+        Çalışma zamanı hataları normal şartlar altında ortalarda görünmeyen, ancak uygulamayı müşterinin cihazına kurduğunuzda ya da demo yaparken ortaya çıkmayı seven ve çok can sıkan hatalardır. Son dönemde “istisnai durum yönetimi” ile çözümlemeye çalıştığımız bu hatalar daha çok bir fonksiyon için belirli varsayımlar üzerine kodlama yaptığımız, ancak kullanıcının uygulamayı çalıştırdığı anda o şartların sağlanmaması durumunda ortaya çıkarlar. Örneğin internet bağlantısı varken basılması gereken bir düğmeye bağlantı yokken basılması ya da “C:\” dizininde olması gereken bir dosyanın yanlışlıkla silinmiş olması gibi durumlarda çalışma zamanı hatalarıyla karşılaşılır.
+        </p>
+        </div>
+    <h3> Mantık hataları</h3>
+    <div>
+        <p>
+        Mantık hatalarıysa daha çok uygulamanın beklenenden farklı davranması olarak düşünülebilir. Kullanıcı düğmeye bastığında olması gerekenden farklı bir durumla karşılaşıyordur. Örneğin bir bordro ekranında puantaj, brüt rakam ve kesinti oranlarını girdiğinizde olması gerekenden farklı bir “net” miktarı alıyorsanız bu bir mantık hatasıdır ve ciddi acılar çekmenize neden olabilecek bir bug’ınız var demektir.
+        </p>
+    </div>
+</div>
+</body>
+</html>

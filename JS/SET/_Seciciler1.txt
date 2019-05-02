@@ -27,3 +27,25 @@ $("#Liste li:eq(1)").addClass("secici")    Id=Liste olan nesnenin 0,,  1.lisine 
         });
     });
 </script>
+
+
+-------
+
+$('body button:eq(0)') -->  body nin içindeki tum buttonlar için  , buton ne kadar içerde olursa olsun 
+ilk gelen button elementini seçer
+
+---------------
+$('#newOrnek  div').css({'background-color':'red'});  --> #newOrnek idli tum divler için bunu yap.
+
+$('#newOrnek > div')  --> #newOrnek idli birinci dereceden yakin olan divler için yap.
+    
+
+    $('#newOrnek + p')  --> #newOrnek idli nesneden sonraki ilk p nesnesini secer.
+     $('#newOrnek ~ p')   --> #newOrnek idli nesneden sonraki tüm p nesnesini secer.
+
+$('input[name=basaEkle]')
+
+
+  $('body button:contains(AF)').click(()=>{    Buttonlardan 'AF' içeren butonlar için
+     
+ 

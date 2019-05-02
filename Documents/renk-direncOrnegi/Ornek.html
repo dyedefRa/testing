@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DİRENÇ RENK KODLARI</title>
+    <style>
+        label{
+            display: block;
+            width: 300px;
+            
+        }
+    .katsayi option:nth-child(1) {
+    background: #000000;
+    color:#fff;
+    }
+        
+    .katsayi option:nth-child(2) {
+    background: #953700;
+    color:#fff;
+    }
+    
+    .katsayi option:nth-child(3) {
+    background: #FF0000;
+    color:#fff;
+    }
+        
+    .katsayi option:nth-child(4) {
+    background: #ff6600;
+    color:#fff;
+    }
+    
+    .katsayi option:nth-child(5) {
+    background: #ffff00;
+    color:#000;
+    }
+        
+    .katsayi option:nth-child(6) {
+    background: #00ff00;
+    color:#000;
+    }
+    
+    .katsayi option:nth-child(7) {
+    background: #0000ff;
+    color:#fff;
+    }
+        
+    .katsayi option:nth-child(8) {
+    background: #fe01fc;
+    color:#fff;
+    }
+    
+    .katsayi option:nth-child(9) {
+    background: #999;
+    color:#fff;
+    }
+        
+    .katsayi option:nth-child(10) {
+    background: #fff;
+    color:#000;
+    }
+        
+    /*tölerans*/
+        
+    #renk4 option:nth-child(1){
+        background: #9b3300;
+        color:#fff;
+    }
+    
+    #renk4 option:nth-child(2){
+        background: #ff0000;
+        color:#fff;
+    }
+     
+    #renk4 option:nth-child(3){
+        background: #ffcc01;
+        color:#000;
+    }
+    
+    #renk4 option:nth-child(4){
+        background: #969a99;
+        color:#000;
+    }
+        
+    </style>
+</head>
+
+<body>
+<label>
+1.RENK
+    <select class="katsayi" id="renk1">
+        <option value="0">SİYAH</option>
+        <option value="1">KAHVERENGİ</option>
+        <option value="2">KIRMIZI</option>
+        <option value="3">TURUNCU</option>
+        <option value="4">SARI</option>
+        <option value="5">YEŞİL</option>
+        <option value="6">MAVİ</option>
+        <option value="7">MOR</option>
+        <option value="8">GRİ</option>
+        <option value="9">BEYAZ</option>
+
+</select>
+</label>
+<label>
+2.RENK
+    <select class="katsayi"  id="renk2">
+        <option value="0">SİYAH</option>
+        <option value="1">KAHVERENGİ</option>
+        <option value="2">KIRMIZI</option>
+        <option value="3">TURUNCU</option>
+        <option value="4">SARI</option>
+        <option value="5">YEŞİL</option>
+        <option value="6">MAVİ</option>
+        <option value="7">MOR</option>
+        <option value="8">GRİ</option>
+        <option value="9">BEYAZ</option>
+
+</select>
+</label>
+<label>
+3.RENK
+    <select class="katsayi"  id="renk3">
+        <option value="0">SİYAH</option>
+        <option value="1">KAHVERENGİ</option>
+        <option value="2">KIRMIZI</option>
+        <option value="3">TURUNCU</option>
+        <option value="4">SARI</option>
+        <option value="5">YEŞİL</option>
+        <option value="6">MAVİ</option>
+        <option value="7">MOR</option>
+        <option value="8">GRİ</option>
+        <option value="9">BEYAZ</option>
+
+</select>
+</label>
+<label>
+4.RENK
+    <select id="renk4">
+        <option value="1">KAHVERENGİ</option>
+        <option value="2">KIRMIZI</option>
+        <option value="5">ALTIN</option>
+        <option value="10">GÜMÜŞ</option>
+
+
+</select>
+</label>
+<label>
+BİRİM
+    <select id="birim">
+        <option value="1">Ω</option>
+        <option value="1000">kΩ</option>
+        <option value="1000000">mΩ</option>
+
+
+</select>
+</label>
+<div id="goster"></div>
+<script>
+var katsayi1=document.getElementById("renk1");
+var katsayi2=document.getElementById("renk2");
+var katsayi3=document.getElementById("renk3");
+var tolerans=document.getElementById("renk4");
+var birim=document.getElementById("birim");
+var goster=document.getElementById("goster");
+
+var renk=[
+    {"arkaplan":"#000000","yazi":"#fff"},
+    {"arkaplan":"#953700","yazi":"#fff"},
+    {"arkaplan":"#FF0000","yazi":"#fff"},
+    {"arkaplan":"#ff6600","yazi":"#000"},
+    {"arkaplan":"#ffff00","yazi":"#000"},
+    {"arkaplan":"#00ff00","yazi":"#fff"},
+    {"arkaplan":"#0000ff","yazi":"#fff"},
+    {"arkaplan":"#fe01fc","yazi":"#000"},
+    {"arkaplan":"#999","yazi":"#000"},
+    {"arkaplan":"#fff","yazi":"#000"}
+];
+
+var toleransRenk=[
+    {"arkaplan":"#9b3300","yazi":"#fff"},
+    {"arkaplan":"#ff0000","yazi":"#fff"},
+    {"arkaplan":"#ffcc01","yazi":"#000"},
+    {"arkaplan":"#969a99","yazi":"#000"}
+    ];
+    
+katsayi1.onclick=function(){
+    //console.log(renk[this.selectedIndex].arkaplan);
+    this.style.backgroundColor=renk[this.selectedIndex].arkaplan;
+    this.style.color=renk[this.selectedIndex].yazi;
+    
+    hesapla();
+}
+
+katsayi2.onclick=function(){
+    //console.log(renk[this.selectedIndex].arkaplan);
+    this.style.backgroundColor=renk[this.selectedIndex].arkaplan;
+    this.style.color=renk[this.selectedIndex].yazi;
+    
+    hesapla();
+}
+ 
+katsayi3.onclick=function(){
+    //console.log(renk[this.selectedIndex].arkaplan);
+    this.style.backgroundColor=renk[this.selectedIndex].arkaplan;
+    this.style.color=renk[this.selectedIndex].yazi;
+    
+    hesapla();
+}
+
+birim.onclick=function(){
+    
+    hesapla();
+}
+
+tolerans.onclick=function(){
+    //console.log(renk[this.selectedIndex].arkaplan);
+    this.style.backgroundColor=toleransRenk[this.selectedIndex].arkaplan;
+    this.style.color=toleransRenk[this.selectedIndex].yazi;
+    
+    hesapla();
+}
+
+function hesapla(){
+    //Birleştirilen iki metinsel ifade Number ile sayısal değere dönüştürülüyor
+    var birlestir=Number(katsayi1.value+katsayi2.value);/*dikkat metinsel iki ifade birleştiriliyor örn:33 gibi*/
+    var sonuc=(birlestir*Math.pow(10,katsayi3.value))/birim.value;
+    
+    var gosterge=birim.options[birim.selectedIndex].text;
+    var enaz=sonuc*(100-Number(tolerans.value))/100;
+    var encok=sonuc*(100+Number(tolerans.value))/100;
+    goster.innerHTML="<h3>Direnç Değeri:"+sonuc+gosterge+"</h3>"+
+                "<h3>Tölerans:%"+tolerans.value+"</h3>"+
+                "<h3>Direnç Aralığı: "+enaz+gosterge+" - "+encok+gosterge+"</h3>";
+
+}
+</script>  
+</body>
+</html>
