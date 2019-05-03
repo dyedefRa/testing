@@ -1,0 +1,92 @@
+  public Stream Print(BrandEnum brandEnum, List<LabelPrintRequestModel> labelItem, string imagePath)
+        {
+            /*
+            Büyük:          11.3 x 16.3  cm
+            Orta Dikey:     9.3   x 13.3  cm
+            Küçük Dikey:    8.3   x 11.8  cm
+            Küçük Yatay:    11.8 x 8.3    cm
+            Mini:           10.2 x 6.8 cm
+            */
+            //FileStream fs = new FileStream("Sample1.pdf", FileMode.Create, FileAccess.Write, FileShare.None);
+            MemoryStream memoryStream = new MemoryStream();
+            Document doc = new Document(PageSize.A4.Rotate(), 15f, 20f, 15f, 20f);
+
+            PdfWriter writer = PdfWriter.GetInstance(doc, memoryStream);
+            writer.SetLanguage("tr-TR");
+            doc.Open();
+            doc.AddAuthor("BSH ");
+            doc.AddCreationDate();
+
+            #region " Styles "
+            #region " Bosch "
+            if (brandEnum == BrandEnum.Bosch)
+            {
+                _styleBig = new LabelStyle
+                {
+                    Width = Utilities.InchesToPoints(Utilities.MillimetersToInches(11.3f * 10)),
+                    Height = Utilities.InchesToPoints(Utilities.MillimetersToInches(16f * 10)),
+                    HeaderHeight = Utilities.InchesToPoints(Utilities.MillimetersToInches(6f * 10)),
+                    FooterHeight = Utilities.InchesToPoints(Utilities.MillimetersToInches(3.4f * 10)),
+                    Padding = Utilities.InchesToPoints(Utilities.MillimetersToInches(1f * 10)),
+                    Margin = Utilities.InchesToPoints(Utilities.MillimetersToInches(1f * 10)),
+                    H1 = LabelStyle.GetFont(16, Font.BOLD),
+                    H2 = LabelStyle.GetFont(10),
+                    Price = LabelStyle.GetFont(11, Font.BOLD),
+                    OldPrice = LabelStyle.GetFont(10, Font.STRIKETHRU),
+                    InstallmentPrice = LabelStyle.GetFont(11),
+                    Property = LabelStyle.GetFont(9),
+                    Manufacture = LabelStyle.GetFont(9, Font.BOLD),
+                    ManufactureText = LabelStyle.GetFont(9),
+                    QrWidth = Utilities.InchesToPoints(Utilities.MillimetersToInches(2f * 10)),
+                    DomesticProductImageHeight = 37
+                };
+
+
+
+
+
+
+
+----------------------
+
+
+if (labelRowItem.LabelItems.Count == 0)
+            {
+                AddEmptyPage(doc);
+                return;
+            }
+
+            var mainTable = new PdfPTable(labelRowItem.LabelItems.Count)
+            {
+                HorizontalAlignment = Element.ALIGN_LEFT,
+                LockedWidth = true
+            };
+            mainTable.SetTotalWidth(labelRowItem.TotalWidth.ToArray());
+
+            foreach (var labelItem in labelRowItem.LabelItems)
+            {
+                var style = new LabelStyle();
+                bool isSmallAndHorizontal = false;
+                switch (labelItem.Size)
+                {
+                    case LabelSize.Big:
+                        style = _styleBig;
+                        break;
+                    case LabelSize.Normal:
+                        style = _styleRegular;
+                        break;
+                    case LabelSize.Small:
+                        style = labelItem.Orientation == Orientation.Horizontal ? _styleSmallHorizontal : _styleSmall; isSmallAndHorizontal = labelItem.Orientation == Orientation.Horizontal ? true : false;
+                        break;
+                    case LabelSize.Mini:
+                        style = _styleMini;
+                        break;
+                }
+
+                var table = new PdfPTable(1)
+                {
+                    TableEvent = new DottedTable(),
+                    LockedWidth = true,
+                    HorizontalAlignment = Element.ALIGN_LEFT,
+                };
+                table.SetTotalWidth(new[] { style.Width });

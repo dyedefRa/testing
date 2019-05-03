@@ -1,0 +1,19 @@
+[pa_User_List_BulkSelectByDealerCode]
+
+
+SupportContactUs
+
+
+
+
+ServiceResult<List<UserListBulkSelectByDealerCodeResult>> ListUsersFromFile(int brandId, Stream fileStream, bool includeSubUsers)
+
+
+jquery.validationEngine-tr.js
+
+
+  var paragraphTotalPrice = new Paragraph
+                        {
+                            new Chunk(string.Format("{0:n} TL ", labelItem.Price), style.Price),
+                            new Chunk(string.Format("{0:n} TL", labelItem.OldPrice), style.OldPrice)
+                        };

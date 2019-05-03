@@ -1,1 +1,5 @@
 https://bip.boschevaletleri.com/Admin/ProductCategory
+
+http://local.boschevaletleri.com/Admin/Message/SendableListIndex -- Mail
+
+MapOperationsService ile GOOGLE MAP
