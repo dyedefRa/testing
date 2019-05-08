@@ -17,3 +17,9 @@ window.location.replace("http://www.bilgisun.org");
 
 // Bir baglantiya tiklatilmis gibi yönlendirme etkisine sahip olan; 
 window.location.href = "http://www.bilgisun.org";
+
+
+
+API TETIKLEMEE
+
+https://www.gencayyildiz.com/blog/c-ile-token-authentication-uygulanan-web-api-tetikleme/
