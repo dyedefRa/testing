@@ -12,6 +12,7 @@ pa_D2COrderItem_Single_BulkUpdateDeliveryNote cc
 
 BYTE
 
+
 SERVS PUBLISH
 http://www.mshowto.org/c-ile-windows-servis-gelistirme-ve-setup-olusturma-bolum-2.html
 
