@@ -1,0 +1,13 @@
+ var httpContext = request.Properties["MS_HttpContext"] as HttpContextWrapper;
+                var apiActivityLog = new LogApiActivityEntity
+                {
+                    BrandId = BrandManager.CurrentBrand.Id,
+                    LogType = GetLogType(request.RequestUri.LocalPath),
+                    CreatedDate = DateTime.Now,
+                    Content = content,
+                    Uri = request.RequestUri.ToString(),
+                    IpAddress = httpContext != null
+                        ? (httpContext.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] ??
+                           httpContext.Request.ServerVariables["REMOTE_ADDR"])
+                        : string.Empty
+                };

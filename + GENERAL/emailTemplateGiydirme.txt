@@ -1,0 +1,14 @@
+
+            var emailTemplate = File.ReadAllText(
+                HttpContext.Current.Server.MapPath("/assets/common/templates/SupportEmailTemplate.html"))
+                .Replace("@userFullName", supportContactUsEntity.FirstName + " " + supportContactUsEntity.LastName)
+                .Replace("@userEmail", supportContactUsEntity.Email)
+                .Replace("@brand", brandEntity.BrandName)
+                .Replace("@dealerCode", dealerCode)
+                .Replace("@dealerName", dealerName)
+                .Replace("@city", cityName)
+                .Replace("@town", townName)
+                .Replace("@dateTime", supportContactUsEntity.CreatedDate.ToString("dd.MM.yyyy HH:mm"))
+                .Replace("@subject", subjectDescription)
+                .Replace("@message", supportContactUsEntity.MessageContent)
+                .Replace("@content", "");
