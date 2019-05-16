@@ -8,7 +8,7 @@ https://www.pythontr.com/makale/c-windows-service-olusturma-580
 @@@@ --> TASK   /Admin/D2cORderDetail?orderId=8802
 /Admin/d2cOrderDetail?orderId=22439
 
-pa_D2COrderItem_Single_BulkUpdateDeliveryNote cc
+pa_D2COrderItem_Single_BulkUpdateDeliveryNote ccc
 
 BYTE
 
