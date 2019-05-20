@@ -6,8 +6,8 @@ https://www.youtube.com/watch?v=J16dJtItriE&list=PLfusR98SaeH_WsaT2DtkKOOlWECmnC
 https://www.youtube.com/watch?v=xi40m7XofTE&list=PLpiXyP9d3U1ryxoRtiX3s4-bQhvKi6sFa
 
 
---closest ,parent(),serialize  ,find()
---window.location.replace
+--closest ,parent(),serialize  ,find() 
+--window.location.replacee
 
 
 http://www.bilgisun.org/javascript-yonlendirme   ******
