@@ -1,0 +1,60 @@
+ var orderEnumList = {};
+    orderEnumList['ShortStatusList'] = { '3': 'Bayi Bulunamadi - CKY', '4': 'Devam ediyor', '5': 'Kabul edildi - 2saat bekliyor', '6': 'Tamamlandi', '7': 'Kabul edilmedi - CKY', '8': 'Süresi doldu - CKY', '13': 'Bsh kullanici tarafindan iptal edildi.' };
+
+    orderEnumList['Status'] = { '0': 'Hata', '1': 'Islenmedi', '2': 'Arama Bitti', '3': 'Bayi Bulunamadi - CKY', '4': 'Devam ediyor', '5': 'Kabul edildi - 2saat bekliyor', '6': 'Tamamlandi', '7': 'Kabul edilmedi - CKY', '8': 'Süresi doldu - CKY', '9': 'Bölündü', '10': 'Bir daha bölündü', '11': 'SAP\'den iptal edildi', '12': 'Yeniden baslatildi', '13': 'Bsh kullanici tarafindan iptal edildi.', '14': 'Manual siparise dönüstürüldü' };
+    orderEnumList['ItemsType'] = { '1': 'CP', '2': 'LDA', '3': 'CP + LDA' };
+    orderEnumList['DeliveryType'] = { '1': 'Bayi - kendi araci', '2': 'Bayi - servis araci', '3': 'Bayi - lojistik ev teslimati', '4': 'BSH Lojistik', '5': 'Kargo', '6': 'ÇKY' };
+    orderEnumList['OrderDealerStatus'] = { '-1': 'Bayi Çikarildi', '0': 'Beklemede', '1': 'Kabul Etti', '2': 'Reddetti', '3': 'Süresi doldu', '4': 'Iptal Etti' };
+
+    var allowedStatus = [3, 4, 5, 6, 7, 8, 13];
+    var allowedSapStatus = [3,5,6,7,8];
+
+
+------------
+
+TEMPLATENIN ICINDE TEMPLATE !!!!!
+
+
+<script id="templateOrderList" type="text/x-jquery-tmpl">
+    <table class="bip-members-table table table-striped table-bordered table-s table-no-margin">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Siparis Durumu</th>
+                <th style="width: 70px">Ürün Tipi</th>
+                <th style="width: 122px">Siparis Kabul Tarihi</th>
+                <th>Teslimat Tipi</th>
+                <th style="width: 117px;">Siparis Tarihi</th>
+                <th style="width: 117px;">Ürünler</th>
+                <th style="width: 69px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{tmpl "#templateOrderListItem"}} // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        </tbody>
+    </table> 
+</script>
+
+<script id="templateOrderListItem" type="text/x-jquery-tmpl">
+    {{each ResultValue}}
+    <tr style="{{if allowedStatus.indexOf(Status) == -1}}background-color:rgba(60, 118, 61, 0.55);{{/if}}">   //@@@@@@@@@@@@@@@@@@@@@
+        <td><a href="/Admin/D2COrderDetail?OrderId=${Id}" target="_blank">Siparise Git</a></td>
+        <td>${orderEnumList['Status'][Status]}</td>   
+        <td>${orderEnumList['ItemsType'][ItemsType]}</td>
+        <td>${AcceptedDate ? moment(eval('new ' + AcceptedDate.replace(/\//g,'',''))).format('DD-MM-YYYY HH:mm') : ''}</td>
+        <td>${orderEnumList['DeliveryType'][DeliveryType]}</td>
+        <td>${moment(eval('new ' + CreatedDate.replace(/\//g,'',''))).format('DD-MM-YYYY HH:mm')}</td>
+        <td>${Items}</td>
+        <td>
+            {{if allowedStatus.indexOf(Status) != -1}}
+            <button type="button" class="bip-button" style="margin: 0 0 10px" onclick="displayOrderDetails('${Id}');">SEÇ</button>
+
+            {{/if}}
+            
+            {{if sftpIsActive && (Status == 9 || (!ParentOrderId && (allowedSapStatus.indexOf(Status) != -1)))}}
+            <button type="button" class="bip-button" style="margin: 0 0 10px" onclick="sendOrderToSAP('${Id}');">SAP'ye Gönder</button>
+            {{/if}}
+        </td>
+    </tr>
+    {{/each}}
+</script>
