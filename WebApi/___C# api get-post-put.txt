@@ -1,0 +1,144 @@
+  apiClient = new HttpClient();
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+
+  apiClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", privateKey);
+            apiClient.BaseAddress = new Uri(@"xxx.com/");
+            apiClient.DefaultRequestHeaders.Accept.Clear();
+            apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
+
+
+
+-------------------
+
+ public async Task<NetTrainmentUserModel> GetIfExist(string guid = "")
+        {
+            try
+            {
+                using (HttpResponseMessage httpResponse = apiClient.GetAsync(_requestUri + "?id=" + guid).Result)
+                {
+                    if (httpResponse.IsSuccessStatusCode)
+                    {
+                        var userModel = await httpResponse.Content.ReadAsAsync<NetTrainmentUserModel>();
+                        userModel.Status = Status.Basarili;
+                        return userModel;
+                    }
+                    else {
+                        return new NetTrainmentUserModel { Status = Status.YapilanIslemOlumsuz };
+                    }                  
+                }
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error("NetTrainment Get isleminde hata olustu", ex);
+                return new NetTrainmentUserModel { Status = Status.Hata };
+            }
+        }
+
+
+
+ public async Task<NetTrainmentUserModel> PostForNewUser(NetTrainmentUserModel personel)
+        {
+            try
+            {                             
+                HttpResponseMessage httpResponse = apiClient.PostAsJsonAsync(_requestUri, personel).Result;
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var userModel = await httpResponse.Content.ReadAsAsync<NetTrainmentUserModel>();
+                    userModel.Status = Status.Basarili;
+                    return userModel;
+                }
+                else
+                {
+                    return new NetTrainmentUserModel { Status = Status.YapilanIslemOlumsuz };
+                }
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error("NetTrainment Post isleminde hata olustu", ex);
+                return new NetTrainmentUserModel { Status = Status.Hata };
+            }
+        }
+        public async Task<NetTrainmentUserModel> PutAndUpdate(NetTrainmentUserModel personel)
+        {
+            try
+            {
+                HttpResponseMessage httpResponse = apiClient.PutAsJsonAsync(_requestUri, personel).Result;
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var userModel = await httpResponse.Content.ReadAsAsync<NetTrainmentUserModel>();
+                    userModel.Status = Status.Basarili;
+                    return userModel;
+                }
+                else
+                {
+                    return new NetTrainmentUserModel { Status = Status.YapilanIslemOlumsuz };
+                }
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error("NetTrainment Put isleminde hata olustu", ex);
+                return new NetTrainmentUserModel { Status = Status.Hata };
+            }
+        }
+
+        public NetTrainmentUserModel CastModel(UserEntity model)
+        {
+            //var userName = RandomAddingString4(model.Firstname+model.Lastname, 3);
+            return new NetTrainmentUserModel()
+            {
+                Identifier = model.IdGuid.ToString(),
+                FirstName = model.Firstname,
+                LastName = model.Lastname,
+                Email = model.Email,
+                UserName = model.Email,
+                CountryCode = "TR",
+                LanguageCode = "tr-TR",
+                IsNonUniqueEmail = true
+            };
+        }
+
+
+
+
+
+
+
+@@@@@@@@@@@@@@CONTOLLER
+
+
+    public ActionResult Linked(string realLink)
+        {
+            UserEntity currentUser = CurrentUserData.User;
+
+            if (currentUser.IdGuid == Guid.Empty || currentUser.IdGuid == null)
+                _userBusinessLogic.IdGuid(currentUser.Id, Guid.NewGuid());
+
+            UserEntity updatedUser = _userBusinessLogic.GetById(currentUser.Id).ResultValue;
+            NetTrainmentApiHelper netTrainmentApiHelper = new NetTrainmentApiHelper(BrandManager.CurrentBrandEnum);
+
+
+
+            NetTrainmentUserModel getUserModel = netTrainmentApiHelper.GetIfExist(updatedUser.IdGuid.ToString()).Result;
+          if (getUserModel.Status == Status.YapilanIslemOlumsuz)
+            {
+                NetTrainmentUserModel postUserModel = netTrainmentApiHelper.PostForNewUser(netTrainmentApiHelper.CastModel(updatedUser)).Result;
+                if (postUserModel.Status == Status.YapilanIslemOlumsuz)
+                {
+                    LogHelper.Error("NetTrainment , Get veya Post isleminde hata olustu", new Exception("Kullanici bilgileri alinamadi yada kayit islemi basarisiz!"));
+                }
+                var postToken = postUserModel.AuthorizationToken;
+                NetTrainmentApiHelper.SetProperties(postToken, realLink);
+                return Redirect("/Home/MenuRedirect?key=aaa");
+            }
+            var getToken = getUserModel.AuthorizationToken;
+            NetTrainmentApiHelper.SetProperties(getToken, realLink);
+            //var url="xxx.com;
+            //var deger = string.Format("PublicKey={0}&Token={1}&&ReturnUrl={2}", NetTrainmentApiHelper.publicKey, NetTrainmentApiHelper.AuthToken, realLink);
+            //var redirectER = url + '?' + deger;
+            //return RedirectToAction("WWW",redirectER);
+            ////return Redirect(redirectER);
+
+
+            return Redirect("/Home/MenuRedirect?key=NetTrain");
+        }

@@ -2,9 +2,16 @@
 
 
 SupportContactUs
+--DIZAYN BAK
+
+https://local.evaletleri.com/Admin/ProductCategory
+
+http://local.valetleri.com/Admin/Message/SendableListIndex -- Mail
+
+MapOperationsService ile GOOGLE MAP
 
 
-
+------
 
 ServiceResult<List<UserListBulkSelectByDealerCodeResult>> ListUsersFromFile(int brandId, Stream fileStream, bool includeSubUsers)
 
@@ -17,3 +24,21 @@ jquery.validationEngine-tr.js
                             new Chunk(string.Format("{0:n} TL ", labelItem.Price), style.Price),
                             new Chunk(string.Format("{0:n} TL", labelItem.OldPrice), style.OldPrice)
                         };
+
+
+
+pa_Product_List_Model_Search
+
+pa_UserLabel_Single_BulkInsert****
+
+
+
+-----
+
+
+Label>Print>labeItemBulkList
+
+DealerGruopMapBusinessLogic Controller full
+
+Toplu ürün eklemede excel ile eklemek !! 
+ProcessProductFile
