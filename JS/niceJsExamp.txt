@@ -4,3 +4,20 @@
                     $WaitingDealerCode = $divOrderDetails.find('#WaitingDealerCode');
 
                     $divOrderDetails.find(':input').trigger('change');
+
+
+
+
+
+
+
+     data.Dealers = data.Dealers.sort(function(a, b) {
+                        return a.Rank > b.Rank ? 1 : -1;
+                    });
+
+
+
+
+
+
+
