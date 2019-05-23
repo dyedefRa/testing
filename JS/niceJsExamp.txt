@@ -1,0 +1,6 @@
+  $('#containerOrder').html('').append($('#templateOrder').tmpl(data)).find('.date-picker').datetimepicker();
+
+                    $AcceptedDealerCode = $divOrderDetails.find('#AcceptedDealerCode');
+                    $WaitingDealerCode = $divOrderDetails.find('#WaitingDealerCode');
+
+                    $divOrderDetails.find(':input').trigger('change');
