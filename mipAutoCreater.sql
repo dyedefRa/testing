@@ -1,0 +1,7 @@
+USE [master]
+GO
+CREATE DATABASE mip ON 
+( FILENAME = N'D:\MIP.mdf' ),
+( FILENAME = N'D:\MIP_1.ldf' )
+ FOR ATTACH ;
+GO
