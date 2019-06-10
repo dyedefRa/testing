@@ -1,0 +1,11 @@
+C:\Users\aozturk\source\repos\MovieApp\MovieApp.MvcWebUI\bin\Debug\netcoreapp2.0\MovieApp.MvcWebUI.deps.json
+C:\Users\aozturk\source\repos\MovieApp\MovieApp.MvcWebUI\bin\Debug\netcoreapp2.0\MovieApp.MvcWebUI.runtimeconfig.json
+C:\Users\aozturk\source\repos\MovieApp\MovieApp.MvcWebUI\bin\Debug\netcoreapp2.0\MovieApp.MvcWebUI.runtimeconfig.dev.json
+C:\Users\aozturk\source\repos\MovieApp\MovieApp.MvcWebUI\bin\Debug\netcoreapp2.0\MovieApp.MvcWebUI.dll
+C:\Users\aozturk\source\repos\MovieApp\MovieApp.MvcWebUI\bin\Debug\netcoreapp2.0\MovieApp.MvcWebUI.pdb
+C:\Users\aozturk\source\repos\MovieApp\MovieApp.MvcWebUI\obj\Debug\netcoreapp2.0\MovieApp.MvcWebUI.csproj.CoreCompileInputs.cache
+C:\Users\aozturk\source\repos\MovieApp\MovieApp.MvcWebUI\obj\Debug\netcoreapp2.0\MovieApp.MvcWebUI.AssemblyInfoInputs.cache
+C:\Users\aozturk\source\repos\MovieApp\MovieApp.MvcWebUI\obj\Debug\netcoreapp2.0\MovieApp.MvcWebUI.AssemblyInfo.cs
+C:\Users\aozturk\source\repos\MovieApp\MovieApp.MvcWebUI\obj\Debug\netcoreapp2.0\MovieApp.MvcWebUI.dll
+C:\Users\aozturk\source\repos\MovieApp\MovieApp.MvcWebUI\obj\Debug\netcoreapp2.0\MovieApp.MvcWebUI.pdb
+C:\Users\aozturk\source\repos\MovieApp\MovieApp.MvcWebUI\obj\Debug\netcoreapp2.0\MovieApp.MvcWebUI.csprojAssemblyReference.cache

