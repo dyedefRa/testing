@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.539
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsService1", "WindowsService1\WindowsService1.csproj", "{0D70EF81-6307-4653-951C-A90C2BD1547B}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SETUPSERVICE", "SETUPSERVICE\SETUPSERVICE.vdproj", "{27F446A2-D120-4A89-9C39-EEC0D8BD67D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D70EF81-6307-4653-951C-A90C2BD1547B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D70EF81-6307-4653-951C-A90C2BD1547B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D70EF81-6307-4653-951C-A90C2BD1547B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D70EF81-6307-4653-951C-A90C2BD1547B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27F446A2-D120-4A89-9C39-EEC0D8BD67D8}.Debug|Any CPU.ActiveCfg = Debug
+		{27F446A2-D120-4A89-9C39-EEC0D8BD67D8}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE8D536C-E6D0-405F-B903-07383F8F497A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.539
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsService1", "WindowsService1\WindowsService1.csproj", "{9A9B9434-00C6-40F2-A36E-EE009080D833}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SETUPER", "SETUPER\SETUPER.vdproj", "{EEEB7E3F-0B74-4D4B-AFEA-725677F16955}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A9B9434-00C6-40F2-A36E-EE009080D833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A9B9434-00C6-40F2-A36E-EE009080D833}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A9B9434-00C6-40F2-A36E-EE009080D833}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A9B9434-00C6-40F2-A36E-EE009080D833}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEEB7E3F-0B74-4D4B-AFEA-725677F16955}.Debug|Any CPU.ActiveCfg = Debug
+		{EEEB7E3F-0B74-4D4B-AFEA-725677F16955}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4356099-5E68-4EC8-AB85-53FC54988E0C}
+	EndGlobalSection
+EndGlobal

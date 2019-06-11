@@ -1,0 +1,8 @@
+﻿@@@Servise Add Installer dan ekleme yapman gerekiyor.
+bu işlemi yaptıktan sonra ProjectInstalller geldi projeye.
+
+
+@@Setup Project Itemini seçip projeye ekledik çünkü bu servisi kuracak setup projesi lazımdı.
+
+
+propertiesdeki custom Actions tan ayar yapman lazım

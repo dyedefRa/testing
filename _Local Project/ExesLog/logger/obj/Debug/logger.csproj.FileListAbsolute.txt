@@ -1,0 +1,9 @@
+C:\Users\aozturk\source\repos\ExesLog\logger\bin\Debug\logger.exe.config
+C:\Users\aozturk\source\repos\ExesLog\logger\bin\Debug\logger.exe
+C:\Users\aozturk\source\repos\ExesLog\logger\bin\Debug\logger.pdb
+C:\Users\aozturk\source\repos\ExesLog\logger\obj\Debug\logger.Properties.Resources.resources
+C:\Users\aozturk\source\repos\ExesLog\logger\obj\Debug\logger.csproj.GenerateResource.cache
+C:\Users\aozturk\source\repos\ExesLog\logger\obj\Debug\logger.csproj.CoreCompileInputs.cache
+C:\Users\aozturk\source\repos\ExesLog\logger\obj\Debug\logger.exe
+C:\Users\aozturk\source\repos\ExesLog\logger\obj\Debug\logger.pdb
+C:\Users\aozturk\source\repos\ExesLog\logger\obj\Debug\logger.Form1.resources

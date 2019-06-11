@@ -1,0 +1,1 @@
+﻿Bilgisayar açık kaldığı surece loglama yapsın.
