@@ -4,3 +4,10 @@
 
 SendCompletedOrderToApi!!!!! 
 pa_D2COrder_List_GetOrders
+
+canli destek
+
+takvimm layout
+
+
+*** D2C > AdminTools >> Sip Yön >>  SEÇ! yukariya dogru gelen ekran
