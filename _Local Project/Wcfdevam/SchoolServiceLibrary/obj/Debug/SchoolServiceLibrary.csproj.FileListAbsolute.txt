@@ -1,0 +1,7 @@
+C:\Users\aozturk\source\repos\Wcfdevam\SchoolServiceLibrary\bin\Debug\SchoolServiceLibrary.dll.config
+C:\Users\aozturk\source\repos\Wcfdevam\SchoolServiceLibrary\bin\Debug\SchoolServiceLibrary.dll
+C:\Users\aozturk\source\repos\Wcfdevam\SchoolServiceLibrary\bin\Debug\SchoolServiceLibrary.pdb
+C:\Users\aozturk\source\repos\Wcfdevam\SchoolServiceLibrary\obj\Debug\SchoolServiceLibrary.csprojAssemblyReference.cache
+C:\Users\aozturk\source\repos\Wcfdevam\SchoolServiceLibrary\obj\Debug\SchoolServiceLibrary.csproj.CoreCompileInputs.cache
+C:\Users\aozturk\source\repos\Wcfdevam\SchoolServiceLibrary\obj\Debug\SchoolServiceLibrary.dll
+C:\Users\aozturk\source\repos\Wcfdevam\SchoolServiceLibrary\obj\Debug\SchoolServiceLibrary.pdb

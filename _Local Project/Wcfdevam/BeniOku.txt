@@ -1,0 +1,7 @@
+﻿@@@@@DERS 1-------------------------
+1)Bu kez hazır sunulan WCF Service Library i ekleyelim.
+Bu bir kütüphane fakat WCF e uygun bir library.|  Bu kürüphane WCF Service itemi ekliyoruz(StudentService ve IStudentService.. olusuyor otomatik)
+
+Student.cd =>>Serileştirmek istediğimiz bir sınftaki proplarında bazen Enum dönmemiz gerekir.
+
+2) Herhangi bir object doneceksek ve bu donecegımız Objecnin fieldinda Enum varsa bunuda EnumMember olarak işaretlememiz gerekcek

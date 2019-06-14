@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.539
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ders 1 -DataContracts", "Ders 1 -DataContracts", "{9A114B9A-D23C-4706-A042-F8398C75CEF1}"
+	ProjectSection(SolutionItems) = preProject
+		BeniOku.txt = BeniOku.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolServiceLibrary", "SchoolServiceLibrary\SchoolServiceLibrary.csproj", "{016A0FE9-4E34-4AF5-B123-9A91E74B7AA1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ders 2 -DataContracts Surrogates", "Ders 2 -DataContracts Surrogates", "{6718F2C7-0FF5-4E9D-88BF-289AF813D16B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindLibrary", "NorthwindLibrary\NorthwindLibrary.csproj", "{45A8A702-D0D0-4513-AE11-A0B2F99D3596}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{016A0FE9-4E34-4AF5-B123-9A91E74B7AA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{016A0FE9-4E34-4AF5-B123-9A91E74B7AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{016A0FE9-4E34-4AF5-B123-9A91E74B7AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{016A0FE9-4E34-4AF5-B123-9A91E74B7AA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45A8A702-D0D0-4513-AE11-A0B2F99D3596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45A8A702-D0D0-4513-AE11-A0B2F99D3596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45A8A702-D0D0-4513-AE11-A0B2F99D3596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45A8A702-D0D0-4513-AE11-A0B2F99D3596}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{016A0FE9-4E34-4AF5-B123-9A91E74B7AA1} = {9A114B9A-D23C-4706-A042-F8398C75CEF1}
+		{45A8A702-D0D0-4513-AE11-A0B2F99D3596} = {6718F2C7-0FF5-4E9D-88BF-289AF813D16B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA49ECEB-AFAA-44D2-A720-B8888393EDF6}
+	EndGlobalSection
+EndGlobal

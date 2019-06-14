@@ -1,0 +1,13 @@
+C:\Users\aozturk\source\repos\SettingsApp\SettingsApp.UI\bin\Debug\SettingsApp.UI.exe.config
+C:\Users\aozturk\source\repos\SettingsApp\SettingsApp.UI\bin\Debug\SettingsApp.UI.exe
+C:\Users\aozturk\source\repos\SettingsApp\SettingsApp.UI\bin\Debug\SettingsApp.UI.pdb
+C:\Users\aozturk\source\repos\SettingsApp\SettingsApp.UI\bin\Debug\System.ValueTuple.dll
+C:\Users\aozturk\source\repos\SettingsApp\SettingsApp.UI\bin\Debug\System.ValueTuple.xml
+C:\Users\aozturk\source\repos\SettingsApp\SettingsApp.UI\obj\Debug\SettingsApp.UI.csprojAssemblyReference.cache
+C:\Users\aozturk\source\repos\SettingsApp\SettingsApp.UI\obj\Debug\SettingsApp.UI.Form1.resources
+C:\Users\aozturk\source\repos\SettingsApp\SettingsApp.UI\obj\Debug\SettingsApp.UI.Properties.Resources.resources
+C:\Users\aozturk\source\repos\SettingsApp\SettingsApp.UI\obj\Debug\SettingsApp.UI.csproj.GenerateResource.cache
+C:\Users\aozturk\source\repos\SettingsApp\SettingsApp.UI\obj\Debug\SettingsApp.UI.csproj.CoreCompileInputs.cache
+C:\Users\aozturk\source\repos\SettingsApp\SettingsApp.UI\obj\Debug\SettingsApp.UI.csproj.CopyComplete
+C:\Users\aozturk\source\repos\SettingsApp\SettingsApp.UI\obj\Debug\SettingsApp.UI.exe
+C:\Users\aozturk\source\repos\SettingsApp\SettingsApp.UI\obj\Debug\SettingsApp.UI.pdb
