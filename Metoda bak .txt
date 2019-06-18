@@ -9,5 +9,7 @@ canli destek
 
 takvimm layout
 
+IsPrivate=0
+
 
 *** D2C > AdminTools >> Sip Yön >>  SEÇ! yukariya dogru gelen ekran
