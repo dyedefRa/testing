@@ -1,0 +1,97 @@
+﻿@model DropFiles.OKUBENI.Model.wSipari
+
+@{
+    ViewBag.Title = "SiparisDosyaDetay";
+}
+
+
+<link href="@Url.Content("~/OKUBENI/dropzone.css")" rel="stylesheet" />
+
+
+<div class="form-row split1 ">
+    <div class="wrap clearfix">
+        <label for="input3" class="big-title split1">Yüklü Belgeler</label>
+        @foreach (var document in Model.wDosyas)
+        {
+            <div class="wrap clearfix split3">
+                <a target="_blank" href="@(String.Format(@"{0}\{1}",document.Path,document.Name))">@document.Name</a>
+                @*@if (document.Document.CreatedBy == UserManager.CurrentUser.Id || (UserManager.CurrentUser.Type == UserType.MarketingInvestmentSpecialist && Model.ResponsibleUser.Id == UserManager.CurrentUser.Id))
+                {*@
+                    @using (Html.BeginForm("DosyaSil", "Home", FormMethod.Post))
+                    {
+                        <input type="hidden" name="WorkorderTaskId" value="@Model.Id" />
+                        <input type="hidden" name="WorkorderTaskDocumentId" value="@document.Id" />
+                        <button type="submit">Sil</button>
+                    }
+                @*}*@
+            </div>
+        }
+    </div>
+</div>
+<hr />
+<div class="form-row split1">
+    @using (Html.BeginForm("UploadWorkorderTaskFile", "Home", FormMethod.Post, new { @class = "dropzone", id = "dropzoneForm", enctype = "multipart/form-data" }))
+    {
+        if (Model != null)
+        {
+            <input type="hidden" name="CurrentObjectId" id="CurrentObjectId" value="@Model" />
+        }
+        <div class="fallback">
+            <div id="dropzone">
+                <input name="file" type="file" multiple />
+            </div>
+        </div>
+    }
+    <div>
+        <input type="button" value="Dosyaları Yükle" id="submit-all-file" />
+    </div>
+</div>
+
+
+
+<script src="@Url.Content("~/OKUBENI/jquery-1.7.min.js")"></script>
+<script src="@Url.Content("~/OKUBENI/dropzone.js")"></script>
+<script src="@Url.Content("~/OKUBENI/myDropzoneCodes.js")"></script>
+
+<script>
+
+
+    $(document).ready(function () {
+        var myZone = function (myDropzone) {
+            myDropzone.on("complete", function (data) {
+                //alert(JSON.parse(data.xhr.responseText));
+                window.location.reload(true);
+            });
+        };
+
+        _dropzone(myZone);
+    });
+</script>
+
+
+@*<div>
+        <h4>Siparis</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.OlusturulmaTarihi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OlusturulmaTarihi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Ad)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Ad)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@
