@@ -1,0 +1,4 @@
+[pa_Product_List_UnSyncedProducts]
+
+productHistoryController > Insert
+ProductHistoryBusinessLogic > InsertAndUpload KULLAN !!!!! Bir excel yükle ve test et
