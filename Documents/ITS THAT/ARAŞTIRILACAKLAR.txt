@@ -4,3 +4,12 @@
 --host dosyasi url yonlendirme
 
 X-SSL sertifikasi ne
+WIN SERVIS UZAK SUNUCUYA KURMAK ! 
+
+
+  172.16.1.30  sql sunucusu
+?
+   sql user test01
+?
+  sifre: 1234
+

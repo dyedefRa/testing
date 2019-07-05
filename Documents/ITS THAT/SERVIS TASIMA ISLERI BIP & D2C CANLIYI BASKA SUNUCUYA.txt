@@ -1,0 +1,23 @@
+		 D2c yada BIPv2 WinSer için farketmiyor yapilacak islemler =>
+1 - canli sunucuya win servisi kuracagimiz için , master a geçis yapip hangi servisi çalistiracaksan onu SET UP project diyip build yapmak yada çalistirmak.
+2- Olusan Debug dosyasini canli sunucuda bulunamsi gereken dosyaya yapistir.
+(D2c den 3 tane   BIPv2 den 5 TANE OLdugu için biz 3 ve 5 er kez kopyalayip ayri ayri dosyalara yapistirdik)
+
+3*****-
+CMd yi adminstartor ile al 
+
+orn BoschD2c servisi için =>
+Exesinin bulundugu dosya 
+	D:\PROJECTS\BIP\www\Application\D2C.Application.WinService\bin\Debug    (A)
+old dusunursek ve buna A diyelim
+ve exe ismi
+	D2C.Application.WinService   olsun  (B)
+
+cmd de A dosyasinda olman gerek => ve oradada CMD de
+
+B install diyeceksin !
+
+TABIKI BUNU ICIN
+
+ Topshelf GEREKIYOR ! IYI ARASTIR TOP SHELFI !
+
