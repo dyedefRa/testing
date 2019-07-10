@@ -1,0 +1,45 @@
+Following errors were detected during this operation.
+	* [7/10/2019 6:17:56 PM] System.Deployment.Application.DeploymentDownloadException (Unknown subtype)
+		- Downloading file:///D:/MVM/KYS/bsh_Tickets_ExcelExporter/bin/Debug/bsh_Tickets_ExcelExporter.exe.config.deploy did not succeed.
+		- Source: System.Deployment
+		- Stack trace:
+			at System.Deployment.Application.SystemNetDownloader.DownloadSingleFile(DownloadQueueItem next)
+			at System.Deployment.Application.SystemNetDownloader.DownloadAllFiles()
+			at System.Deployment.Application.FileDownloader.Download(SubscriptionState subState, X509Certificate2 clientCertificate)
+			at System.Deployment.Application.DownloadManager.DownloadDependencies(SubscriptionState subState, AssemblyManifest deployManifest, AssemblyManifest appManifest, Uri sourceUriBase, String targetDirectory, String group, IDownloadNotification notification, DownloadOptions options)
+			at System.Deployment.Application.ApplicationActivator.DownloadApplication(SubscriptionState subState, ActivationDescription actDesc, Int64 transactionId, TempDirectory& downloadTemp)
+			at System.Deployment.Application.ApplicationActivator.InstallApplication(SubscriptionState& subState, ActivationDescription actDesc)
+			at System.Deployment.Application.ApplicationActivator.PerformDeploymentActivation(Uri activationUri, Boolean isShortcut, String textualSubId, String deploymentProviderUrlFromExtension, BrowserSettings browserSettings, String& errorPageUrl, Uri& deploymentUri)
+			at System.Deployment.Application.ApplicationActivator.PerformDeploymentActivationWithRetry(Uri activationUri, Boolean isShortcut, String textualSubId, String deploymentProviderUrlFromExtension, BrowserSettings browserSettings, String& errorPageUrl)
+--- End of stack trace from previous location where exception was thrown ---
+			at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+			at System.Deployment.Application.ApplicationActivator.PerformDeploymentActivationWithRetry(Uri activationUri, Boolean isShortcut, String textualSubId, String deploymentProviderUrlFromExtension, BrowserSettings browserSettings, String& errorPageUrl)
+			at System.Deployment.Application.ApplicationActivator.ActivateDeploymentWorker(Object state)
+		--- Inner Exception ---
+		System.Net.WebException
+		- Could not find file 'D:\MVM\KYS\bsh_Tickets_ExcelExporter\bin\Debug\bsh_Tickets_ExcelExporter.exe.config.deploy'.
+		- Source: System
+		- Stack trace:
+			at System.Net.FileWebRequest.EndGetResponse(IAsyncResult asyncResult)
+			at System.Deployment.Application.SystemNetDownloader.DownloadSingleFile(DownloadQueueItem next)
+		--- Inner Exception ---
+		System.Net.WebException
+		- Could not find file 'D:\MVM\KYS\bsh_Tickets_ExcelExporter\bin\Debug\bsh_Tickets_ExcelExporter.exe.config.deploy'.
+		- Source: System
+		- Stack trace:
+			at System.Net.FileWebResponse..ctor(FileWebRequest request, Uri uri, FileAccess access, Boolean asyncHint)
+			at System.Net.FileWebRequest.GetResponseCallback(Object state)
+		--- Inner Exception ---
+		System.IO.FileNotFoundException
+		- Could not find file 'D:\MVM\KYS\bsh_Tickets_ExcelExporter\bin\Debug\bsh_Tickets_ExcelExporter.exe.config.deploy'.
+		- Source: mscorlib
+		- Stack trace:
+			at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+			at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+			at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+			at System.Net.FileWebStream..ctor(FileWebRequest request, String path, FileMode mode, FileAccess access, FileShare sharing, Int32 length, Boolean async)
+			at System.Net.FileWebResponse..ctor(FileWebRequest request, Uri uri, FileAccess access, Boolean asyncHint)
+
+COMPONENT STORE TRANSACTION DETAILS
+	No transaction information is available.
+

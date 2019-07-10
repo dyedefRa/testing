@@ -1,0 +1,5 @@
+SET IDENTITY_INSERT [Investment] ON 
+
+INSERT INTO Investment (Id,Status,Title,InvestmentCategoryId,IsRequired,InformationUserId,ApprovalUserId,BudgetTemplateId,IsOpenWorkorderTask,CreatedOn,CreatedBy,ModifiedOn,ModifiedBy,WorkflowType) VALUES (453,0,'YENI TABELA',6,0,NULL,NULL,14,1,GETDATE(),15477,NULL,NULL,1)  
+
+ SET IDENTITY_INSERT [Investment] OFF
