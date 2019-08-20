@@ -1,0 +1,8 @@
+/Admin/Report/Survey?SurveyId=985
+
+>> Soru
+>> 9 Yapilan isle...
+>> Detayli Grafifkler
+>> Ruya reklam 
+
+Dan ilgili grafigi gorebilirz
