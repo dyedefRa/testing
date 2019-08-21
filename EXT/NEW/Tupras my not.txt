@@ -1,0 +1,9 @@
+degerlerin gelmesi için geçmis tgp hesabi gerek
+
+Ocak için => 
+
+HamPetrolTotal = xx.01.2019 olan tüm Inventory ve ProductCode ='000000000000004001'olanlarin ++HPTOP 
+URTOP        = xx.01.2019  olan Inventory.Sum(MNG05);
+
+
+RAFKAYIP= URTOP-HPTOP
