@@ -1,0 +1,88 @@
+ public List<BasicColumnChartDataItem> GetSurveyReportDataChoiceTotalsByQuestion(int questionId, int surveyTypeId, out long total)
+        {
+            total = 0;
+            var questionResponse = _surveyQuestionBusinessLogic.GetById(questionId);
+            if (questionResponse.HasError)
+                return null;
+
+            var question = questionResponse.ResultValue;
+            List<BasicColumnChartDataItem> chartData = new List<BasicColumnChartDataItem>();
+            if (question.QuestionType == SurveyQuestionType.MultiChoiceSorting)
+            {
+                //BURADA SP YAZACAKSIN :!:!:!:
+                //_surveyQuestionAnswerBusinessLogic.GetByQuestionId
+                //Degiesecek!:!:!:
+                //var surveyQuestionAnswer=_surveyQuestionAnswerBusinessLogic.GetById
+                //  Select * from SurveyQuestion Where SurveyId=93
+            //    Select* from SurveyQuestionAnswer Where SurveyQuestionId = 296
+//  Select* from SurveyQuestionAnswerChoice Where SurveyQuestionChoiceId in (577, 576, 575)
+                var reportByMultipleChoiceQuestionResponse = _surveyBusinessLogic.ListReportByMultipleChoiceQuestion(question.BrandId, question.Id);
+                if (reportByMultipleChoiceQuestionResponse.HasError)
+                    return null;
+                //soru kadar oneceksin
+                foreach (var dataItem in reportByMultipleChoiceQuestionResponse.ResultValue)
+                {
+                    if (!string.IsNullOrWhiteSpace(dataItem.Choice) && dataItem.UserCount.HasValue)
+                    {
+                        total += dataItem.UserCount.Value;
+                        chartData.Add(new BasicColumnChartDataItem
+                        {
+                            Name = dataItem.Choice,
+                            Data = new List<double> { dataItem.UserCount.Value,11}
+                        });
+                        // Data = new List<double> { dataItem.UserCount.Value,11,3} dersek  ilk secenek için 3 grafide ekler :!!
+                    }
+                }
+                OrderYesNoQuestionChoices(ref chartData);
+            }
+            else if (question.QuestionType != SurveyQuestionType.MultiChoiceMultiAnswerWithRating)
+            {
+                var reportByMultipleChoiceQuestionResponse = _surveyBusinessLogic.ListReportByMultipleChoiceQuestion(question.BrandId, question.Id);
+                if (reportByMultipleChoiceQuestionResponse.HasError)
+                    return null;
+
+                foreach (var dataItem in reportByMultipleChoiceQuestionResponse.ResultValue)
+                {
+                    if (!string.IsNullOrWhiteSpace(dataItem.Choice) && dataItem.UserCount.HasValue)
+                    {
+                        total += dataItem.UserCount.Value;
+                        chartData.Add(new BasicColumnChartDataItem
+                        {
+                            Name = dataItem.Choice,
+                            Data = new List<double> { dataItem.UserCount.Value }
+                        });
+                    }
+                }
+                OrderYesNoQuestionChoices(ref chartData);
+            }
+            else
+            {
+                var questionAnswerList = _surveyQuestionAnswerBusinessLogic.ListMultiChoiceAnswerNameAndCount(question.BrandId, question.Id, (int)SurveyQuestionType.MultiChoiceMultiAnswerWithRating).ResultValue;
+
+                for (int i = 0; i <= question.TopRatingValue; i++)
+                {
+                    if (questionAnswerList.Any(x => x.AnswerName == i.ToString()))
+                    {
+                        var dataItem = questionAnswerList.Where(x => x.AnswerName == i.ToString()).FirstOrDefault();
+                        if (dataItem != null && !string.IsNullOrWhiteSpace(dataItem.AnswerName) && dataItem.TotalAnswered.HasValue)
+                        {
+                            total += dataItem.TotalAnswered.Value;
+                            chartData.Add(new BasicColumnChartDataItem
+                            {
+                                Name = dataItem.AnswerName,
+                                Data = new List<double> { dataItem.TotalAnswered.Value }
+                            });
+                        }
+                    }
+                    else
+                    {
+                        chartData.Add(new BasicColumnChartDataItem
+                        {
+                            Name = i.ToString(),
+                            Data = new List<double> { 0 }
+                        });
+                    }
+                }
+            }
+            return chartData;
+        }
