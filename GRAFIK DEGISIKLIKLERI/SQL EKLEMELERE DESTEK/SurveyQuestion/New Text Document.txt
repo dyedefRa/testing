@@ -1,0 +1,1 @@
+296	1	93	<p>Bu bir test sorusudur</p>  	NULL	1	2019-08-23 11:15:25.000	1	6	1	1	0	NULL	NULL	NULL	NULL	NULL
