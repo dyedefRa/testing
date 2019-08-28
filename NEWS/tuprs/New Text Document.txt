@@ -1,1 +1,0 @@
-http://tfs:8080/tfs/Projects/Tupras.KayipFire/_versionControl?_a=contents

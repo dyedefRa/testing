@@ -1,2 +1,0 @@
--Ay ve yila gore olan Chart degerlerini order by Yap .
--Inventory tablosu icin bir yeni field gerek ve her sap servis calistiginda update edildiginde vs... gecmis tgp hesabinda ... guncellemelii!!:!:!

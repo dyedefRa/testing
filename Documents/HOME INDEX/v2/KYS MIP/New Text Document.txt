@@ -1,3 +1,0 @@
-SET IDENTITY_INSERT [Investment] ON
-  insert into Investment() Values()
-  SET IDENTITY_INSERT [Investment] OFF

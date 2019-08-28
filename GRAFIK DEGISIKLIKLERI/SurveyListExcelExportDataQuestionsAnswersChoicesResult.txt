@@ -1,5 +1,0 @@
-SurveyListExcelExportDataQuestionsAnswersChoicesResult sinifina 
-
-    public int ChoiceOrderNumber { get; set; }
-
-ekle
