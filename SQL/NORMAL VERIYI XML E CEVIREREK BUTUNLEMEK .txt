@@ -1,0 +1,15 @@
+select Title + ',' from Vehicles for xml path('')
+
+
+# LogApiActivity  tablosundaki Content alanina uzun degerler girilmis ve 
+
+[    {      "DealerCode": "7000100007",      "StockData": [        {          "VibCode": "KDN56NW22N",          "SalableQuantity": 15        }      ]    },    {      "DealerCode": "7000100007",      "StockData": [        {         
+   
+#kopyalayip yapistirdigimda eksik geliyordu 
+@@@@@@@@@@@ÇÖZÜM@@@@@@@@@@@@@@@@@@@@@@@@@@@@qqqqqqq
+
+
+=>=>>>>=>=>=>=    Select Content + ',' from LogApiActivity Where ID=842847 for xml path('')
+
+dedik ve sorun çözüldü.
+
