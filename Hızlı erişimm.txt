@@ -1,4 +1,4 @@
-TOPSHELF OGREN
+TOPSHELF OGRENn
 
 Scheduler ile program
 https://www.oguzhansari.com/blog/c-mvc-de-quartz-net-ile-zamanlanmis-gorev-hazirlama
