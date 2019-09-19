@@ -1,0 +1,7 @@
+    $('#SubSectionQuestion_12').mask('(000) 000-00-00', { placeholder: "(___) ___-__-__" });
+
+
+///
+
+
+@Html.TextBoxFor(q => q.Entity.PhoneNumber, new { @class = "text required",@placeholder= "(___) ___-__-__",@Id="SubPhone" })
