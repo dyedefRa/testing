@@ -1,0 +1,4 @@
+Enum.GetValues(typeof(MyEnum)).Cast<MyEnum>().Select(v => new SelectListItem {
+    Text = v.ToString(),
+    Value = ((int)v).ToString()
+}).ToList();
