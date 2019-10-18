@@ -1,0 +1,101 @@
+
+span.bip-icon.bip-message-sizerigth.icon-camera-active BUNA VERIYOR
+
+span.bip-icon.bip-message-sizerigth.icon-camera-active {
+    -webkit-animation: glowing 1500ms infinite;
+    -moz-animation: glowing 1500ms infinite;
+    -o-animation: glowing 1500ms infinite;
+    animation: glowing 1500ms infinite;
+}
+
+@-webkit-keyframes glowing {
+    0% {
+        box-shadow: 0 0 3px #009b9b;
+        border-radius: 100px;
+        padding: 10px;
+        border: none;
+    }
+
+    50% {
+        box-shadow: 0 0 40px #0cd4d4;
+        border-radius: 100px;
+        padding: 10px;
+        border: none;
+    }
+
+    100% {
+        box-shadow: 0 0 3px #009b9b;
+        border-radius: 100px;
+        padding: 5px;
+        border: none;
+    }
+}
+
+@-moz-keyframes glowing {
+    0% {
+        box-shadow: 0 0 3px #009b9b;
+        border-radius: 100px;
+        padding: 10px;
+        border: none;
+    }
+
+    50% {
+        box-shadow: 0 0 40px #0cd4d4;
+        border-radius: 100px;
+        padding: 10px;
+        border: none;
+    }
+
+    100% {
+        box-shadow: 0 0 3px #009b9b;
+        border-radius: 100px;
+        padding: 5px;
+        border: none;
+    }
+}
+
+@-o-keyframes glowing {
+    0% {
+        box-shadow: 0 0 3px #009b9b;
+        border-radius: 100px;
+        padding: 10px;
+        border: none;
+    }
+
+    50% {
+        box-shadow: 0 0 40px #0cd4d4;
+        border-radius: 100px;
+        padding: 10px;
+        border: none;
+    }
+
+    100% {
+        box-shadow: 0 0 3px #009b9b;
+        border-radius: 100px;
+        padding: 5px;
+        border: none;
+    }
+}
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 3px #009b9b;
+        border-radius: 100px;
+        padding: 10px;
+        border: none;
+    }
+
+    50% {
+        box-shadow: 0 0 40px #0cd4d4;
+        border-radius: 100px;
+        padding: 10px;
+        border: none;
+    }
+
+    100% {
+        box-shadow: 0 0 3px #009b9b;
+        border-radius: 100px;
+        padding: 5px;
+        border: none;
+    }
+}
