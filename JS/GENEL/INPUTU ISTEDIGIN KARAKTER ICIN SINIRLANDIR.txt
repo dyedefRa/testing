@@ -1,0 +1,17 @@
+$(function () {
+                var input = document.getElementById("Rate");
+                var lastValue = "";
+
+                input.addEventListener("keydown", valueCheck);
+                input.addEventListener("keyup", valueCheck);
+
+                function valueCheck() {
+                    if (input.value.match(/^[0-9,]*$/))
+                        lastValue = input.value;
+                    else
+                        input.value = lastValue;
+                }
+}
+
+
+<input id='Rate'>  (Double yaptik sayi ve , var sadece)
