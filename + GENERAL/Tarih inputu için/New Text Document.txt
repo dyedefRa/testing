@@ -1,0 +1,1 @@
+   <input class="form-control date-picker validate[required]" type="text" id="StartingDate"  name="StartingDate" data-date-format="DD.MM.YYYY" value="@Model.ViewModel.StartingDate" />

@@ -1,0 +1,2 @@
+
+Update D2CEmailTemplate Set ToEmail=REPLACE(ToEmail , 'esarikaya@nuevo.com.tr' , 'ecifci@nuevo.com.tr') Where ToEmail like    '%esarikaya@nuevo.com.tr%'

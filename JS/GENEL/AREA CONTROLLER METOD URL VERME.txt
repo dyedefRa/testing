@@ -1,0 +1,1 @@
+window.location.href = "@Url.Action("CloseThisSiteWithConfiguration", "SystemConfiguration", new { area = "Admin" })"
