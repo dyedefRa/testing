@@ -1,0 +1,4 @@
+ilgili katmana sag tık  open folder..
+
+
+.csproj daki versiyonları Nugettan ındır versıyon aynı olsun!
