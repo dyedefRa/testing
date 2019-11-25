@@ -1,4 +1,15 @@
-ilgili katmana sag tık  open folder..
+﻿ilgili katmana sag tık  open folder..
 
 
 .csproj daki versiyonları Nugettan ındır versıyon aynı olsun!
+
+
+-------------------------
+
+ <Reference Include="QRCoder, Version=1.3.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.3.6\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+
+
+Referancelerden 
+QRCoder.1.3.6 arat Nugetta!
