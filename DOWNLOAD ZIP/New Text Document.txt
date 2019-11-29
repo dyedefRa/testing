@@ -1,0 +1,32 @@
+ 
+https://csharpcode.org/blog/returndownload-multiple-files-asp-net-mvc-fileresult-action/
+
+
+public FileResult DownloadAllFiles(int? workorderTaskId)
+        {
+            WorkorderTaskRepository workorderTaskRepository = new WorkorderTaskRepository();
+            WorkorderTaskEntity workorderTask = workorderTaskRepository.GetSingle(workorderTaskId);
+
+            var outputStream = new MemoryStream();
+
+            using (ZipFile zip = new ZipFile())
+            {
+
+                foreach (var document in workorderTask.WorkorderTaskDocuments)
+                {
+                    var filePath = $@"{document.Document.Path}\{document.Document.Name}";
+                    string fullPath = Server.MapPath(filePath);
+
+                    zip.AddFile(fullPath, "Files");
+                }
+
+                zip.Save(outputStream);
+
+            }
+
+            outputStream.Position = 0;
+            string zipName = String.Format("Zip_{0}_{1}.zip", workorderTaskId, DateTime.Now.ToString("yyyy-MMM-dd-HHmmss"));
+
+            return File(outputStream, "application/zip", zipName);
+
+        }
