@@ -1,6 +1,7 @@
  
 https://csharpcode.org/blog/returndownload-multiple-files-asp-net-mvc-fileresult-action/
 
+ <a id="downloadAllFileButton" href="/WorkOrder/DownloadAllFiles?workorderTaskId=@Model.Id" style="color:brown">Tüm dosyaları indir</a>
 
 public FileResult DownloadAllFiles(int? workorderTaskId)
         {
