@@ -1,0 +1,72 @@
+public void WriteToExcel(DataTable dt, string ReportType, string ReportName)
+        {
+            string str = "attachment; filename=" + ReportName + ".xls";
+            HttpContext.Current.Response.ClearContent();
+            HttpContext.Current.Response.Buffer = true;
+            HttpContext.Current.Response.AddHeader("content-disposition", str);
+            //HttpContext.Current.Response.ContentEncoding = Encoding.GetEncoding("iso-8859-9");
+            //HttpContext.Current.Response.ContentType = "application/vnd.ms-excel;charset=ISO-8859-9";
+            HttpContext.Current.Response.ContentType = "application/vnd.ms-excel";
+            HttpContext.Current.Response.ContentEncoding = System.Text.Encoding.GetEncoding("windows-1254");
+            HttpContext.Current.Response.Charset = "windows-1254";
+            string str2 = "";
+
+            if (ReportType == "pr_GetUploadListWithTicktPassword")
+            {
+//Kolon ismi
+                HttpContext.Current.Response.Write(str2 + "Liste Adi\tAd\tSoyad\tEmail\tBilet Sifresi\tBilet Olusturulma Tarihi\tBayi Kullanicisi\tBayi Emaili\tBilet Kullanilma Tarihi\tBilet Fiyati");
+                HttpContext.Current.Response.Write("\n");
+                foreach (DataRow row in dt.Rows)
+                {
+                    str2 = "";
+                    var price = row["TicketPrice"].ToString().Split(',')[0];                 
+                    HttpContext.Current.Response.Write(str2 + row["ListName"].ToString() + "\t" + row["FirstName"].ToString() + "\t" + row["LastName"].ToString() + "\t" + row["Email"].ToString() + "\t" + row["TicketPassword"].ToString() + "\t" + row["TicketCreatedDate"].ToString() + "\t" + row["VendorPerson"].ToString() + "\t" + row["VendorEmailAdress"].ToString() + "\t" + row["VendorUseDate"].ToString() + "\t" + price);
+                    HttpContext.Current.Response.Write("\n");
+                }
+            }
+            HttpContext.Current.Response.End();
+        }
+
+
+
+///@@@@@@@@@@@@@@@@@@@@@@ SP SI  (KOLON ISIMLERINI ANLAMAK ICIN ATIYORUM  BURAYA SADECE )
+(Yukarıda ki "\t" + row... ile yazılmış yerleri anlamak için.)
+
+  
+-- =============================================    
+-- Author:  <Author,,Name>    
+-- Create date: <Create Date,,>    
+-- Description: <Description,,>    
+-- =============================================    
+CREATE PROCEDURE [dbo].[pr_GetUploadListWithTicktPassword]    
+    
+@UploadListId int      
+      
+AS      
+BEGIN      
+      
+ SET NOCOUNT ON;      
+  
+SELECT   
+ ul.ListName,  
+ m.FirstName,  
+ m.LastName,  
+ m.Email,  
+ t.TicketPassword,  
+ ul.CreateDate 'TicketCreatedDate',  
+ v.VendorPerson 'VendorPerson',  
+ v.EmailAddress 'VendorEmailAdress',  
+ vpt.CreateDate 'VendorUseDate',  
+ ct.TicketPrice 'TicketPrice'    
+FROM   
+ UploadList ul  WITH(NOLOCK)     
+INNER JOIN Members m  WITH(NOLOCK)  ON m.UploadListId=ul.Id  
+INNER JOIN Ticket t  WITH(NOLOCK) ON t.MemberId=m.MemberId  
+INNER JOIN CampaignTicket ct WITH(NOLOCK) ON ct.CampaignTicketId=ul.CampaignTicketId AND ct.CampaignId=ul.CampaignId  
+LEFT JOIN VendorProcTickets vpt ON vpt.TicketId=t.TicketId  
+LEFT JOIN Vendor v ON v.VendorId=vpt.VendorId  
+  
+WHERE   
+ ul.ID=@UploadListId   
+   
+END    
