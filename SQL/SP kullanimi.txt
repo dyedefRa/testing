@@ -1,0 +1,22 @@
+
+            DataLayer _objDataLayer = new DataLayer(db);
+            _objDataLayer.ExecuteNonQuery("pr_AdminUpdateCampaign",
+                "@CampaignId", CampaignId,
+                "@CampaignName", CampaignName,
+                "@CampaignDetails", CampaignDetails,
+                "@StartDate", StartDate,
+                "@EndDate", EndDate,
+                "@UpdateTicketDates", UpdateTicketDates,
+                "@CampaignStatus", CampaignStatus,
+                "@IsChangeName", IsChangeName,
+                "@IsChangeSurname", IsChangeSurname,
+                "@IsChangeEmail", IsChangeEmail,
+                "@IsChangeGSM", IsChangeGSM,
+                "@IsChangeTCKN", IsChangeTCKN,
+                "@FileName", FileName,
+                "@IsSMS", IsSMS,
+                "@IsLocalSMS", IsLocalSMS,
+                "@IsBulkSMS", IsBulkSMS,
+                "@SMSText", SMSText,
+                "@IsActive", IsActive,
+                "@IsVendorUpload", IsVendorUpload);
