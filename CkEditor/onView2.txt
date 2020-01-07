@@ -1,0 +1,48 @@
+@model List<BIPv2.Application.Web.ViewModels.CKEditorViewModel>
+
+<script src="/assets/common/js/plugins/ckEditor/ckeditor.js"></script>
+<script type="text/javascript">
+    $(function () {
+        for (var i in CKEDITOR.instances) {
+            $("form textarea[name=" + CKEDITOR.instances[i].name + "]").addClass("validate[required]");
+            $("form textarea[name=" + CKEDITOR.instances[i].name + "]").attr("data-prompt-position", 'bottomLeft:400,0');
+        }
+
+        function CK_jQ() {
+            CKEDITOR.tools.setTimeout(function () {
+                @foreach (var editor in Model)
+                {
+                    <text>
+                    $("#@(editor.ElementId)").val(CKEDITOR.instances.@(editor.ElementId).getData());
+                    </text>
+                }
+            }, 0);
+        }
+
+        @foreach (var editor in Model)
+        {
+            <text>
+            CKEDITOR.replace("@(editor.ElementId)", {
+                height: "@(editor.Height == 0 ? "300px" : editor.Height + "px")",
+                width: "@(editor.Width == 0 ? "100%" : editor.Width + "px")",
+                on: {
+                    instanceReady: function(ev) {
+                        $("#@(editor.ElementId)").css({ display: "block", visibility: "hidden", position: "absolute" });
+                        this.document.on("keyup", CK_jQ);
+                        this.document.on("paste", CK_jQ);
+                    }
+                }
+            });
+            </text>
+        }
+
+        $("#@(ViewData["FormId"])").submit(function(e) {
+            @foreach (var editor in Model)
+            {
+                <text>
+                $("#@(editor.ElementId)").val(CKEDITOR.instances.@(editor.ElementId).getData());
+                </text>
+            }
+        });
+    });
+</script>

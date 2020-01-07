@@ -1,0 +1,15 @@
+@Html.Partial("PartialViews/CKEditor", new List<CKEditorViewModel>
+{
+    new CKEditorViewModel
+    {
+        ElementId = "Description",
+        Height = 300,
+        Width = 750
+    },
+    new CKEditorViewModel
+    {
+        ElementId = "IntroductionMessage",
+        Height = 300,
+        Width = 750
+    }
+}, new ViewDataDictionary { { "FormId", "form1" } })
