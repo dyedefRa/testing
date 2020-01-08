@@ -1,0 +1,18 @@
+  function filterFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput"); //search inputu
+        filter = input.value.toUpperCase();
+        dropDown = document.getElementById("StuffIdDealer"); //optionların kaplayan
+        a = dropDown.getElementsByTagName("option");
+
+        for (i = 0; i < a.length; i++) {
+            //console.log(a[i]);
+            txtValue = a[i].getAttribute("data-userstuffname"); //value degılde data-userstuffname="@model.Name" ile ara
+                       
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+            } else {
+                a[i].style.display = "none";
+            }
+        }
+    }
