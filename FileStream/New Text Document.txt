@@ -1,25 +1,14 @@
- /// <summary>
-        /// Belirtilen verileri notepada yazar.
-        /// </summary>
-        /// <param name="_path">Dosya yolu.</param>
-        /// <param name="_body">İçerik</param>
-        public void writeNotepad(string _path, string _body)
+﻿ public static void LogYaz(string _body)
         {
-            //Dosya yolu kontrol edilir. Dosya yoksa oluşturulur.
-            if (!File.Exists(_path))
-            {
-                //Dosya oluşturulur.
-                File.Create(path).Dispose();
-                MessageBox.Show("Dosya bulunamadı.");
-            }
+            string _path = @"E:\APPS\IIS\testweb01\Upload\test2020.txt";
+            if (!System.IO.File.Exists(_path))
+                System.IO.File.Create(_path).Dispose();
             else
             {
-                //Verileri alt alta yazmak için, true parametresi gönderilir.
-	        //Eğer false gönderilse sadece en son yazılan veriyi kaydeder.
-                StreamWriter write = new StreamWriter(_path,true);
- 
-                //içerik notepade yazılır.
+                System.IO.StreamWriter write = new System.IO.StreamWriter(_path, true);
                 write.WriteLine(_body);
                 write.Close();
             }
         }
+
+
