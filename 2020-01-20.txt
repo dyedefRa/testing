@@ -1,0 +1,26 @@
+﻿  sp_helptext pa_Product_Single_BulkMerge KESIN BAK
+-- xml ile veri atma ve sp si
+
+
+--------------------------
+View tarafında ;
+com/Admin/ProductCategory olaya bak
+------------------------
+QRCode olayına bak
+
+------------------------
+ Api dek'  SpicaCommonResult Completion(), olayına bak
+
+profil uyum testinde maile test gönderiliyor (spica yi nasıl tetıklıyor da spice o maile test gönderiyior) ve  spica sisteminden çözüyorsun apimiz ile bize yanıtları donuyorlar.
+
+-------------------------
+
+SQL user yonetımı 
+
+---------------------
+/EducationContent  
+
+IMAP 
+-----------------
+
+DealerBusinessLogic > components ile injection
