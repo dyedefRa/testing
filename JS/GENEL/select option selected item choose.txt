@@ -1,0 +1,13 @@
+ $('#LiveStreamTypeId').change(function (e) {
+            var livetypeName = this.options[this.selectedIndex].text;  //.value
+
+
+
+
+
+///////////// OR
+
+
+
+$("#elementId :selected").text(); // The text content of the selected option
+$("#elementId :selected").val(); 

@@ -1,0 +1,6 @@
+   const LiveStreamType = {
+        Youtube: 'Youtube',
+        DaCast: 'DaCast',
+        LiveCast: 'LiveCast'
+     
+    }

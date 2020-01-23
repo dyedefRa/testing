@@ -1,0 +1,59 @@
+
+DECLARE -- PROCEDURE [dbo].[pa_D2CReport_List_ExpiredDaily]
+	@BrandId INT=2
+BEGIN	
+	DECLARE @dateStart DATETIME =  DATEADD(HH,-24,GETDATE())
+	
+	SELECT
+		 d.DealerCode, d.ShortName, ac.CityName, at.TownName, sl.ParentAreaCode, sl.AreaCode,  o.SapPurchaseNoLong,od.EndDate ActionDate,
+		STUFF((
+			SELECT ', ' + oi.ProductCode + ': ' +
+				ISNULL((SELECT TOP 1 CAST(s.SalableQuantity AS VARCHAR) FROM D2CStock s (NOLOCK) WHERE s.DealerCode = o.AcceptedDealerCode AND s.ProductCode = oi.ProductCode),0) 
+			FROM D2COrderItem (NOLOCK) oi
+			WHERE oi.OrderId = o.Id ORDER BY oi.ProductCode FOR XML PATH('')
+		),1,1,'') AS Items,
+		(SELECT COUNT(*) FROM D2COrderItem WHERE OrderId = o.Id) AS ItemsCount
+	FROM D2COrderDealer od (NOLOCK)
+	LEFT JOIN D2COrder o (NOLOCK) ON o.Id = od.OrderId		
+	LEFT JOIN Dealer d (NOLOCK) ON d.DealerCode = od.DealerCode
+	LEFT JOIN AddressCity ac (NOLOCK) ON ac.Id = d.CityId
+	LEFT JOIN AddressTown at (NOLOCK) ON at.Id = d.TownId
+	
+	LEFT JOIN DealerUserBSHMap dubm (NOLOCK) ON dubm.DealerCode = od.DealerCode 
+	LEFT JOIN UserBSH ub (NOLOCK) ON ub.UserId = dubm.UserBSHId
+	LEFT JOIN [User] u (NOLOCK) ON u.Id = dubm.UserBSHId
+
+	LEFT JOIN SalesNetwork sl (NOLOCK) ON sl.Id = ub.SalesNetworkId
+			
+	WHERE
+		od.BrandId = @BrandId AND 
+		od.OrderDealerStatus = 3 
+
+		
+		--AND od.EndDate > '2019-09-20' AND od.EndDate<'2019-09-21' -- 21 i�in
+		--AND od.EndDate > '2019-09-21' AND od.EndDate<'2019-09-22' -- 22 i�in
+		AND od.EndDate > '2020-01-21' AND od.EndDate<'2020-01-22' -- 23 i�in 
+  
+
+    -- None = 0,
+    -- Accepted = 1,
+    -- Rejected = 2,
+    -- Expired = 3,
+    -- Cancelled = 4, // kabul ettikten sonra iptal ediyor 
+
+END
+
+
+
+
+
+
+
+
+
+
+7000120388	EKREM ERGİN - TURHAN BAYRAM ERGİN	Kahramanmaraş	Merkez	TRSG	SES2	1106380896-0	2020-01-21 10:01:53.323	 BF520LMR0: 0	1
+7000125907	AVGIN D.T.M.	Kahramanmaraş	DULKADİROĞLU	TRSG	SES2	1106380896-0	2020-01-21 11:01:53.917	 BF520LMR0: 0	1
+7000107908	GÜRBÜZ TİCARET	İstanbul	Beşiktaş	TRSM	SEM2	1106386837-0	2020-01-21 17:39:56.403	 MQ96400: 2	1
+
+

@@ -24,3 +24,8 @@ IMAP
 -----------------
 
 DealerBusinessLogic > components ile injection
+
+---------
+ Api dek'  SpicaCommonResult Completion(), olayına bak
+
+profil uyum testinde maile test gönderiliyor (spica yi nasıl tetıklıyor da spice o maile test gönderiyior) ve  spica sisteminden çözüyorsun apimiz ile bize yanıtları donuyorlar.
