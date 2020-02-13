@@ -1,0 +1,46 @@
+
+
+
+    <input type="text" placeholder="İsme göre arama yap.." id="myInput" onkeyup="filterFunction()">
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+                    <div class="select-style">
+                        <select name="StuffIdDealer" id="StuffIdDealer" size="10">
+                          
+                            @foreach (var userItem in Model.ViewModel.Where(x => x.UserStuffRank == (int)UserStuffRank.SalesSupervisorDealer))
+                            {
+                                <option value="@userItem.UserId" data-usercode="@userItem.Code" data-userstuffname="@userItem.UserStuffName" @(userBSHMaplist.Any(x => x.UserBSHId == userItem.UserId) ? "selected" : "")>@userItem.Code - @userItem.UserStuffName</option>
+                            }
+                        </select>
+                    </div>
+
+
+
+---Yukarıda bir text girdisi ve bu inputa girelen veriye göre altındaki option un verilerini kaybetme özelliği yapacagız.
+ 
+ ve önemli olan yer =>
+data-usercode="@userItem.Code" data-userstuffname="@userItem.UserStuffName" gibi dataları input data ile yakalıyoruz
+
+
+--------------------------------------------  javascripti =>
+
+
+   function filterFunction() {
+        var input, filter, ul, li, a, i, usercode;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        dropDown = document.getElementById("StuffIdDealer");
+        a = dropDown.getElementsByTagName("option");
+
+        for (i = 0; i < a.length; i++) {
+            //console.log(a[i]);
+            txtValue = a[i].getAttribute("data-userstuffname");
+            usercode = a[i].getAttribute("data-usercode");
+            if (txtValue.toUpperCase().indexOf(filter) > -1 || usercode.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+            } else {
+                a[i].style.display = "none";
+            }
+        }
+    }
