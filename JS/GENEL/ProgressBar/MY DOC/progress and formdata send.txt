@@ -1,0 +1,512 @@
+
+@model ImportModel
+@using Trenkwalder.Business.Abstract;
+@inject ICatalogueColumnTitleService _catalogueColumnTitleService;
+@inject IChainService _chainService;
+@inject IChainColumnProfileService _chainColumnProfileService;
+@inject IChainCatalogueService _chainCatalogueService;
+@{
+    ViewData["Title"] = "ImportData";
+
+    if (Context.Request.Query["chainId"] == "")
+    {
+        <script>
+            window.location = "/Chain/List/";
+        </script>
+        return;
+    }
+
+    var column = "";
+    var chainId = Convert.ToInt32(Context.Request.Query["chainId"]);
+    var chain = await _chainService.GetById(chainId);
+    var profiles = await _chainColumnProfileService.GetListByChainId(Convert.ToInt32(Context.Request.Query["chainId"]));
+    var chainCatalogue = await _chainCatalogueService.GetByChainId(chainId);
+    var titles = new List<CatalogueColumnTitle>();
+
+    if (Context.Request.Query["profileId"].Count != 0)
+    {
+        titles = _catalogueColumnTitleService.GetListFromProfileId(Convert.ToInt32(Context.Request.Query["profileId"])).GetAwaiter().GetResult().Data;
+    }
+
+}
+
+<!-- Main content -->
+<div class="content-wrapper">
+    <!-- Page header -->
+    <div class="page-header page-header-default">
+        <div class="breadcrumb-line">
+            <ul class="breadcrumb">
+                <li><a asp-action="Index" asp-route-id="@chainId"><i class="icon-user position-left"></i>@Translate("ChainCatalogue")</a></li>
+                <li class="active">@Translate("Import")</li>
+            </ul>
+
+            @*<ul class="breadcrumb-elements">
+                    <li><a href="#"><i class="icon-comment-discussion position-left"></i> Support</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-gear position-left"></i>
+                            Settings
+                            <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="#"><i class="icon-user-lock"></i> Account security</a></li>
+                            <li><a href="#"><i class="icon-statistics"></i> Analytics</a></li>
+                            <li><a href="#"><i class="icon-accessibility"></i> Accessibility</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="icon-gear"></i> All settings</a></li>
+                        </ul>
+                    </li>
+                </ul>*@
+        </div>
+    </div>
+    <!-- /page header -->
+    <!-- Content area -->
+    <div class="content">
+        <!-- Vertical form options -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Basic layout-->
+                <div class="panel panel-flat">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">@Translate("CatalogueImport")</h5>
+                        <div class="heading-elements">
+                            <ul class="icons-list">
+                                @*<li><a asp-controller="Staff" asp-action="ExportData" class="btn btn-link btn-float text-size-small has-text"><i class="icon-database-export text-primary"></i><span>@Translate("Export")</span></a></li>
+                                    <li><a asp-controller="Staff" asp-action="ImportData" class="btn btn-link btn-float text-size-small has-text"><i class="icon-import text-primary"></i><span>@Translate("Import")</span></a></li>
+                                    <li><a asp-controller="Staff" asp-action="Add" class="btn btn-link btn-float text-size-small has-text"><i class="icon-plus-circle2 text-primary"></i><span>@Translate("Add") </span></a></li>
+                                    <li><a asp-controller="Staff" asp-action="List" class="btn btn-link btn-float text-size-small has-text"><i class="icon-list text-primary"></i><span>@Translate("List") </span></a></li>*@
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            @if (ViewBag.Result != null)
+                            {
+                                <h3>@Translate("Error Result")</h3>
+                                <lu>
+                                    @foreach (var item in (List<string>)ViewBag.Result)
+                                    {
+                                        <li>@item</li>
+
+                                    }
+                                </lu>
+                            }
+
+                            @if (profiles.Data.Count() == 0)
+                            {
+                                <h2 class="danger">@("To load data, you need to pair columns") !</h2>
+                                <a class="btn btn-success" href="/CatalogueColumTitle/index?chainId=@chainId">@Translate("AddNewMatching")</a>
+                            }
+                            else
+                            {
+                                <h3> @Translate("ProfileList")</h3>
+                                <a class="btn btn-success mb-10" href="/CatalogueColumTitle/index?chainId=@chainId">@Translate("AddNewProfile")</a>
+                                <table class="table table-sm table-hover">
+                                    <tr>
+                                        <th>@Translate("ProfileName")</th>
+                                        <th>@Translate("CreateDate")</th>
+                                        <th>@Translate("Edit")</th>
+                                    </tr>
+                                    @foreach (var item in profiles.Data)
+                                    {
+                                        <tr>
+                                            <td>@item.Name</td>
+                                            <td>@item.CreateDate</td>
+                                            <td>
+                                                <a href="/CatalogueColumTitle/index?chainId=@chainId&profileId=@item.Id">@Translate("EditMatching")</a>
+                                            </td>
+                                        </tr>
+
+                                    }
+
+                                </table>
+                                @if (Context.Request.Query["profileId"].Count != 0)
+                                {
+                                    <h2> @Translate("MatchColumnList")</h2>
+
+                                    <table class="table table-sm table-hover">
+                                        <tr>
+                                            @foreach (var item in titles.Where(x => x.ColumnIndex > 99))
+                                            {
+                                                <td>@item.Description </td>
+                                            }
+                                            @foreach (var item in titles.Where(x => x.ColumnIndex < 22))
+                                            {
+                                                <td>@item.Description </td>
+                                            }
+
+                                        </tr>
+                                    </table>
+                                }
+                                <form action="#" method="post" id="formSubmit" enctype="multipart/form-data">
+                                    <input hidden name="chainId" id="chainId" value="@chain.Data.Id" />
+                                    <input hidden asp-for="ChainCatalogueId" id="ChainCatalogueId" />
+                                    <div class="alert-danger">
+                                        <div class="alert-danger">
+                                            <div asp-validation-summary="All" class="text-danger"></div>
+                                        </div>
+                                        <div class="col-md-2"> <label>@Translate("SelectImportProfile"):</label></div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <select class="select" name="selectedProfile" id="selectedProfile" required>
+                                                <option>
+                                                    @Translate(BaseLanguage.PleaseChoose.ToString())
+
+                                                </option>
+
+                                                @foreach (var item in profiles.Data)
+                                                {
+                                                    if (Context.Request.Query["profileId"].Count != 0)
+                                                    {
+                                                        if (Context.Request.Query["profileId"].ToString() == item.Id.ToString())
+                                                        {
+                                                            <option value="@item.Id" selected>@item.Name</option>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@item.Id">@item.Name</option>
+                                                    }
+
+                                                }
+
+                                            </select>
+                                            <span class="text-danger" id="selectedProfileValid" style="visibility:hidden">Lütfen profil seçiniz*</span>
+                                        </div>
+                                    </div>
+
+                                    @if (Model.ChainCatalogueId == 0)
+                                    {
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" id="IsCheck" asp-for="IsCheck">
+                                                        @Translate("IDBarcode")
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <input hidden asp-for="IsCheck">
+
+                                    }
+                                    <div class="col-md-4">
+                                        <input type="file" asp-for="file" class="form-control" id="file" name="file" />
+                                        <span class="text-danger" id="selectedDocument" style="visibility:hidden">Lütfen dosya seçiniz*</span>
+                                        <div id="firstprogress" style="visibility:hidden;">
+                                            <progress id="progressBar" value="0" max="100" style="width:400px;height:20px"></progress>
+                                            <p id="status"></p>
+                                            <p id="loaded_n_total"></p>
+                                        </div>
+                                        <br />
+                                        <b id="left-second-print" style="color:red;"></b>
+                                        <br />
+                                        <div id="otherprogress" style="visibility:hidden;">
+                                            @*<div id="otherprogress">*@
+
+                                            <progress id="progressBar2" value="0" max="100" style="width:400px;height:20px"></progress>
+                                            <p id="status2"></p>
+                                            <p id="loaded_n_total2"></p>
+                                        </div>
+                                        <br />
+                                        <b id="rotate-message" style="color:red;visibility:hidden;">Yükleme tamamlandı.Yönlendiriliyorsunuz...</b>
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="text-left">
+
+                                            @*<button type="submit" onclick="ShowLoader()" class="btn btn-default">@Translate("ImportData") <i class="icon-arrow-right14 position-right"></i></button>*@
+                                            <button type="submit" class="btn btn-default">@Translate("ImportData") <i class="icon-arrow-right14 position-right"></i></button>
+
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            }
+
+                            @*@if (Model != null)
+                                {
+                                    <table class="table table-sm table-hover">
+                                        <thead>
+                                            <tr>
+
+                                                <th>@Translate("Barcode")</th>
+                                                <th>@Translate("StockCode")</th>
+                                                <th>@Translate("Description")</th>
+                                                <th>@Translate("Price")</th>
+                                                @for (int i = 1; i < 21; i++)
+                                                {
+                                                    <th>@(!titles.Data.Where(x => x.ColumnIndex == i).Any() ? $"Reserve {i} " : titles.Data.Where(x => x.ColumnIndex == i).FirstOrDefault().Description)</th>
+                                                }
+
+
+                                            </tr>
+
+                                        </thead>
+
+                                        @foreach (var item in Model.ToList())
+                                        {
+                                            <tr>
+                                                <td>@item.Barcode</td>
+                                                <td>@item.StockCode</td>
+                                                <td>@item.Description</td>
+                                                <td>@item.Price</td>
+                                                <td>@item.D1</td>
+                                                <td>@item.D2</td>
+                                                <td>@item.D3</td>
+                                                <td>@item.D4</td>
+                                                <td>@item.D5</td>
+                                                <td>@item.D6</td>
+                                                <td>@item.D7</td>
+                                                <td>@item.D8</td>
+                                                <td>@item.D9</td>
+                                                <td>@item.D10</td>
+                                                <td>@item.D11</td>
+                                                <td>@item.D12</td>
+                                                <td>@item.D13</td>
+                                                <td>@item.D14</td>
+                                                <td>@item.D15</td>
+                                                <td>@item.D16</td>
+                                                <td>@item.D17</td>
+                                                <td>@item.D18</td>
+                                                <td>@item.D19</td>
+                                                <td>@item.D20</td>
+                                            </tr>
+                                        }
+
+
+
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+
+
+                                }*@
+
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /basic layout -->
+            </div>
+        </div>
+        <!-- /vertical form options -->
+    </div>
+    <!-- /content area -->
+</div>
+<!-- /main content -->
+
+@section scripts{
+    <script>
+
+        $("#selectedProfile").change(function() {
+            if ($("#selectedProfile").val() > 0) {
+                window.location = "/Catalogue/ImportData?profileId=" +
+                    $("#selectedProfile").val() +
+                    "&chainId=" +
+                    @chainId;
+            } else {
+                window.location = "/Catalogue/ImportData?chainId=" + @chainId;
+            }
+        });
+
+        function ShowLoader() {
+            var dark_4 = $('body,html');
+                    $(dark_4).block({
+                        message: '<i class="icon-spinner4 spinner"></i>',
+                        overlayCSS: {
+                            backgroundColor: '#1B2024',
+                            opacity: 0.40,
+                            cursor: 'wait'
+                        },
+                        css: {
+                            border: 0,
+                            padding: 0,
+                            backgroundColor: 'none',
+                            color: '#fff'
+                        }
+                    });
+                    window.setTimeout(function() {
+                            $(dark_4).unblock();
+                        },
+                        2000000);
+        }
+
+        var totalUploadedValue = 0;
+        //var stopSecondProgress;
+        //var totalCount = 0;
+        var saniye = 0;
+        var uploaddedItemCount = 0;
+        var isFullUpload = false;
+        function _(el) {
+              return document.getElementById(el);
+        }
+        $('#file').change(function () {
+              var $file = document.getElementById("file").files[0];
+            if ($file == undefined) {
+                $('#selectedDocument').focus();
+                $('#selectedDocument').css('visibility', 'visible');
+            }
+            else {
+                  $('#selectedDocument').css('visibility', 'hidden');
+            }
+        })
+        $("#formSubmit").submit(function (e) {
+            e.preventDefault();
+            var $selectedProfile = $('#selectedProfile').val();
+            if ($selectedProfile == 'Seçiniz') {
+                $('#selectedProfile').focus();
+                $('#selectedProfileValid').css('visibility', 'visible');
+                return;
+            }
+            var $chainId = $('#chainId').val();
+            var $selectedProfile = $('#selectedProfile').val();
+            var $IsCheck = $('#IsCheck').val();
+            var $file = document.getElementById("file").files[0];
+            if ($file == undefined) {
+                $('#selectedDocument').focus();
+                $('#selectedDocument').css('visibility', 'visible');
+                return;
+            }
+             $('#firstprogress').css("visibility", "visible");
+            var data = new FormData();
+                data.append("chainId", $chainId);
+                data.append("selectedProfile", $selectedProfile);
+                data.append("IsCheck", $IsCheck);
+                data.append("file", $file);
+                data.append("ChainCatalogueId",  @Model.ChainCatalogueId);
+                data.append("StocktakingId",  @Model.StocktakingId);
+
+            var ajax = new XMLHttpRequest();
+                ajax.upload.addEventListener("progress", progressHandler, false);
+                ajax.addEventListener("load", completeHandler, false);
+                ajax.addEventListener("error", errorHandler, false);
+                ajax.addEventListener("abort", abortHandler, false);
+                ajax.open("POST", "/Catalogue/ImportData");
+                ajax.send(data);
+                  });
+
+            function progressHandler(event) {
+              _("loaded_n_total").innerHTML = "" + event.loaded + " bytes of " + event.total;
+              var percent = (event.loaded / event.total) * 100;
+                _("progressBar").value = Math.round(percent);
+              if (Math.round(percent) == 100) {
+                  _("status").innerHTML = Math.round(percent) + "% dosya alındı...";
+                  $('#otherprogress').css("visibility", "visible");
+                   ShowLoader();
+              }
+              else {
+                     _("status").innerHTML = Math.round(percent) + "% dosya alınıyor...";
+                }
+                setTimeout(setInterval(GetPerSecImport, 2000), 5000);
+                 //stopSecondProgress = setTimeout(setInterval(GetPerSecImport, 500), 2000);
+                //if (totalUploadedValue==100) {
+                //    clearInterval(stop);
+                //    alert('DURDU');
+                //}
+            }
+        function completeHandler(event) {
+                
+                //_("status").innerHTML = event.target.responseText;
+                if (event.target.status == '200') {
+                    _("status").innerHTML = 'Dosyalar alındı.Yüklenme tamamlandı.';
+                
+                }
+                else {
+                    _("status").innerHTML = event.target.status + ' hata kodu alındı.Lütfen belge ve profilinizin parametre uyumluluğunu kontrol ediniz.';
+                    $("#status").css('color', 'red');
+                    $('#otherprogress').css("visibility", "hidden");
+                    setTimeout(function () {
+                        window.location.reload();
+                          }, 3000);
+
+                }
+                _("loaded_n_total").innerHTML = "";
+              //_("progressBar").value = 0;
+            }
+
+            function errorHandler(event) {
+              _("status").innerHTML = "Upload Failed";
+            }
+
+            function abortHandler(event) {
+              _("status").innerHTML = "Upload Aborted";
+              }
+        function customProgress(x, f) {
+                _("loaded_n_total2").innerHTML = x + " items of " + f;
+                var percent = (x / f) * 100;
+                _("progressBar2").value = Math.round(percent);
+               totalUploadedValue = Math.round(percent);
+                uploaddedItemCount = x;
+                if (Math.round(percent) == 100) {
+                    _("status2").innerHTML = Math.round(percent) + "% sunucuya yüklendi..Yüklenme tamamlandı";
+                    //clearInterval(stopSecondProgress);
+                }
+                else {
+                      _("status2").innerHTML = Math.round(percent) + "% sunucuya yükleniyor...Lütfen bekleyiniz...";
+                }
+                //console.log('ExTRA ' + totalUploadedValue); // Burasını sil
+            }
+            function GetPerSecImport() {
+                $.ajax({
+                    url: "/Catalogue/GetPerSecImport",
+                    type: 'GET',
+                    success: function (data) {
+                        saniye = (data.totalImportItem - data.uploadedImportItem) / 25;
+                        customProgress(data.uploadedImportItem, data.totalImportItem);
+                        isFullUpload = data.isFullUpload;
+                    },
+                    error: function () {
+                        console.log('ERROR!');
+                    }
+                });
+            }
+
+            function saniyeDurdur()
+             {
+	            window.clearInterval(stopSecondProgress);
+             }
+            function saniyeBaslat()
+            {
+                if (isFullUpload) {
+                    $('#rotate-message').css('visibility', 'visible');                                  
+                    $('#left-second-print').text(0.00);
+                      setTimeout(function () {  $('#left-second-print').css('visibility', 'hidden');
+                      }, 1000);
+                     window.clearInterval(stopSecondProgress);
+                        setTimeout(function () {   window.location.href = '/Catalogue/Index/@Model.ChainCatalogueId';
+                          }, 3000);
+                     }
+                if (saniye>0) {
+                      saniye --;
+                    if (saniye >= 0) {
+                        if (uploaddedItemCount>1) {
+                             $('#left-second-print').text(saniye.toFixed(2));
+                        }
+
+                    }
+                    else {
+                        window.clearInterval(stopSecondProgress);
+                        setTimeout(function () {
+                            $('#left-second-print').css('visibility', 'hidden');
+                        }, 1000)
+                    }
+                }
+              }
+        var stopSecondProgress = window.setInterval('saniyeBaslat()', 1000);
+
+    </script>
+}
+@section ThemeJS {
+    <script src="~/global_assets/js/plugins/forms/selects/select2.min.js"></script>
+    <script src="~/global_assets/js/plugins/forms/styling/uniform.min.js"></script>
+    <script src="~/global_assets/js/demo_pages/form_layouts.js"></script>
+}
