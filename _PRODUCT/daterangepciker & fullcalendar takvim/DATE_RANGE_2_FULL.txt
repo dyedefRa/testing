@@ -1,0 +1,219 @@
+@using Trenkwalder.Business.Abstract
+@model StocktakingViewModel
+@inject IStocktakingService _stocktakingService;
+@inject ICalendarExceptionService  _calendarExceptionService;
+@{
+    ViewData["Title"] = "PageStocktakingCalendar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    if (Model.ChainId <= 0)
+    {
+        <script>
+            window.location = "/Chain/List/";
+        </script>
+        return;
+    }
+    var chainId = Convert.ToInt32(Model.ChainId);
+    var stockTakingList = await _stocktakingService.GetListForChainId(chainId);
+    var plannedStatusStockTakingList = stockTakingList.Data.Where(x => x.StocktakingStatusId == (int)StocktakingStatusEnum.Planned);
+    var openStatusStockTakingList = stockTakingList.Data.Where(x => x.StocktakingStatusId == (int)StocktakingStatusEnum.Open);
+    var calendarException = _calendarExceptionService.GetList().Result.Data;
+}
+
+<div class="content-wrapper">
+
+    <div class="page-header page-header-default">
+        <div class="breadcrumb-line">
+            <ul class="breadcrumb">
+                <li><a href="/"><i class="icon-home2 position-left"></i>@Translate("Home")</a></li>
+                <li><a href="/Chain/List">@Translate("ChainManagement")</a></li>
+                <li><a href="/Stocktaking/List?chainId=@chainId">@Translate("StocktakingManagement")</a></li>
+                <li class="active">@Translate("Calendar")</li>
+            </ul>
+        </div>
+    </div>
+    <partial name="_PartialChainTopMenu" />
+    <div class="content">
+
+        <!-- External events -->
+        <div class="panel panel-flat">
+
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><b>@Translate("StocktakingCalendar")</b></h3>
+                    <p>Plan & Manage stocktakings</p>
+                </div>
+
+                <div class="panel-body">
+                    <a href="/Stocktaking/List?chainid=@Model.ChainId" class="btn btn-primary">@Translate("Stocktakings")</a>
+                    <a href="/CalendarException/List" class="btn btn-primary">@Translate("MANAGE") @Translate("EXCEPTIONS")</a>
+                </div>
+                <div class="panel-body">
+                    <p class="content-group"> Test <code>Test</code> İçeriği</p>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="content-group" id="external-events">
+                                <h6>
+                                    Open (Unplanned) Stocktakings Pool
+                                </h6>
+                                <div class="fc-events-container content-group" id="openStatusDiv">
+                                    @foreach (var stocktakingItem in openStatusStockTakingList)
+                                    {
+                                        <div class="fc-event fc-day-grid-event fc-h-event fc-start fc-end fc-draggable fc-allow-mouse-resize" data-stocktakingid="@stocktakingItem.Id">@stocktakingItem.Store.Name</div>
+                                    }
+                                </div>
+                                <div class="checkbox checkbox-right checkbox-switchery switchery-xs text-center">
+                                    <label>
+                                        <input type="checkbox" class="switch" checked="checked" id="drop-remove">
+                                        Remove after drop
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="fullcalendar-external"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section ThemeJS {
+    <script src="~/global_assets/js/core/libraries/jquery_ui/interactions.min.js"></script>
+    <script src="~/global_assets/js/plugins/forms/styling/switchery.min.js"></script>
+    <script src="~/global_assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script src="~/global_assets/js/plugins/ui/fullcalendar/fullcalendar.min.js"></script>
+    <script src="~/global_assets/js/plugins/ui/fullcalendar/lang/tr.js"></script>
+    <script>
+        var events = [];
+        var openStockTaking = @Html.Raw(Json.Serialize(plannedStatusStockTakingList.ToList()));
+        var calendarExceptionDate =@Html.Raw(Json.Serialize(calendarException));
+        openStockTaking.forEach(function (item, index, array) {
+            var eventItem = { id: item.id, title: item.store.name, start: item.startDate, end: item.startDate };
+            events.push(eventItem);
+        });
+        function SetStatus(stockTakingId, stocktakingStatus, date, isDateChange) {           
+            var responseObject = {
+                stockTakingId: stockTakingId,
+                stocktakingStatus: stocktakingStatus,
+                date: date,
+                isDateChange: isDateChange
+            };
+            $.ajax({
+                  type: "POST",
+                  url: "/Stocktaking/ChangeStockTakingStatusAndDate",
+                  data: responseObject,
+                  dataType: "json",
+                  error: function (error) {
+                    console.log(error);
+                   }
+            });
+        }
+       document.addEventListener('DOMContentLoaded', function () {
+             var today = new Date();
+                today=today.toISOString().substring(0, 10);
+           $('.fullcalendar-external').fullCalendar({
+               header: {
+                   left: 'prev,next today',
+                   center: 'title',
+                   right: 'month,agendaWeek,agendaDay'
+               },
+               editable: true,
+               defaultDate: today,
+               eventDrop: function (event, delta, revertFunc) {
+
+                   var newDate = event.start.format().split('T')[0];
+                   var splitedDate = newDate.split("-");
+                   var dateObject = new Date(splitedDate[0], splitedDate[1] - 1, splitedDate[2])
+                   var dateDay = dateObject.getDay();
+                   var hasExcept = false;
+                   calendarExceptionDate.forEach(exp => {
+                       var holidayBeginDay = new Date(exp.beginDate.split('T')[0]);
+                       var holidayEndDay = new Date(exp.endDate.split('T')[0]);
+                       holidayBeginDay.setHours(0,0,0,0);
+                       holidayEndDay.setHours(0,0,0,0);
+                       if (holidayBeginDay <= dateObject && holidayEndDay > dateObject) {                         
+                           hasExcept = true;
+                       }
+                   });
+                   var isWeekend = (dateDay === 6) || (dateDay === 0);
+                   if (hasExcept) {
+                        alert('Kayıtlı tatil günlerine seçim yapılamaz');
+                       revertFunc();
+                       return
+                   }
+                  else if (isWeekend) {
+                       alert('Haftasonuna Seçim yapılamaz');
+                       revertFunc();
+                        return;
+                   }
+                   else
+                        SetStatus(event.id,@((int)StocktakingStatusEnum.Planned), newDate, true);
+
+               },
+               events: events,
+               locale: 'tr',
+               droppable: true,
+               drop: function (e) {
+                   var stocktakingId = $(this).data("stocktakingid");
+                   var hasExcept = false;
+                   var droppedDate = new Date(e._i);
+                   var changingDate = new Date(e._i).toISOString().substring(0, 10);
+                   calendarExceptionDate.forEach(exp => {
+                       var holidayBeginDay = new Date(exp.beginDate.split('T')[0]);
+                       var holidayEndDay = new Date(exp.endDate.split('T')[0]);
+                       holidayBeginDay.setHours(0, 0, 0, 0);
+                       holidayEndDay.setHours(0, 0, 0, 0);
+                       if (holidayBeginDay < droppedDate && holidayEndDay > droppedDate) {
+                           hasExcept = true;
+                           return;
+                       }
+                   });
+                   var splitedDate = changingDate.split("-");
+                   var dateObject = new Date(splitedDate[0], splitedDate[1] - 1, splitedDate[2]);
+                   var dateDay = dateObject.getDay();
+                   var isWeekend = (dateDay === 6) || (dateDay === 0);
+                    if (hasExcept) {
+                        alert('Kayıtlı tatil günlerine seçim yapılamaz');
+                       window.location.reload();
+                       return
+                    }
+                   else if (isWeekend) {
+                       alert('Haftasonuna Seçim yapılamaz');
+                       window.location.reload();
+                       return;
+                   }
+                   else {
+                       if (confirm('Tarih değişikliği yapılsın mı ?')) {
+                           SetStatus(stocktakingId,@((int)StocktakingStatusEnum.Planned), changingDate, true);
+                       }
+                       else
+                           SetStatus(stocktakingId,@((int)StocktakingStatusEnum.Planned), today, false);
+                   }             
+                   if ($('#drop-remove').is(':checked')) {
+                        $(this).remove();
+                   }
+               }
+             });
+             $('#external-events .fc-event').each(function () {
+                $(this).css({ 'backgroundColor': $(this).data('color'), 'borderColor': $(this).data('color') });
+                $(this).data('event', {
+                    title: $.trim($(this).html()), // use the element's text as the event title
+                    color: $(this).data('color'),
+                    stick: true // maintain when user navigates (see docs on the renderEvent method)
+                });
+                $(this).draggable({
+                    zIndex: 999,
+                    revert: true, // will cause the event to go back to its
+                    revertDuration: 0 // original position after the drag
+                });
+            });
+       });
+    </script>
+}
+
+
+

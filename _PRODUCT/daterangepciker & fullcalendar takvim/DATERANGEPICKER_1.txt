@@ -1,0 +1,10 @@
+ $(".applyDatepicker").daterangepicker({
+            timePicker: true,
+            singleDatePicker: true,
+            timePicker24Hour: true,
+            timePickerIncrement: 5,
+            opens: 'left',
+            locale: {
+                format: 'MM/DD/YYYY H:mm'
+            }
+        });

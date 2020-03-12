@@ -1,0 +1,28 @@
+ $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            defaultDate: '@DateTime.Today.ToString("yyyy-MM-dd")',
+            editable: false,
+            eventStartEditable: false,
+            eventEndEditable: false,
+            lang: "tr",
+            eventLimit: true, // allow "more" link when too many events
+            eventClick: function (calEvent, jsEvent, view) {
+                var rendered = $.tmpl($("#eventModalTemplate"), calEvent);
+                $("#calendarEvWrapper").html(rendered);
+                $("#eventModal").modal("show");
+            },
+            eventRender: function (event, element) {
+                if ($(".fc-agendaDay-view").length) {
+                    var $title = $(element).find(".fc-title");
+                    $title.css('display', 'inline-block');
+                    $title.html('<strong>Bayi: </strong>' + $title.html());
+                    var $content = $(element).find(".fc-content");
+                    $content.append(', <strong>Konu: </strong>' + event.subjectTitle);
+                    $content.append(', <strong>Açıklama: </strong>' + event.description);
+                }
+            }
+        });
