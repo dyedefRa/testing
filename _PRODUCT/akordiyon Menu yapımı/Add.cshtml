@@ -1,0 +1,245 @@
+﻿@model RoleViewModel
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .categoryTitle {
+        cursor: pointer;
+    }
+
+    .pcit-td {
+        font-size: 12px;
+    }
+</style>
+<link href="~/assets/css/layout.css" rel="stylesheet" />
+<div class="content-wrapper">
+    <div class="page-header page-header-default">
+        <div class="breadcrumb-line">
+            <ul class="breadcrumb">
+                <li><a href="/"><i class="icon-home2 position-left"></i>@Translate("Home")</a></li>
+                <li>@Translate("applicationsettings")</li>
+                <li><a asp-action="list">@Translate("RoleManagement")</a></li>
+                <li class="active">@Translate("AddRole")</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="row">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <form class="form-horizontal" action="#" method="post">
+                <div class="col-md-6">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="panel panel-flat">
+                        <div class="panel-heading">
+                            <h5 class="panel-title">@Translate("RoleInformation")</h5>
+                            <div class="heading-elements">
+                                <ul class="icons-list">
+                                    <li>    <a asp-controller="Role" asp-action="List" class="btn btn-link btn-float text-size-small has-text"><i class="icon-list text-primary"></i><span>@Translate("List")</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <input type="hidden" asp-for="Id" />
+                            <div class="form-group">
+                                <label class="control-label col-lg-2">@Translate("RoleName"):</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" placeholder="@Translate("RoleName")" required asp-for="RoleName" oninvalid="this.setCustomValidity('@Translate("Pleasefilloutthisfield")')" oninput="setCustomValidity('')">
+                                </div>
+                            </div>
+                            @if (Model.Id > 0)
+                            {
+                                @*<div class="form-group">
+                                          <label class="control-label col-lg-2">@Translate(BaseLanguage.State.ToString()):</label>
+                                        <select class="select" asp-for="State">
+                                            <option value="1">@Translate(BaseLanguage.Active.ToString())</option>
+                                            <option value="0">@Translate(BaseLanguage.Passive.ToString())</option>
+                                            <option value="255">@Translate(BaseLanguage.Deleted.ToString())</option>
+                                        </select>
+                                    </div>*@
+                            }
+                            <div class="text-right">
+                                <a asp-action="List" type="submit" class="btn btn-danger">
+                                    @Translate(BaseLanguage.Cancel.ToString())
+                                    <i class="icon-close2 position-right"></i>
+                                </a>
+                                <button type="submit" class="btn @(ViewContext.RouteData.Values["Id"] == null ? "btn-success" : "btn-info")">
+                                    @if (ViewContext.RouteData.Values["Id"] == null)
+                                    {
+                                        @Translate(BaseLanguage.Create.ToString())
+                                    }
+                                    else
+                                    {
+                                        @Translate(BaseLanguage.Save.ToString())
+                                    }
+                                    <i class="icon-checkmark position-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="panel panel-flat">
+                        <div class="panel-heading">
+                            <h5 class="panel-title">@Translate("RolePolicy")</h5>
+                            <div class="heading-elements">
+                                <ul class="icons-list">
+                                    <li><a data-action="collapse"></a></li>
+                                    <li><a data-action="reload"></a></li>
+                                    <li><a data-action="close"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group has-feedback">
+                                <input type="text" class="form-control" placeholder="@Translate("SearchInPolicies")" onkeyup="searchFunction()" id="searchInput">
+                                <div class="form-control-feedback">
+                                    <i class="icon-search4 text-size-base"></i>
+                                </div>
+                            </div>
+                            @*<div class="form-group">
+                                    @{
+                                        var groups = Model.Claims.GroupBy(x => x.Title.Trim().Split('-')[0]).ToList();
+                                        <div id="searchUl" style="list-style-type: none" class="row">
+                                            @foreach (var group in groups)
+                                            {
+                                                <div class="col-md-4">
+                                                    <ul style="list-style-type: none; background:#eee;">
+                                                        @foreach (var checkboxClaim in group)
+                                                        {
+                                                            <li>
+                                                                <div>
+                                                                    @{
+                                                                        var index = Model.Claims.FindIndex(x => x == checkboxClaim);
+                                                                        <input asp-for="Claims[index].Selected" type="checkbox" class="checker" />
+                                                                        <label asp-for="Claims[index].Selected">@Model.Claims[index].Title</label>
+                                                                        <input type="hidden" asp-for="Claims[index].Id" />
+                                                                    }
+                                                                </div>
+                                                            </li>
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            }
+                                        </div>
+                                    }
+                                </div>*@
+                            <div class="row">
+                                <div class="col-md-12 membersTableWrapper">
+                                    <table class="bip-members-table table table-striped table-bordered table-s table-no-margin productsCategoryTable">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 40px;"></th>
+                                                <th>@Translate("Title")</th>
+                                                <th style="width: 100px;">@Translate("Operations")</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="reportContainer">
+                                            @{
+                                                var groups = Model.Claims.GroupBy(x => x.Title.Trim().Split('-')[0]).ToList();
+                                            }
+                                            @foreach (var group in groups)
+                                            {
+                                                <tr class="categoryTitle openIt" data-keyz="@group.Key.Trim()">
+                                                    <td>
+                                                        @*@Model.Claims[Model.Claims.FindIndex(x => x == checkboxClaim)].Title.Split('-')[0]*@
+                                                        <a href="#" onclick=" return false;" class="bp-mt-action "><span class="icon-arrow-down12 icon-menu-arrow"></span></a>
+                                                    </td>
+                                                    <td style="text-transform:uppercase; font-weight:bolder; font-size:12px;">
+                                                        @*@Model.Claims[Model.Claims.FindIndex(x => x == checkboxClaim)].Id*@
+                                                        @group.Key
+                                                    </td>
+                                                    <td>
+                                                        <input type="checkbox" class="checker selectFull" value="false" />
+                                                    </td>
+                                                </tr>
+                                                foreach (var item in group)
+                                                {
+                                                    var index = Model.Claims.FindIndex(x => x == item);
+                                                    <tr style="display: none;" class="@group.Key.Trim() applySearchTr">
+                                                        <td colspan="9" class="pct-td">
+                                                            <table class="bip-members-table table table-striped table-bordered table-s table-no-margin productsCategoryInnerTable">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="pcit-td" style="width: 40px;">
+                                                                            <input type="hidden" asp-for="Claims[index].Id" />
+                                                                            <input asp-for="Claims[index].Selected" type="checkbox" class="checker" />
+                                                                        </td>
+                                                                        <td class="pcit-td">
+                                                                            <label asp-for="Claims[index].Selected"> @Model.Claims[index].Title</label>
+                                                                        </td>
+                                                                        <td style="width: 100px;" class="pcit-td">
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section ThemeJS {
+    <script src="~/global_assets/js/plugins/forms/selects/select2.min.js"></script>
+    <script src="~/global_assets/js/plugins/forms/styling/uniform.min.js"></script>
+    <script src="~/global_assets/js/demo_pages/form_layouts.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.selectFull').change(function (e) {
+                var item1 = $(this).closest("tr");
+                var $keyName = $(this).closest("tr").data("keyz");
+                item1.removeClass('openIt');
+                item1.find('span').addClass('icon-arrow-up12');
+                item1.find('span').removeClass('icon-arrow-down12');
+                 $("." + $keyName).css("display", "table-row");
+                //$("." + $keyName).find('.checker').prop('checked', $(this)[0].checked);
+                 $("." + $keyName).attr('style','table-row').find('.checker').prop('checked', $(this)[0].checked);
+
+                //var allVisibleItem = $("." + $keyName).find('.applySearchTr').prevObject;
+                //for (var i = 0; i < allVisibleItem.length; i++) {
+                //    if (allVisibleItem[i].outerHTML.includes('table-row')) {
+                //        console.log(allVisibleItem[i]);
+                //  //allVisibleItem[i].getElementsByClassName('.checker').prop('checked', $(this)[0].checked);
+                //    }
+                //}
+            });
+            $('.categoryTitle').click(function (e) {
+                var $keyName = $(this).data("keyz");
+                var isClose = $(this).hasClass('openIt');
+                if (isClose) { //open
+                    $(this).removeClass('openIt');
+                    $(this).find('span').addClass('icon-arrow-up12');
+                    $(this).find('span').removeClass('icon-arrow-down12');
+                    $("." + $keyName).css("display", "table-row");
+                } else {
+                    $(this).addClass('openIt');
+                    $(this).find('span').addClass('icon-arrow-down12');
+                    $(this).find('span').removeClass('icon-arrow-up12');
+                    $("." + $keyName).css("display", "none");
+                }
+            });
+        });
+        function searchFunction() {
+            filter = document.getElementById('searchInput').value.toUpperCase();
+            var thatTrs = $('#reportContainer>.applySearchTr');
+            for (i = 0; i < thatTrs.length; i++) {
+                notes = thatTrs[i].getElementsByTagName('label');
+                if (notes[0].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    thatTrs[i].style.display = "table-row";
+                }
+                else
+                    thatTrs[i].style.display = "none";
+            }
+        }
+    </script>
+}

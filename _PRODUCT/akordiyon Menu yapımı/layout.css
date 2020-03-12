@@ -1,0 +1,3488 @@
+﻿@import url("fonts.css");
+@import url('font-awesome.css');
+/*@import url("bip-font.css");*/
+
+.bip-loading {
+    color: #fff;
+    font-size: 64px;
+}
+/*img{ max-width: 100%;}*/
+.s-prli-button {
+    position: absolute;
+    bottom: 13px;
+    left: 30%;
+}
+
+input.p__size.p__size--mini {
+    margin-bottom: 8px;
+}
+
+.membersTableWrapper {
+    background: #fff;
+}
+
+iframe body:before {
+    content: '';
+    background-image: none;
+    opacity: 0;
+}
+
+.productsCategoryTable {
+}
+
+.productsCategoryInnerTable {
+    border: none;
+    margin: 0px 0px;
+}
+
+.productsCategoryTable td.pct-td {
+    padding: 0px !important;
+}
+
+.productsCategoryInnerTable td.pcit-td {
+    padding: 7px 10px !important;
+}
+
+    .productsCategoryInnerTable td.pcit-td:first-child {
+        width: 45px;
+    }
+
+.productsCategoryInnerTable > tbody > tr:nth-of-type(odd) {
+    background-color: #fff !important;
+}
+
+.popUpTable.productsCategoryInnerTable td.pcit-td:first-child {
+    padding-top: 12px !important;
+}
+
+.ProductDetailsEdit label {
+    width: 72% !important;
+    padding-left: 16px !important;
+}
+
+.ProductDetailsEdit .bip-form-checkbox {
+    top: 8px;
+}
+
+.modal #messageDetailDiv .bip-msbc-a {
+    width: auto;
+}
+
+.bip-main #areaEducationComments.box-messages {
+    max-height: 470px;
+    overflow-y: scroll;
+}
+
+.modal #messageDetailDiv .bip-messages-sbreadcrumb a {
+    padding-right: 20px !important;
+    padding-left: 7px !important;
+}
+
+    .modal #messageDetailDiv .bip-messages-sbreadcrumb a:nth-child(4) {
+        border-right: 1px solid #215f8b;
+    }
+
+    .modal #messageDetailDiv .bip-messages-sbreadcrumb a:nth-last-child(2) {
+        border: none;
+    }
+
+.categoryTitle {
+    background-color: #f2f2f2 !important;
+}
+
+.productsCategoryTable .categoryTitle td {
+    padding: 7px 10px !important;
+}
+
+    .productsCategoryTable .categoryTitle td:first-child {
+        width: 46px;
+    }
+
+.productsCategoryTable .categoryTitle.popup td:last-child {
+    width: 40px !important;
+}
+
+.sortableColumn {
+    cursor: pointer;
+    background-image: none;
+}
+
+    .sortableColumn.sortActive.asc {
+        background-image: url("../images/asc.png");
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-position-x: 96%;
+    }
+
+    .sortableColumn.sortActive.desc {
+        background-image: url("../images/desc.png");
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-position-x: 96%;
+    }
+
+.bip-duyuru-font {
+    font-weight: 600;
+    font-size: 16px !important;
+}
+
+.bip-sprite {
+    background: url('../images/bip-sprite.png') no-repeat;
+    display: inline-block;
+}
+
+.bip-s-facebook {
+    background-position: 0 0;
+    width: 29px;
+    height: 29px;
+}
+
+.bip-s-youtube {
+    background-position: -32px 0;
+    width: 29px;
+    height: 29px;
+}
+
+.bip-s-instagram {
+    background-position: -65px 0;
+    width: 29px;
+    height: 29px;
+}
+
+.bip-s-vimeo {
+    background-position: -98px 0;
+    width: 29px;
+    height: 29px;
+}
+
+.bip-s-pinterest {
+    background-position: -131px 0;
+    width: 29px;
+    height: 29px;
+}
+
+.bip-s-we {
+    background-position: -54px -31px;
+    width: 46px;
+    height: 46px;
+}
+
+.bip-s-ce {
+    background-position: -1px -32px;
+    width: 46px;
+    height: 46px;
+}
+
+.bip-s-delay {
+    background-position: -1px -82px;
+    width: 16px;
+    height: 16px;
+}
+
+.bip-s-check {
+    background-position: -21px -81px;
+    width: 22px;
+    height: 17px;
+    margin-top: 4px;
+}
+
+.bip-s-ban {
+    background-position: -46px -81px;
+    width: 17px;
+    height: 17px;
+    margin-top: 8px;
+}
+
+.bip-header {
+    padding: 0 5px;
+    margin: 15px 0;
+}
+
+.bip-h-logo {
+    background: url(../images/bip-logo.png) no-repeat left center;
+    width: 100%;
+    max-width: 180px !important;
+    height: 42px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.bip-h-brand {
+}
+
+.bip-h-nav {
+}
+
+.bip-hnl-item {
+    float: left;
+    position: relative;
+}
+
+.bip-hnli-link {
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    padding: 0 29px;
+    font-size: 14px;
+}
+
+.bip-hn-list-d2c .bip-hnli-link {
+    padding: 0 12px;
+}
+
+.bip-hnli-link .bip-icon {
+    font-size: 6px;
+    vertical-align: middle;
+    /*margin-left: 6px;*/
+}
+
+.bip-hnli-link .icon-search {
+    font-size: 14px;
+}
+
+.bip-hnli-link.active {
+}
+
+    .bip-hnli-link.active .bip-icon {
+    }
+
+.bip-hnli-submenu {
+    display: none;
+    width: 221px;
+    border-top: none !important;
+    -webkit-box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.5);
+    border-top: none;
+    padding: 25px 15px;
+    position: absolute;
+    z-index: 1000;
+    padding: 20px 15px 10px;
+}
+
+    .bip-hnli-submenu.active {
+        display: block;
+    }
+
+    .bip-hnli-submenu.bip-hnli-search {
+        top: 0;
+        right: 0;
+        padding-bottom: 20px;
+    }
+
+.bip-hnlis-form {
+}
+
+.bip-hnlisf-group {
+}
+
+.bip-hnlisfg-input {
+    outline: 0;
+    border: 0;
+    padding: 5px;
+    vertical-align: middle;
+    display: inline-block;
+    width: 150px;
+}
+
+.bip-hnlisfg-button {
+    background: none;
+    outline: none;
+    border: none;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: 0px;
+    margin-bottom: -3px;
+    padding: 2px 5px 3px !important;
+}
+
+    .bip-hnlisfg-button .bip-icon {
+        font-size: 18px;
+    }
+
+.bip-hnlisf-radiobox {
+    display: inline-block;
+    margin: 15px 7px 0;
+}
+
+.bip-hnlisfr-label {
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.bip-hnlis-list {
+}
+
+.bip-hnlisl-item {
+}
+
+#btnFilterDialog {
+    margin-bottom: 20px;
+}
+
+.bip-hnlisli-link {
+    font-size: 13px;
+    padding: 7px 0;
+    display: inline-block;
+}
+
+    .bip-hnlisli-link .bip-icon {
+        font-size: 7px;
+        vertical-align: middle;
+    }
+
+.weatherIcon {
+    font-size: 30px;
+    height: 20px;
+    float: left;
+    display: inline-block;
+    margin: 0px -20px 0 0px;
+}
+
+.bip-news-item .NewsTitle {
+    color: #000;
+}
+
+#LoginForm .bip-form-checkbox label {
+    font-weight: 500;
+}
+
+#financialAdvisoryMessageForm .bip-button-normal {
+    margin-right: 0px;
+}
+
+.financial-advisor-box .bip--link {
+    font-size: 14px;
+}
+
+.bip__supportboxtext .bip--link {
+    font-size: 14px;
+}
+
+.bip-main {
+}
+
+.bip-m-submenu {
+}
+
+.bip-msm-user {
+    font-size: 13px;
+}
+
+    .bip-msm-user span {
+        font-weight: 400;
+    }
+
+.bip-msm-exchange {
+    display: inline-block;
+}
+
+.bip-msme-item {
+    display: inline-block;
+}
+
+.bip-msmei-value {
+    display: inline-block;
+    font-size: 13px; /*margin-left: 15px;*/
+    margin-left: 0px;
+    margin-right: 12px;
+}
+
+.col-md-6.bip-exhangeContainer.text-center {
+    min-width: 242px;
+}
+
+.col-md-6.bip-weatherContainer {
+    max-width: 205px;
+    margin-top: -3px; /*margin-right: -29px;*/
+    margin-left: -29px;
+    padding-left: 13px;
+}
+
+.bip-msmli-content .bip-m-ma-links li p.bip-msmlil-text {
+    height: 30px;
+}
+
+span.bip-icon.bip-tl-icon {
+    font-size: 27px;
+    font-weight: bold;
+    font-family: arial;
+}
+
+.bip-cawb-button {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    width: auto !important;
+    padding: 8px 13% !important;
+}
+
+.bip-commercialAccountWarning span.bip-icon.icon-exclamation {
+    font-size: 120px;
+    position: relative;
+    top: -20px;
+    text-align: right;
+    color: #005691;
+}
+
+.bip-cawb-text {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.bip-cai-box {
+    -webkit-box-shadow: 0px -1px 7px 0px rgba(0,0,0,0.32);
+    -moz-box-shadow: 0px -1px 7px 0px rgba(0,0,0,0.32);
+    box-shadow: 0px -1px 7px 0px rgba(0,0,0,0.32);
+    padding: 15px 15px 0px 15px;
+    margin-bottom: 30px;
+    border-width: 2px;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.bip-cai-header {
+    background: #005691;
+    line-height: 30px;
+    padding: 5px 15px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+span.bip-caib-spanHeader {
+    min-width: 131px;
+    display: inline-block;
+    font-weight: bold;
+    position: relative;
+}
+
+.bip-cai-box ul > li {
+    line-height: 25px;
+    border-bottom: 1px solid #f9f9f9;
+    padding: 5px;
+}
+
+.bip-cai-box ul {
+    border: 1px solid #f2f2f2;
+}
+
+span.bip-caib-spanHeader:after {
+    content: ":";
+    position: absolute;
+    right: 6px;
+    font-weight: 100;
+}
+
+.bip-cai-box ul > li:last-child {
+    border: none;
+}
+
+.bip-cai-box ul > li:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.bip-cai-button {
+    margin-top: -10px;
+}
+
+.bip-caib-header {
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.bip-cai-newClick {
+    text-align: right;
+    position: relative;
+    bottom: -33px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+    .bip-cai-newClick span {
+        font-weight: bold;
+    }
+
+div#IBANGroup {
+    width: 66%;
+    display: inline-block;
+}
+
+    div#IBANGroup input {
+        min-width: 60.5px;
+        width: 14%;
+    }
+
+
+        div#IBANGroup input:nth-child(2), div#IBANGroup input:last-child {
+            min-width: 40px !important;
+            width: 10%;
+        }
+
+input#IBAN {
+    position: absolute;
+    z-index: -9;
+    border: none;
+    color: #fff;
+}
+
+.col-md-6.bip-weatherContainer span:nth-child(2) {
+    margin-top: 3px;
+    display: inline-block;
+    margin-left: -9px;
+}
+
+.bip-msm-weather {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 13px;
+}
+
+.bip-msm-list {
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.bip-msml-item {
+    display: inline-block;
+    margin: 0 0.5%;
+    vertical-align: bottom;
+}
+
+.bip-msml-item-active {
+    height: 68px;
+    margin-bottom: -20px;
+}
+
+.bip-msml-item:last-child {
+    margin-right: 0;
+}
+
+.bip-msmli-link {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+}
+
+    .bip-msmli-link .bip-icon {
+        font-size: 23px;
+    }
+
+.bip-m-ma-link .bip-icon {
+    display: block;
+    font-size: 20px;
+}
+
+.bip-msmlil-text {
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+.bip-msmlil-rectangle {
+    padding: 1px 3px;
+    font-size: 11px;
+    border-radius: 3px;
+    position: absolute;
+    right: 9px;
+    top: 11px;
+    text-align: center;
+    line-height: 16px;
+    font-style: normal;
+}
+
+.bip-msmlil-circle {
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+    border-radius: 9px;
+    position: absolute;
+    right: 15px;
+    top: 9px;
+    text-align: center;
+    line-height: 20px;
+    font-style: normal;
+}
+
+.bip-msmlil-circle-time {
+    right: 1px;
+    width: 40px;
+}
+
+.bip-msmli-link .icon-message .bip-msmlil-circle {
+    right: 20px;
+}
+
+.bip-msmli-avatar {
+    height: 33px;
+    width: 33px;
+    border-radius: 16.5px;
+    margin: -2px auto;
+}
+
+.bip-msmlia-image {
+    max-width: 31px;
+    max-height: 31px;
+    height: 100%;
+}
+
+.bip-msmli-content {
+    display: none;
+    background-color: #f1f1f1;
+    overflow-y: scroll;
+}
+
+    .bip-msmli-content .bip-m-ma-links {
+        text-align: center;
+    }
+
+        .bip-msmli-content .bip-m-ma-links li {
+            display: inline-block;
+        }
+
+.bip-msmli-content-is-active {
+    display: block;
+    position: absolute;
+    z-index: 998;
+    left: 0;
+    right: 0;
+    margin-top: 0;
+    padding: 20px 40px;
+    height: 290px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.bip-msmli-cia-lz {
+    z-index: 799999 !important;
+    padding-left: 20px;
+}
+
+.bootstrap-datetimepicker-widget {
+    z-index: 99999999999 !important;
+}
+/*.bx-viewport {width:80% !important; margin-left:10%;}*/
+.bip-weatherContainer .bx-viewport { /*width:72% !important; margin-left:12%;*/
+}
+
+.bip-m-banner {
+}
+
+.bip-m-all {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    font-size: 14px;
+}
+
+    .bip-m-all .bip-icon {
+        font-size: 8px;
+    }
+
+.bip-m-shortcuts {
+}
+
+.bip-ms-bookmarks {
+    padding: 5px 20px 5px;
+    min-height: 205px;
+}
+
+.bip-msb-list {
+    margin-left: 13px;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.bip-msb-title {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+    .bip-msb-title .bip-icon {
+        font-size: 20px;
+        vertical-align: middle;
+        margin: -2px 6px 0 0;
+        float: left;
+    }
+
+.bip-msbl-item {
+    display: block;
+}
+
+    .bip-msbl-item .icon-aDelete {
+        font-size: 14px;
+        position: absolute;
+        right: 15px;
+        margin-top: 8px;
+        cursor: pointer;
+    }
+
+.bip-msbli-link {
+    font-size: 14px;
+    padding: 4px 0;
+    display: inline-block;
+}
+
+    .bip-msbli-link .bip-icon {
+        font-size: 9px;
+        vertical-align: middle;
+    }
+
+.bip-ms-search {
+    padding: 20px 20px;
+    margin-top: 11px;
+}
+
+.bip-mss-form {
+}
+
+input[type=text].bip-mmsf-input {
+    border: none;
+    outline: none;
+    padding: 7px 3px 7px 10px;
+    display: inline;
+}
+
+.bip-mssf-button {
+    height: 22px;
+    line-height: 22px;
+    padding: 0 10px;
+}
+
+.bip-m-calendar {
+    position: relative;
+    background-color: #FFF;
+}
+
+.bip-mc-date {
+    margin: 0;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.bip-mc-box {
+    border-top: none;
+    padding: 4px;
+}
+
+.bip-mc-message {
+}
+
+    .bip-mc-message .bx-controls-direction .bip-icon {
+        right: 5px;
+    }
+
+.modal {
+    text-align: center;
+    padding: 0 !important;
+}
+
+    .modal form {
+        display: inline-block;
+    }
+
+    .modal:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -4px;
+    }
+
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    z-index: 999999;
+}
+
+.bip-mcm-list {
+    margin: 0;
+}
+
+.bip-mcml-item {
+    height: 111px;
+    padding: 5px 10px 5px 10px;
+}
+
+.bip-mcmli-link {
+    display: block;
+    padding: 5px 0;
+    margin: 0 20px;
+}
+
+    .bip-mcmli-link:last-child {
+        border: none;
+    }
+
+.bip-mc-all {
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    line-height: 18px;
+    padding-right: 10px;
+    height: 24px;
+    padding: 2px 10px;
+}
+
+    .bip-mc-all .bip-icon {
+        font-size: 7px;
+        vertical-align: initial;
+    }
+
+.bip-m-mailbox {
+    margin-top: 11px;
+}
+
+.bip-mmb-controls {
+    font-size: 14px;
+}
+
+    .bip-mmb-controls:after {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        height: 41px;
+        right: 5px;
+        left: 5px;
+    }
+
+.bip-mmbc-action {
+    float: left;
+    padding: 0px 30px;
+    font-size: 16px;
+    line-height: 16px;
+    border-right: 1px solid transparent;
+    position: relative;
+    z-index: 2;
+}
+
+    .bip-mmbc-action.active {
+    }
+
+        .bip-mmbc-action.active:first-child {
+            border-left: 1px solid transparent;
+        }
+
+.bip-mmbc-link {
+    float: right;
+    padding: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+    .bip-mmbc-link .bip-icon {
+        font-size: 7px;
+        vertical-align: middle;
+    }
+
+.bip-mmbcl-text {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.bip-mmbc-action .bip-icon {
+    font-size: 40px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.bip-mmbca-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.bip-mmb-box {
+    display: none;
+    margin-top: 41px;
+}
+
+    .bip-mmb-box.active {
+        display: block;
+    }
+
+.bip-mmbb-row {
+    padding: 0 3px;
+    position: relative;
+    min-height: 30px;
+    line-height: 27px;
+}
+
+    .bip-mmbb-row:nth-child(odd) {
+    }
+
+    .bip-mmbb-row:last-child {
+        border-bottom: none;
+    }
+
+.bip-mmbbr-list {
+    margin: 0;
+}
+
+.bip-mmbbr-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    opacity: 0;
+    cursor: pointer;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -khtml-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+}
+
+.form-control {
+    border-radius: 0px;
+}
+
+.bip-mmbbrl-item {
+    display: inline-block;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+    .bip-mmbbrl-item.col1 {
+        width: 8%;
+        padding-left: 10px;
+    }
+
+    .bip-mmbbrl-item.col2 {
+        width: 23%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap
+    }
+
+    .bip-mmbbrl-item.col3 {
+        width: 45%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap
+    }
+
+    .bip-mmbbrl-item.col4 {
+        width: 20%;
+    }
+
+    .bip-mmbbrl-item .icon-message {
+        font-size: 10px;
+        vertical-align: middle;
+    }
+
+    .bip-mmbbrl-item .icon-read-message {
+        font-size: 16px;
+        vertical-align: middle;
+    }
+
+    .bip-mmbbrl-item .icon-attachment {
+        vertical-align: middle;
+        font-size: 18px;
+        margin-left: 5px;
+    }
+
+.bip-message-subject {
+    width: 280px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 20px;
+}
+
+.bip-msmlicn-item {
+    border-bottom: 1px solid #DDD;
+    padding-bottom: 9px;
+}
+
+.bip-m-minibanner {
+    margin-top: 11px;
+}
+
+    .bip-m-minibanner img {
+        width: 100%;
+    }
+
+.bip-mmbb-row.unread,
+.bip-mmbb-row.unread .bip-icon {
+    color: #000;
+}
+
+.bip-m-footerlink {
+    margin-top: 11px;
+}
+
+.bip-mfl-list {
+    border-right: none;
+}
+
+.bip-mfll-item {
+    float: left;
+    height: 45px;
+}
+
+.bip-mflli-link {
+    display: block;
+    padding: 7px 8px 0;
+}
+
+    .bip-mflli-link .bip-icon {
+        font-size: 30px;
+        float: left;
+        margin-right: 8px;
+    }
+
+.bip-mfllil-text {
+    float: left;
+    width: 70px;
+    font-size: 14px;
+    margin: 0;
+}
+
+    .bip-mfllil-text.last {
+        line-height: 29px;
+    }
+
+    .bip-mfllil-text span {
+        display: block;
+        font-size: 10px;
+    }
+
+.activeMessage {
+    background: #E9F6FF;
+}
+
+.bip-footer {
+    margin-top: 12px;
+}
+
+.bip-f-copyright {
+    width: 50%;
+    float: left;
+    line-height: 25px;
+}
+
+.bip-fc-link {
+}
+
+.bip-f-social {
+    text-align: right;
+    width: 50%;
+    float: right;
+}
+
+.bip-fs-link {
+    margin-left: 10px;
+}
+
+.bip-form {
+}
+
+.bip-form-checkbox {
+    width: 15px;
+    height: 15px;
+    background: #fcfff4;
+    position: relative;
+    border: 1px solid #c3c3c4;
+    margin-bottom: 18px;
+}
+
+    .bip-form-checkbox label {
+        position: absolute;
+        top: -5px;
+        left: 19px;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+.tagCheckbox {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0;
+}
+
+.bip-form-checkbox .bip-form-checkbox-label {
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 4px;
+    top: 4px;
+    margin: 0px;
+}
+
+    .bip-form-checkbox .bip-form-checkbox-label:after {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        opacity: 0;
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        top: -2px;
+        left: -2px;
+        z-index: 2;
+    }
+
+.bip-form-checkbox input[type=checkbox]:checked + .bip-form-checkbox-label:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+
+.bip-form-checkbox input[type=radio]:checked + .bip-form-checkbox-label:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+
+.bip-form-input-fw {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid #dedede;
+    outline: none;
+}
+
+.bip-form-checkbox input[type=radio] {
+    display: none;
+}
+
+.bip-tabs {
+    margin: 0;
+    padding: 0;
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+.bip-tabs-tab {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    float: left;
+    margin-right: 3px;
+    margin-top: 5px;
+    z-index: 9;
+    position: relative;
+    background: url("assets/common/images/tab-bg.png");
+    height: 32px;
+    text-align: center;
+    background-repeat: no-repeat;
+    padding: 3px 8px;
+}
+
+    .bip-tabs-tab a {
+        font-size: 13px;
+        line-height: 2em;
+        display: block;
+        outline: none;
+        color: black;
+        font-weight: bold;
+    }
+
+    .bip-tabs-tab.active {
+        background: url("assets/common/images/tab-bg-active.png");
+        background-repeat: no-repeat;
+        margin-top: 0px;
+        height: 38px !important;
+    }
+
+.bip-m-commontab h3 {
+    margin-bottom: 4px;
+    margin-top: 9px;
+}
+
+.bip-tab-container .bip-tabs-panel-container {
+    background: #fff;
+    border: solid #c3c3c4 1px;
+    padding: 10px;
+    float: left;
+    width: 100%;
+    margin-top: -1px;
+}
+
+.bip-upload-profile-img,
+.bip-change-profile-img,
+.bip-cpi-hover {
+    width: 100px;
+    height: 100px;
+    border-radius: 200px;
+    border: 1px solid #dedede;
+    text-align: center;
+    margin: auto;
+    padding-top: 24px;
+    background-size: cover;
+}
+
+.bip-upload-profile-img {
+    padding-top: 35px;
+    margin: 35px auto 15px auto;
+}
+
+    .bip-upload-profile-img a,
+    .bip-change-profile-img a {
+        font-size: 14px;
+        color: #252525;
+    }
+
+.bold {
+    font-weight: bold;
+}
+
+.icon-bilgilerim, .icon-Sifremi_unuttum {
+    font-size: 25px !important;
+}
+
+.icon-users {
+    font-size: 30px !important;
+}
+
+.select-style select:disabled, .select-style input:disabled {
+    cursor: no-drop;
+    background-color: #eee;
+}
+
+.select-style select, .select-style input {
+    padding: 5px 8px;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+    .select-style select:focus {
+        outline: none;
+    }
+
+.bip-msml-item-active .bip-msmli-link {
+    background-color: #f1f1f1;
+}
+
+.bip-msml-item:first-child {
+    margin-left: 0;
+}
+
+.form-group {
+    width: 100%;
+    float: left;
+}
+
+.DocumentDate {
+    float: left;
+}
+
+    .DocumentDate #MinCreatedDate, .DocumentDate #MaxCreatedDate {
+        width: 80%;
+    }
+
+.Documentbtn button {
+    margin-top: 0px;
+}
+
+#pac-input {
+    margin-top: 10px;
+    height: 30px;
+}
+
+.bip-m-ma-link .icon-users {
+    font-size: 25px;
+    line-height: 20px;
+}
+
+.date-container {
+    border: 1px solid #dedede;
+}
+
+.input-datetimepicker {
+    border: none !important;
+}
+
+.HomeReminderLink {
+    float: left;
+}
+
+
+.bip-mfllil-text {
+    float: none;
+    display: inline-block;
+    line-height: 16px;
+    text-align: left;
+    width: auto;
+}
+
+.bip-mflli-link .bip-icon {
+    float: none;
+}
+
+.bip-mflli-link {
+    text-align: center;
+}
+
+.sss__content {
+    display: none;
+}
+
+.sss__content--active {
+    display: block;
+}
+
+.jspHorizontalBar .jspTrack, .jspHorizontalBar .jspDrag {
+    height: 0px;
+}
+
+.bip-page-title p {
+    margin-top: 15px;
+}
+
+.bip-page-title__link {
+    margin-top: 20px;
+}
+
+.bip-ps-info {
+    margin-top: -15px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+    .bip-ps-info .bip-s-delay {
+        background-position: -1px -82px;
+        width: 20px;
+        height: 16px;
+    }
+
+.bip-m-cproductps {
+    padding: 20px;
+    padding-left: 40px;
+}
+
+.bip-m-cpritem {
+    margin-bottom: 20px;
+}
+
+    .bip-m-cpritem img {
+        margin-bottom: 6px;
+    }
+
+    .bip-m-cpritem div {
+        max-width: 180px;
+    }
+
+.bip-msbc-a {
+    width: 24%;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.bip-messages-sbreadcrumb a:last-child, .bip-messages-sbreadcrumb a:nth-child(4) {
+    border-right: none;
+}
+
+.bip-messages-sbreadcrumb a {
+    padding-right: 5px !important;
+    padding-left: 2px !important;
+}
+
+.bip-messages-stop {
+    padding: 20px 4px;
+}
+
+#vertical-menu,
+#vertical-menu ul,
+#vertical-menu ul li,
+#vertical-menu ul li a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#vertical-menu {
+    width: 100%;
+    background-color: #f1f1f1;
+    height: auto;
+    min-height: 900px;
+    border-left: 1px solid #c3c3c4;
+    border-right: 1px solid #c3c3c4;
+    border-bottom: 1px solid #c3c3c4;
+}
+
+    #vertical-menu ul ul {
+        display: none;
+    }
+
+    #vertical-menu > ul > li.active > ul {
+        display: block;
+    }
+
+.align-right {
+    float: right;
+}
+
+.bip__sboxtitle--primary {
+    margin-bottom: 5px;
+}
+
+.bip__suppportbox--textonly.firstSupport {
+    height: 145px;
+}
+
+.bip__suppportbox {
+    min-height: 106.5px !important;
+}
+
+.firstSupport .bip__supporrtboximg img {
+    max-height: 145px !important;
+}
+
+.bip__supporrtboximg img {
+    max-height: 106.5px !important;
+}
+
+.bip__supporrtboximg {
+    padding: 0px !important;
+}
+
+#vertical-menu ul ul ul li a {
+    padding-left: 32px;
+}
+
+#vertical-menu ul ul li a:hover {
+    color: #ffffff;
+}
+
+#vertical-menu ul ul > li.has-sub > a:after {
+    top: 16px;
+    right: 26px;
+    background: #dddddd;
+}
+
+.ProdDetailRow .input--half {
+    border-bottom: 1px solid #ccc;
+}
+
+    .ProdDetailRow .input--half label {
+        height: auto;
+    }
+
+#vertical-menu ul ul > li.has-sub > a:before {
+    top: 20px;
+    background: #dddddd;
+}
+
+.admin-wrapper {
+    margin-top: 15px;
+    border-top: 1px solid #c3c3c4
+}
+
+#vertical-menu li.has-sub ul {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #c3c3c4;
+}
+
+    #vertical-menu li.has-sub ul li a {
+        margin-bottom: 10px;
+        display: block;
+        color: #252525;
+        padding-left: 10px;
+    }
+
+.date-picker, mindate-picker, .input-group-addon {
+    border-radius: 0px;
+}
+
+#vertical-menu .arrow-primary {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    z-index: 9;
+}
+
+#vertical-menu .arrow-secondary {
+    font-size: 8px;
+    position: absolute;
+    left: 0px;
+    top: 1px;
+}
+
+.countdownSpan {
+    display: inline-block;
+    background: url(../images/CountDown-Bg.png) center center no-repeat;
+    width: 130px;
+    height: 57px;
+    color: #215f8b;
+    font-size: 35px !important;
+    line-height: 55px;
+    letter-spacing: 9px;
+    font-weight: 600;
+    text-align: left;
+    text-indent: 9px;
+    width: 230px !important;
+}
+
+.CountTimeSpan {
+    width: 80%;
+    display: inline-block;
+}
+
+    .CountTimeSpan span {
+        width: 33.3%;
+        display: inline-block;
+        float: left;
+        font-size: 13px !important;
+        text-align: center;
+    }
+
+.stepy-countdown {
+    width: 300px !important;
+}
+
+#vertical-menu > ul > li.open > a {
+    background-color: #ffffff;
+}
+
+.bp-hPageCont {
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+    .bp-hPageCont span, .bp-hPageCont a {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+.bip-form-input {
+    padding: 5px 10px;
+    border: 1px solid #dedede;
+    outline: none;
+    display: block;
+}
+
+.memberSearchForm .form-group {
+    margin-bottom: 10px;
+}
+
+.memberSearchForm label {
+    padding-top: 5px;
+}
+
+.bip-members-table thead tr th {
+    text-align: center;
+}
+
+.bip-members-table tr td {
+    padding: 20px 8px !important;
+    font-size: 11px;
+}
+
+#imgChoice {
+    border: 1px solid #ccc;
+}
+
+.bip-messages-sheader a {
+    padding-left: 5px;
+    display: inline-block;
+}
+
+.admin--sidebar {
+    float: left;
+    width: 18%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.admin--content {
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 5px;
+    padding-left: 15px;
+    width: 82%;
+}
+
+    .admin--content .bip-button {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+.bip-gmaps-buttons .bip-button {
+    margin-right: 15px;
+    margin-bottom: 30px;
+}
+
+.admin--content .bip-gmaps-area p {
+    width: 95%;
+}
+
+.admin--content .bip--link {
+    margin-right: 0;
+    margin-top: 7px;
+    display: inline-block;
+}
+
+.bip--link.bigger {
+    font-size: 14px;
+}
+
+#moduleFilterContent .input--half label {
+    width: 25%;
+}
+
+#moduleFilterContent input {
+    width: 60%;
+}
+
+#moduleFilterContent .bip-form-checkbox .bip-form-checkbox-label {
+    width: 270px;
+    max-width: inherit !important;
+    float: left;
+    line-height: 0px;
+    text-indent: 20px;
+    font-size: 10px;
+}
+
+.BhsLabelCheck .bip-form-checkbox .bip-form-checkbox-label {
+    width: 220px;
+    max-width: inherit !important;
+    float: left;
+    line-height: 0px;
+    text-indent: 20px;
+}
+
+.UserReminderDiv label {
+    width: 90px !important;
+}
+
+.UserReminderDiv textarea {
+    width: 90% !important;
+}
+
+.adminformrowf, .adminformrows {
+    width: 46%;
+}
+
+.product__label--full {
+    position: relative;
+}
+
+    .product__label--full input {
+        width: 100%;
+    }
+
+.input--half label {
+    width: 33%;
+    height: 25px;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+.bip-d2c-guide-topText {
+    margin-top: 10px;
+}
+
+.bip-button-small, .bip-button-large, .bip-button-xsmall {
+    margin-left: 3px !important;
+    margin-right: 3px !important;
+}
+
+.date-container .bip-icon {
+    margin-top: 2px;
+    float: right;
+    margin-right: 5px !important;
+}
+
+.titleHr {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.pagination > li {
+    display: inline-block;
+}
+
+.input--half input, .input--half .select-style {
+    width: 65%;
+}
+
+.icon-dealers, .icon-activities {
+    font-size: 12px !important;
+}
+
+a.bip--link .bip-icon {
+    font-size: 8px !important;
+}
+
+#sample-table-2_info {
+    margin-top: 10px;
+}
+
+.attachmentCont {
+    margin-top: 10px;
+}
+
+.input--half .select-style {
+    display: inline-block;
+    top: 10px;
+    margin-top: 0;
+    border-radius: 0;
+    background-position: 98% 50%;
+}
+
+.bip-m-banner .bx-viewport {
+    width: 100% !important;
+    margin-left: 0px !important;
+}
+
+.input--full .bip-form-checkbox, .input--half .bip-form-checkbox {
+    display: inline-block;
+}
+
+.input--half input {
+    padding: 5px 10px;
+    border: 1px solid #dedede;
+    outline: none;
+}
+
+.input--full label {
+    width: 8.75%;
+}
+
+.membersTableWrapper {
+    margin-top: 15px;
+    overflow-x: auto;
+}
+
+.bip-errorPage-popup {
+    overflow-x: auto;
+}
+
+.admin--subusers {
+    width: 80%;
+    display: inline-block;
+}
+
+    .admin--subusers .bip--link {
+        display: block;
+        margin: 0;
+        margin-bottom: 5px;
+    }
+
+.searchbypcode {
+    border: 1px solid #c3c3c4;
+}
+
+    .searchbypcode input[type=text] {
+        width: 93%;
+        border: none;
+        outline: none;
+    }
+
+.bip-mailingmenu-box .icon-sendmessage {
+    font-size: 14px !important;
+}
+
+.bip-news-item .bip-m-page-title {
+    margin-top: 0px;
+}
+
+.bip-m-page-title {
+    margin-top: 5px !important;
+}
+
+.icon-arrow-right {
+    margin-right: 5px;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.bip-message-subject, .bip-message-date {
+    margin-bottom: 3px;
+}
+
+.bip-form-checkbox {
+    margin-bottom: 10px;
+}
+
+#frmNewSubUser input {
+    font-size: 14px;
+}
+
+#frmNewSubUser {
+    margin-top: 15px;
+}
+
+    #frmNewSubUser .bip-form-input-fw {
+        margin-top: 5px;
+    }
+
+    #frmNewSubUser ::-webkit-input-placeholder {
+        color: #424242;
+    }
+
+    #frmNewSubUser :-moz-placeholder {
+        color: #424242;
+    }
+
+    #frmNewSubUser ::-moz-placeholder {
+        color: #424242;
+    }
+
+    #frmNewSubUser :-ms-input-placeholder {
+        color: #424242;
+    }
+
+.bip-m-banner .bx-wrapper img {
+    margin: auto;
+}
+
+.searchbypcode .bip-icon {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.autoproductbc .products {
+    margin-top: 15px;
+    padding-bottom: 15px;
+}
+
+.autoproductb-topactions {
+    padding-top: 15px;
+}
+
+    .autoproductb-topactions a.bip--link {
+        margin-right: 0;
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+.autoproductbc .product {
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 30%;
+    float: left;
+    padding: 20px;
+    border: 1px solid #c3c3c4;
+    min-height: 400px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+    .autoproductbc .product:nth-child(6n+4) {
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+
+    .autoproductbc .product:nth-child(3n+2) {
+        clear: both;
+    }
+
+#imageUrl {
+    padding: 0px;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+#moduleFilterRoot.bipDialogActive .divFilterDialogPassive {
+    margin-right: 15px;
+}
+
+.productContainer-warrancy .product {
+    height: 463px;
+}
+
+.product__shape input[type=radio] {
+    opacity: 0;
+}
+
+.product label {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.product__details {
+    margin-top: 20px;
+}
+
+.product .select-style {
+    background-position: 99% 50%;
+}
+
+.product__header {
+    margin-bottom: -10px;
+}
+
+    .product__header label {
+        cursor: pointer;
+        margin-top: 0;
+        float: left;
+        font-size: 16px;
+    }
+
+    .product__header .bip-form-checkbox {
+        float: right;
+    }
+
+.product__label--half {
+    width: 45%;
+    float: left;
+    position: relative;
+}
+
+    .product__label--half input {
+        width: 100%;
+        padding: 10px;
+    }
+
+.product__price--cash, .product__size, .product__bprice--no {
+    margin-right: 10%;
+}
+
+.autoproductb__actions .bip-button {
+    margin-right: 0;
+    float: none;
+    display: inline-block;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.autoproductb__info p, form.addProductToList p {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.autoproductb__info span, form.addProductToList span {
+    display: inline-block;
+    margin-right: 3px;
+    position: relative;
+    top: 3px;
+}
+
+form.addProductToList .bip-icon {
+    top: 0px;
+}
+
+form.addProductToList button[type="submit"] {
+    margin-top: 18px;
+}
+
+.addfav {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+    .addfav a.bip--link .bip-icon {
+        font-size: 8px;
+        position: relative;
+        top: -1px;
+    }
+
+.ReminderPage .input--half label {
+    width: auto;
+    margin-right: 10px;
+}
+
+.ReminderPage .input-group {
+    display: inline-table;
+    float: none !important;
+}
+
+.autoproductbc hr {
+    border-color: #c3c3c4;
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+form.addProductToList input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#manuelproductb .autoproductbc hr {
+    border-color: #c3c3c4;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.bip-customer-advice-form {
+    margin-top: 15px;
+}
+
+    .bip-customer-advice-form .form-group {
+        margin-bottom: 10px;
+    }
+
+#bip-ts-pager a img {
+    max-width: 96%;
+    margin: 0 auto;
+    display: block;
+    max-height: 44px;
+}
+
+.bipts-img-pager {
+    width: 20%;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    height: 52px;
+    border: 1px solid #dadada;
+    position: relative;
+    line-height: 46px;
+    display: inline-block;
+}
+
+.bip-ni-wrapper {
+    max-height: 160px;
+    overflow: hidden;
+}
+
+.bip-ts-controls {
+    position: relative;
+    top: 18px;
+}
+
+    .bip-ts-controls .bip-icon {
+        font-size: 15px;
+    }
+
+#biptsc-next a span, #biptsc-prev a span {
+    position: relative;
+}
+
+#biptsc-next a span {
+    right: 27px;
+}
+
+#biptsc-prev a span {
+    left: 20px;
+}
+
+.bipts-img-pager a {
+    vertical-align: middle;
+    text-align: center;
+    display: block;
+    padding: 2px;
+}
+
+.announcementModal .modal-content {
+    padding: 1% 2%;
+}
+
+.anmodal-defaultimg span {
+    font-size: 85px;
+}
+
+.announcementModal p {
+    font-size: 14px;
+}
+
+.announcementModal img {
+    max-width: 100%;
+}
+
+.announcementModal .modal-title {
+    font-size: 14px;
+}
+
+.announcementModal .modal-header, .announcementModal .modal-footer, .announcementModal .modal-body {
+    border: none;
+    padding: 5px;
+}
+
+.announcementModal .modal-body {
+    padding: 15px !important;
+}
+
+.financial-advisor-title {
+    display: inline-block;
+}
+
+.financial-advisor-box {
+    padding: 10px;
+    margin-bottom: 10px;
+    min-height: 191px;
+    position: relative;
+}
+
+.fabcl-item {
+    padding: 5px 0;
+}
+
+.fab-content {
+    padding-top: 5px;
+}
+
+.fab-footer {
+    bottom: 10px;
+    right: 10px;
+}
+
+.fab-open-calendar {
+    background-image: url("../images/fcalendar.jpg");
+    background-repeat: no-repeat;
+}
+
+    .fab-open-calendar .bip--link {
+        position: absolute;
+        top: 43%;
+        left: 56%;
+    }
+
+.financial-advisor-contact {
+    padding: 15px;
+}
+
+    .financial-advisor-contact p {
+        margin-top: 10px;
+    }
+
+    .financial-advisor-contact .fab-title {
+        position: relative;
+    }
+
+.border-mask {
+    position: absolute;
+    top: 29px;
+    right: 1px;
+    width: 50%;
+    height: 1px;
+    background-color: #F1F1F1;
+}
+
+.faq-content {
+    padding-bottom: 10px;
+}
+
+.faq-title {
+    cursor: pointer;
+}
+
+.bip-sproduct-buttons .bip-button {
+    margin: 0 0 10px 0;
+    display: block;
+}
+
+.sproduct-row {
+    margin-top: 15px;
+}
+
+.sproduct-titles h3 {
+    margin-top: 2px;
+}
+
+.sproduct-prices span {
+    font-size: 20px;
+}
+
+/*.s-pr-list {
+  padding: 15px 0;
+}*/
+.s-prl-item {
+    border-bottom: 1px solid #c3c3c4;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    height: 333px;
+}
+
+
+.s-prli-content, .s-prli-title {
+    padding-left: 25px;
+}
+
+.s-prli-content {
+    border-left: 1px solid #c3c3c4;
+    height: 88%;
+}
+
+.s-prl-item:nth-child(4n+1) .s-prli-content {
+    border-left: none;
+}
+
+.s-prli-content h4 {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.bip-hnli-submenubank {
+    width: 590px;
+}
+
+.bip-hnlisl-bankitem {
+    float: left;
+}
+
+li.bip-hnlisl-bankitem {
+    margin-right: 30px;
+    width: 150px;
+}
+
+.bip-sitemap-box {
+    font-size: 14px;
+}
+
+.bip-data-secrecy h3, .bip-terms-of-use h3 {
+    margin-top: 0;
+}
+
+.bip-surveydelay-radios, .bip-sdr-item {
+    display: inline-block;
+}
+
+.p__size--big {
+    width: 32px;
+    height: 32px;
+}
+
+.p__size--normal {
+    width: 24px;
+    height: 24px;
+}
+
+.p__size--small {
+    width: 16px;
+    height: 16px;
+}
+
+.p__size--mini {
+    width: 12px;
+    height: 12px;
+}
+
+.p__size--vertical {
+    width: 16px;
+    height: 30px;
+}
+
+.p__size--horizontal {
+    width: 30px;
+    height: 16px;
+}
+
+.sbpc-btn button.bip-button {
+    width: 150px;
+    padding: 5px;
+    display: block;
+    margin-top: 0;
+}
+
+.product__dplace textarea {
+    width: 100%;
+}
+
+.product__save {
+    margin-top: 28px;
+}
+
+.recommended-prices, .editPriceIcons {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+    .editPriceIcons .bip-icon {
+        color: #215f8b;
+        font-size: 16px;
+        position: relative;
+        top: 3px;
+    }
+
+.table > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.bip-spprice-table {
+    margin-top: 20px;
+}
+
+.bip-iblck {
+    display: inline-block;
+}
+
+
+.bip-form-radio label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 15px;
+    margin-right: 15px;
+    font-size: 13px;
+}
+
+.bip-form-radio input[type=radio] {
+    display: none;
+}
+
+.opendays div.bip-form-checkbox {
+    display: inline-block;
+    width: 14%;
+}
+
+.bip-mailingmenu-box {
+    padding: 6px 12px;
+}
+
+.bip-mbl-item {
+    height: 259px;
+    display: block;
+    overflow: hidden;
+}
+
+.bip-mmb-plist {
+    padding-top: 15px;
+}
+
+    .bip-mmb-plist li a, .bip-mmb-slist li a {
+        color: #252525;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+.bip-mmb-slist {
+    padding-top: 15px
+}
+
+.bip-surveydelay {
+    margin-top: 15px;
+}
+
+.bip-survey-formcnt .stepy-header {
+    display: none;
+}
+
+.stepy-navigator {
+    text-align: center;
+}
+
+
+.bip-sq-warning {
+    font-size: 12px;
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 10px;
+}
+
+.bip-sq-title {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.bip-sq-ta {
+    height: 100px;
+}
+
+.bip-ct-radios {
+    margin-top: 10px;
+}
+
+.bip-cs-answers {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bip-ct-radios label {
+    top: -1px;
+}
+
+.bip-csa-a {
+    border-bottom: 1px solid #c3c3c4;
+}
+
+
+.bip-messages-t-m {
+    margin-bottom: 12px;
+}
+
+.bip-messages-sidebar {
+    font-size: 14px;
+}
+
+    .bip-messages-sidebar .bip-icon {
+        font-size: 16px;
+    }
+
+.bip-messages-s-breadcrumb {
+    font-size: 14px;
+    line-height: 28px;
+}
+
+    .bip-messages-s-breadcrumb .bip-form-checkbox {
+        float: left;
+        margin: 5px;
+    }
+
+.bip-searchmessage {
+    border: 1px solid #c3c3c4;
+}
+
+    .bip-searchmessage input[type=text] {
+        width: 85%;
+        border: none;
+        outline: none;
+    }
+
+    .bip-searchmessage .bip-icon {
+        font-size: 14px;
+        vertical-align: middle;
+    }
+
+.searchDetailedMessage.bip-button-normal {
+    margin-top: 0;
+}
+
+.bip-gmaps-buttons #updateLocation {
+    float: left;
+}
+
+.input-group label, .input-group .dateDelete {
+    width: auto !important;
+    cursor: pointer;
+}
+
+.mask {
+    position: absolute;
+    height: 32px;
+    z-index: 9;
+    margin: 1px 1px 1px 4px;
+}
+
+.bip-messages-s-breadcrumb .bip--link {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0;
+}
+
+.widthAuto {
+    width: auto;
+}
+
+.bip-message {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+li.bip-message + li.bip-message {
+    border-top: 1px solid #c3c3c4;
+    overflow: hidden;
+}
+
+.jspHorizontalBar {
+    background: #fff;
+}
+
+    .jspHorizontalBar .jspDrag {
+        display: none;
+    }
+
+.p__size .p__size {
+    border-color: transparent;
+    outline: none;
+}
+
+.product INPUT {
+}
+
+.bip-message .icon-read-message, .bip-message .icon-message {
+    position: relative;
+    top: 20px;
+}
+/*.bip-msme-item {
+width: 220px !important;
+}*/
+
+
+.bip-msm-weathers li {
+    float: left;
+    list-style: none;
+    position: relative;
+    /*width: 143px !important;*/
+    padding-left: 22px;
+}
+
+.bip-message .icon-attachment {
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+
+.icon-attachment {
+    margin-left: 4px;
+}
+
+#productsContainer input[type=checkbox], input[type=radio] {
+    margin: -2px 0 0 -2px;
+}
+
+.p__size--mini {
+    width: 12px !important;
+    height: 12px !important;
+}
+
+.p__size--small {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+.p__size--normal {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+.p__size--big {
+    width: 32px !important;
+    height: 32px !important;
+}
+
+.bip-message-sender {
+    margin: 0;
+}
+
+.box1 {
+    background-color: #f0f0f0;
+    width: 740px;
+    margin: 0 auto 15px auto;
+    padding: 20px 35px;
+    border: 1px solid #d7d7d7;
+    -moz-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    border-radius: 11px;
+    behavior: url(../js/ie-css3.htc);
+}
+
+.box2 {
+    background: transparent url(ashera.jpg);
+    no-repeat top left;
+    width: 414px;
+    height: 262px;
+    margin: 0 auto 35px auto;
+    padding: 15px;
+    border: 11px solid #c6ac6c;
+    position: relative;
+    margin-top: 35px;
+    -moz-border-radius: 32px;
+    -webkit-border-radius: 32px;
+    border-radius: 32px;
+    z-index: 2;
+    behavior: url(../js/ie-css3.htc);
+}
+
+/* The script works with absolutely positioned elements too */
+.box3 {
+    background-color: #ddd;
+    width: 110px;
+    padding: 20px;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    text-align: center;
+    font-weight: bold;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    behavior: url(../js/ie-css3.htc);
+}
+
+    .box3 a {
+        display: block;
+    }
+
+        .box3 a.small {
+            font-size: 75%;
+            padding-bottom: 10px;
+        }
+
+.box2 div {
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13pt;
+    color: #ffd550;
+    _bottom: 21px; /* IE6 */
+    _width: 108%; /* IE6 */
+    /* IE6 workarounds are ugly, I know. Just feeling lazy right now... */
+}
+
+.rel {
+    margin: 30px 0 0 33px;
+    padding: 0;
+    position: relative;
+    zoom: 1; /* IE6 */
+}
+
+code {
+    padding: 0 1ex;
+    background: #fff;
+    border: 1px solid #ddd;
+    white-space: nowrap;
+}
+
+.notice {
+    background: none repeat scroll 0 0 #a00;
+    border-radius: 11px 11px 0 0;
+    color: #fff;
+    font-size: 13pt;
+    font-weight: bold;
+    margin: -20px -35px 20px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+    .notice a {
+        color: #fff;
+    }
+
+
+
+.bip-message p {
+    margin-top: 5px;
+}
+
+.bip-message-fr {
+    border-right: 1px solid #C3C3C3;
+    height: 62px;
+}
+
+.bip-messages {
+    width: 99%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bip-messages-stop {
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #c3c3c4;
+}
+
+.bip-messages-stop, .bip-messages-scontent {
+    padding: 20px 4px;
+}
+
+.bip-messages-scontent {
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.bip-messages-sbreadcrumb a {
+    font-size: 13px;
+    padding-left: 6px;
+    padding-right: 7px;
+}
+
+    .bip-messages-sbreadcrumb a span {
+        margin: 0px 10px;
+        font-size: 15px;
+    }
+
+.bip-takeitback span {
+    margin-right: 6px !important;
+    margin-left: 0px !important;
+}
+
+.bip-messages-sheader {
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.bip-icon.icon-attachment a {
+    font-family: "BoschSansRegular";
+}
+
+.bip-messages-single {
+    border: 1px solid #c3c3c4;
+}
+
+.bip-msh-label {
+    margin-top: 10px;
+}
+
+.bip-msh-title {
+    margin-bottom: 0;
+}
+
+.bip-mtabsl-tab {
+    display: inline-block;
+    width: 48%;
+    text-align: center;
+    font-size: 14px;
+    color: #252525;
+    border-bottom: 1px solid #c3c3c4;
+    padding: 10px;
+}
+
+.bip-messages-tabs {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.bip-message-reading {
+    background-color: #f1f1f1;
+}
+
+.bip-messages-mycontact {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+    .bip-messages-mycontact .bip-messages-sbreadcrumb {
+        padding: 15px 10px 5px 10px;
+    }
+
+.bip-m-mc-table .bip-form-checkbox {
+    top: 8px;
+}
+
+.searchContactForm .bip-button {
+    margin-right: 0;
+}
+
+.bip-m-mc-table {
+    font-size: 14px;
+}
+
+.bip-mt-s .bip-mtabsl-tab {
+    width: 20%;
+}
+
+#bip-messages-sin, #bip-messages-sout {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    padding-top: 10px;
+    display: inline-block;
+}
+
+.bip-m-folder .bip-form-checkbox {
+    display: inline-block;
+    line-height: 25px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    top: 3px;
+}
+
+    .bip-m-folder .bip-form-checkbox label {
+        min-width: 10px;
+    }
+
+.bip-m-folder .bip-messages-s-breadcrumb {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.bip-m-folder {
+    margin-bottom: 15px;
+}
+
+    .bip-addfolder, .bip-m-folder a.bip--link .bip-icon, .bip-addfolder a.bip--link .bip-icon {
+        font-size: 14px;
+        line-height: 32px;
+    }
+
+        .bip-addfolder input {
+            line-height: 10px;
+        }
+
+.bip-mf-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.bip-mf-actions {
+    margin-top: 20px;
+}
+
+#removeFolderModal {
+    font-size: 14px;
+}
+
+table.bip-recipients-table > thead > tr > th {
+    vertical-align: middle;
+}
+
+.bip-recipients-table .bip-form-checkbox {
+    top: 5px;
+    left: 5px;
+}
+
+    .bip-recipients-table .bip-form-checkbox label {
+        min-width: 10px;
+    }
+
+.bip-rf-container {
+    background-color: #f1f1f1;
+    font-size: 14px;
+    padding: 15px 10px 15px 20px;
+}
+
+    .bip-rf-container .form-group {
+        float: none;
+    }
+
+.bip-m-ct-img {
+    padding: 16px 22px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.slicknav_menu {
+    display: none;
+}
+
+.bip-d2c-stats {
+    border: 1px solid #c3c3c4;
+    font-size: 14px;
+}
+
+.AdminBannerCampaign .ImageUploadformError {
+    margin-top: -64px !important;
+    top: 25px !important;
+    left: 213px !important;
+}
+
+.AdminBannerCampaign .formError .formErrorArrowBottom {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    top: 72px !important;
+}
+
+.bip-d2cs-stat {
+    padding: 0;
+}
+
+.bip-d2css-main, .bip-d2css-head {
+    border-right: 1px solid #c3c3c4;
+    font-size: 13px;
+}
+
+.bip-d2css-main {
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.bip-d2css-head {
+    padding: 10px;
+}
+
+.bip-row-nm {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/*  Lastly Added*/
+
+.bip-s-oa-title {
+    margin-bottom: 20px;
+}
+
+.bip-s-oa-table {
+    margin-top: 25px;
+}
+
+.bip-osi-info {
+    margin-top: 10px;
+}
+
+.bip-d2c-guide {
+    overflow: hidden;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid #c3c3c4;
+}
+
+    .bip-d2c-guide .bip--link {
+        margin-top: 7px;
+        display: block;
+    }
+
+.bip-tc-filter {
+    padding-top: 10px;
+    border-bottom: 1px solid #c3c3c4;
+}
+
+.bip-form-checkbox label + label {
+    max-width: inherit;
+}
+
+.bip-m-cartps-table td, .bip-m-cartps-table th {
+    text-align: center;
+}
+
+.td-no-border {
+    border: 0 !important;
+}
+
+.bip-ps-price-row {
+    background-color: #ffffff !important;
+}
+
+.bip-exhangeContainer .bx-wrapper .bx-prev {
+    left: 0;
+    text-align: left;
+}
+
+.bip-exhangeContainer .bx-prev:after, .bip-exhangeContainer .bx-next:after {
+    display: none;
+}
+
+.bip-weatherContainer .bx-prev:after, .bip-weatherContainer .bx-next:after {
+    display: none;
+}
+
+.bip-msme-item .bip-icon {
+    position: relative;
+    /*left:10px;*/
+    left: 0px;
+}
+
+.form-horizontal-inner .modal-header {
+    padding-right: 30px;
+}
+
+.visitclwrapper #calendar {
+    margin-top: 25px;
+}
+
+    .visitclwrapper #calendar .fc-event {
+        cursor: pointer;
+    }
+
+.cke_dialog input[type="checkbox"] {
+    position: initial;
+    left: 0;
+    margin: 0;
+}
+
+.cke_dialog input[type=checkbox] {
+    visibility: initial;
+}
+/* HELPER CLASSES*/
+.m-t-10 {
+    margin-top: 10px;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
+
+.m-t-20 {
+    margin-top: 20px;
+}
+
+.m-b-20 {
+    margin-bottom: 20px;
+}
+
+.m-b-30 {
+    margin-bottom: 30px;
+}
+
+#bip-messages-outgoing ul, #bip-messages-incoming {
+    margin-bottom: 0px;
+}
+
+.bip-whours-table td, .bip-whours-table th {
+    text-align: center;
+}
+
+.bip-whours-table .bip-form-checkbox {
+    margin-bottom: 0;
+    display: inline-block;
+}
+
+.jspScrollable {
+    overflow-y: hidden !important;
+    outline: none;
+}
+
+.word-break-all {
+    word-break: break-all;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.p-t-30 {
+    padding-top: 30px;
+}
+
+.p-t-20 {
+    padding-top: 20px;
+}
+
+.p-t-10 {
+    padding-top: 10px;
+}
+
+.form-group.label--half label {
+    width: 16.33%;
+}
+
+.form-group.label--half .form-detail-value {
+    width: 82.67%;
+}
+
+.input-default {
+    position: inherit !important;
+    z-index: unset !important;
+    border: 1px solid #dedede !important;
+    color: #000 !important;
+}
+/* ================================================== */
+/* ================= Mobile Styles ================== */
+/* ================================================== */
+@media (max-width: 768px) {
+    .bip-m-footerlink {
+        display: none;
+    }
+
+    .bx-pager.bx-default-pager {
+        display: none;
+    }
+
+    .bip-m-ct-img {
+        padding: 16px 4px;
+    }
+
+    .bip-tabs-panel-container {
+        border: none !important;
+    }
+
+    .bip-tabs {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .bip-tabs-tab {
+        width: 49%;
+        background: none !important;
+        background-color: #f1f1f1 !important;
+        border-radius: 0;
+        z-index: 999999;
+        position: relative;
+    }
+
+        .bip-tabs-tab.active {
+            background: none !important;
+            background-color: #ffffff !important;
+        }
+
+            .bip-tabs-tab.active a {
+                color: #215f8b;
+            }
+
+    /* #menu is the original menu */
+    .bip-hn-list {
+        display: none;
+    }
+
+    .slicknav_menu {
+        display: block;
+    }
+
+    .bip-hnl-item {
+        float: none;
+    }
+
+    .bip-hnli-submenu {
+        margin-top: 15px;
+        padding: 0;
+    }
+
+    .bip-hnlisl-item {
+        border-bottom: 1px solid #215f8b;
+    }
+
+    .bip-hnli-submenu.active {
+        width: 100%;
+        border: 0;
+    }
+
+    .bip-h-nav {
+        margin-left: -15px;
+        margin-right: -5px;
+    }
+
+    .bip-msml-item {
+        padding-top: 12px;
+        margin: 0;
+        width: 25%;
+        text-align: center;
+    }
+
+    .bip-header {
+        margin-bottom: 0;
+    }
+
+    .bip-quickm-m {
+        padding-top: 20px;
+    }
+
+        .bip-quickm-m * {
+            font-size: 16px;
+        }
+
+        .bip-quickm-m p {
+            margin-bottom: 3px;
+        }
+
+        .bip-quickm-m .bip-m-ma-links-m {
+            margin-top: 15px;
+        }
+
+        .bip-quickm-m .bip-msmlil-text {
+            font-size: 10px;
+        }
+
+    .bip-msm-list {
+        text-align: center;
+    }
+
+    .slicknav_menu .slicknav_icon {
+        float: left;
+        margin: 0.1em 0 0 .438em;
+        color: #FFF;
+    }
+}
+/* Mobile styles end*/
+
+.fc-day-number {
+    cursor: pointer;
+}
+
+.bip-tc-filter {
+    padding-top: 10px;
+    border-bottom: 1px solid #c3c3c4;
+}
+
+.bip-form-checkbox label + label {
+    max-width: inherit;
+    min-width: 90px;
+}
+
+#dialogNewMessage .bip-form-checkbox label + label {
+    min-width: 200px;
+}
+
+#frmSubUserPermissions .bip-form-checkbox, .user-demand-form .bip-form-checkbox {
+    margin-top: 10px;
+}
+
+span.bip-icon.icon-tasks {
+    font-size: 32px;
+}
+
+span.bip-icon.icon-percent {
+    font-size: 19px;
+    vertical-align: -webkit-baseline-middle;
+}
+/* Ge�ici olarak yaz�ld�. Bunlar silinecek*/
+/*.bp-mt-action .bip-icon {
+    width: 18px;
+    display: inline-block;
+    height: 24px;
+    vertical-align: sub;
+}*/
+/*.bp-mt-action .bip-icon.icon-aEdit{background-color: blue;}
+.bp-mt-action .bip-icon.icon-aDelete{background-color: red;}*/
+/*.bp-mt-action .bip-icon.icon-aDetail{background-color: green;}*/
+
+
+/*.bipDialog{ }
+.bipDialog .dialogOverlay{opacity: 0.9; cursor: pointer; visibility: visible; display: block; position: fixed; width: 100%; height: 100%; top: 0; left: 0;  z-index: 1001;background: url(/assets/common/images/overlay.png) repeat 0 0;}
+.bipDialog .bipDialogRole{display: block; z-index: 2001; outline: 0 none; position: fixed; height: 100%; min-width: 150px; width: 80%; height: 80%; top: 10%; left: 10%;}
+.bipDialog .bipDialogContent{width: auto; min-height: 0px; height: 100%;background-color: #FFF; overflow-y: auto;}
+.bipDialog iframe{width: 99%; height: 99%;}*/
+
+
+#dealerGroupsCheckboxList .bip-form-checkbox .label-text {
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.bipDialog {
+    z-index: 9999999999;
+}
+
+    .bipDialog .dialogOverlay {
+    }
+
+    .bipDialog .bipDialogRole {
+        position: relative;
+        z-index: 2001;
+        height: 92%;
+    }
+
+#notificationPopUpContainer .bipDialogRole {
+    height: auto !important;
+}
+
+.bipDialog .bipDialogRole {
+    vertical-align: inherit !important;
+}
+
+.bipDialog .bipDialogContent {
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 0;
+    border: 3px solid #215f8b;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    max-height: 423px;
+}
+
+.bipDialog iframe {
+    width: 99%;
+    height: 99%;
+    border: none;
+}
+
+.bipDialog .bipDialogCloseBtn {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    z-index: 999;
+    padding: 20px;
+    margin: 3px;
+    cursor: pointer;
+    color: #215f8b;
+}
+
+.bipDialogContainer > iframe {
+    margin: 0 auto;
+    display: table;
+}
+
+.bip-dt-tdfirst img {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.modal-open .modal {
+    z-index: 9999999;
+}
+
+.bootbox.modal.fade.in {
+    z-index: 999999999 !important;
+}
+
+.input--half .bip-datepicker-group {
+    width: 65%;
+    float: none !important;
+    display: inline-table;
+}
+
+.input--half textarea {
+    height: 100px;
+    width: 65%;
+}
+
+.input--half .form-detail-value {
+    display: inline-block;
+    padding-top: 5px;
+    width: 65%;
+}
+
+.bip-datepicker-group input {
+    width: 100%;
+}
+
+.form-group label {
+    vertical-align: top;
+}
+
+.col-md-2 .searchbypcode input[type=text] {
+    padding: 3% 4%;
+    width: 86%;
+}
+
+.panel-bip {
+    background-color: #f1f1f1;
+    overflow: hidden;
+    padding: 10px 15px;
+    border-radius: 0;
+}
+
+    .panel-bip .bip-form-checkbox {
+        margin-bottom: 10px;
+    }
+
+
+#productsContainer {
+    padding: 0 20px;
+}
+
+#CreditItemMainTotalPrice {
+    padding-bottom: 5px;
+}
+
+#productsContainer label {
+    padding-top: 5px;
+}
+
+#CreditItemIMainInstallmentTotalPrice {
+    padding-left: 20px;
+}
+
+.fa-loading-icon-wrapper {
+    z-index: 9999999999 !important;
+}
+
+.fa-loading-bg {
+    z-index: 999999999 !important;
+}
+
+.col-md-6.bip-weatherContainer .bx-wrapper .bx-next {
+    right: -8px;
+}
+
+
+.live-message .message-box {
+    width: 274px;
+    margin-left: 4px;
+    display: inline-block;
+    float: left;
+    padding: 0 10px 0 0px;
+    margin-top: 7px;
+}
+
+.bip-main .message-box {
+    width: 100%;
+    margin-left: 4px;
+    display: inline-block;
+    float: left;
+    padding: 0 10px 0 0px;
+    margin-top: 7px;
+}
+
+.bip-main .message-box-scroll {
+    overflow-y: scroll;
+    max-height: 500px;
+}
+
+.live-message .message-box textarea, .bip-main .message-box textarea {
+    width: 100%;
+}
+
+.live-message .box-message-user, .bip-main .box-message-user {
+    margin: 0;
+    font-weight: bold;
+}
+
+.live-message .box-message-text, .bip-main .box-message-text {
+    margin: 0;
+}
+
+.bip-main .box-message-text {
+    font-size: 1.3em;
+}
+
+.live-message .box-message, .bip-main .box-message {
+    padding: 5px;
+    border: 1px solid #ededed;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.live-message .box-message-send, .bip-main .box-message-send {
+    border: 1px solid #ededed;
+    background-color: whitesmoke;
+    padding: 8px 10px;
+    border-radius: 5px;
+    float: right;
+}
+
+.bipDialogContainer > iframe {
+    margin: inherit !important;
+    display: inherit !important;
+    float: left;
+}
+
+.bipDialogContent.live-message > iframe {
+    display: inline-block;
+    width: 100%;
+    width: calc(100% - 300px);
+    width: -webkit-calc(100% - 300px);
+    width: -moz-calc(100% - 300px);
+    float: left;
+}
+
+.live-message .box-messages, .admin--content .box-messages {
+    height: 265px;
+    overflow: auto;
+    margin-bottom: 10px;
+    padding-right: 5px;
+}
+
+.check-message {
+    float: right;
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+    .check-message.active {
+        background-color: #0eec15;
+    }
+
+.bip-tr-click {
+    display: inline-block;
+    width: 100%;
+    border: 2px solid #f1f1f1;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+    text-align: center;
+    border-radius: 4px;
+    color: #242424;
+}
+
+.bip-custom-star {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    color: #ffbc00 !important;
+}
+
+.bip-dt-tdfirst {
+    position: relative;
+}

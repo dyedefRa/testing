@@ -1,0 +1,69 @@
+png deki akordiyon u yapalım..
+layout.css i dahil et
+
+add.cshtml deki en onemli kodlar asagıdadır =>
+
+
+
+
+
+
+
+
+       <div class="row">
+                                <div class="col-md-12 membersTableWrapper">
+                                    <table class="bip-members-table table table-striped table-bordered table-s table-no-margin productsCategoryTable">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 40px;"></th>
+                                                <th>@Translate("Title")</th>
+                                                <th style="width: 100px;">@Translate("Operations")</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="reportContainer">
+                                            @{
+                                                var groups = Model.Claims.GroupBy(x => x.Title.Trim().Split('-')[0]).ToList();
+                                            }
+                                            @foreach (var group in groups)
+                                            {
+                                                <tr class="categoryTitle openIt" data-keyz="@group.Key.Trim()">
+                                                    <td>
+                                                        @*@Model.Claims[Model.Claims.FindIndex(x => x == checkboxClaim)].Title.Split('-')[0]*@
+                                                        <a href="#" onclick=" return false;" class="bp-mt-action "><span class="icon-arrow-down12 icon-menu-arrow"></span></a>
+                                                    </td>
+                                                    <td style="text-transform:uppercase; font-weight:bolder; font-size:12px;">
+                                                        @*@Model.Claims[Model.Claims.FindIndex(x => x == checkboxClaim)].Id*@
+                                                        @group.Key
+                                                    </td>
+                                                    <td>
+                                                        <input type="checkbox" class="checker selectFull" value="false" />
+                                                    </td>
+                                                </tr>
+                                                foreach (var item in group)
+                                                {
+                                                    var index = Model.Claims.FindIndex(x => x == item);
+                                                    <tr style="display: none;" class="@group.Key.Trim() applySearchTr">
+                                                        <td colspan="9" class="pct-td">
+                                                            <table class="bip-members-table table table-striped table-bordered table-s table-no-margin productsCategoryInnerTable">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="pcit-td" style="width: 40px;">
+                                                                            <input type="hidden" asp-for="Claims[index].Id" />
+                                                                            <input asp-for="Claims[index].Selected" type="checkbox" class="checker" />
+                                                                        </td>
+                                                                        <td class="pcit-td">
+                                                                            <label asp-for="Claims[index].Selected"> @Model.Claims[index].Title</label>
+                                                                        </td>
+                                                                        <td style="width: 100px;" class="pcit-td">
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>

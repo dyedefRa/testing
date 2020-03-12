@@ -1,0 +1,25 @@
+  $('#templateVideoItem').tmpl({ FileURL: fileUrl, Format: format }).appendTo($modal.find('.modal-body'));
+
+
+format ve FileUrl i bu sekilde atıyoruz (ustte)
+
+
+
+
+<script id="templateVideoItem" type="text/x-jquery-tmpl">
+    {{if Format}}
+    @*<div id="flowplayer">
+            <video>
+                <source type="${Format}" src="@filePath${FileURL}">
+            </video>
+        </div>*@
+    <div id="viewer" style="height:100%;width:100%;position:absolute"></div>
+    {{else}}
+    <p>
+        Video formatı desteklenmediğinden video görüntülenememektedir.
+    </p>
+    <p>
+        Bilgisayarınıza indirerek görüntülemek için <a href="@filePath${FileURL}" download target="blank" class="bp-mt-action btnDownloadDocument" title="İndir" data-documentid="${Id}">tıklayınız</a>.
+    </p>
+    {{/if}}
+</script>
