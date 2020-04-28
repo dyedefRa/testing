@@ -11,3 +11,9 @@
 
 $("#elementId :selected").text(); // The text content of the selected option
 $("#elementId :selected").val(); 
+
+
+ATAMA 
+
+                $("#UserType").val("Seçiniz").change(); //Change yap bide
+ $("#UserType").val(null);

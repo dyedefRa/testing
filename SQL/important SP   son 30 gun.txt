@@ -1,0 +1,53 @@
+DECLARE-- PROCEDURE [dbo].[pa_DocumentCategory_List_ActiveForDocumentPage]   
+ @BrandId int=1,
+ @DocumentContentCategoryType int=2
+
+
+ Select  
+  dc.*,  
+  (select Case When COUNT(*) > 0 Then CONVERT(bit,1) Else CONVERT(bit,0) End from Document where DocumentCategoryId = dc.Id and CONVERT(date,DATEADD(day,-30,GETDATE())) < CONVERT(date,CreatedDate)) As 'NewDocument'  
+ From  
+  DocumentCategory dc  
+ Where  
+  Status = 0 And  
+  BrandId = @BrandId And  
+  (@DocumentContentCategoryType IS NULL OR DocumentContentCategoryType = @DocumentContentCategoryType)      
+ Order By CreatedDate Desc   
+
+
+
+
+
+------------------
+
+
+ALTER PROCEDURE [dbo].[pa_DocumentCategory_List_ActiveForDocumentPage]   
+ @BrandId int,  
+ @DocumentContentCategoryType int=NULL,  
+ @PageNumber int = 1,  
+ @PageSize int = 9,  
+ @TotalItemCount bigint output  
+AS  
+BEGIN  
+ Select  
+  @TotalItemCount = COUNT(*)  
+ From  
+  DocumentCategory  
+ Where  
+  Status = 0 And  
+  BrandId = @BrandId And  
+  (@DocumentContentCategoryType IS NULL OR DocumentContentCategoryType = @DocumentContentCategoryType)    
+  
+ Select  
+  dc.*,  
+  (select Case When COUNT(*) > 0 Then CONVERT(bit,1) Else CONVERT(bit,0) End from Document where DocumentCategoryId = dc.Id AND Status=0 and CONVERT(date,DATEADD(day,-30,GETDATE())) < CONVERT(date,CreatedDate)) As 'NewDocument'  
+ From  
+  DocumentCategory dc  
+ Where  
+  Status = 0 And  
+  BrandId = @BrandId And  
+  (@DocumentContentCategoryType IS NULL OR DocumentContentCategoryType = @DocumentContentCategoryType)      
+ Order By CreatedDate Desc   
+ Offset (@PageNumber - 1) * @PageSize ROWS  
+ Fetch Next @PageSize ROWS ONLY  
+END
